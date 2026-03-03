@@ -1,48 +1,41 @@
-# BIST Hisse İzleme (React - CDN)
+# BIST Hisse İzleme (React CDN + Python API)
 
-Bu uygulama React ile yazılmıştır ve `npm` gerektirmez.
+Bu uygulama `npm` gerektirmez ve mevcut üretim akışı aşağıdaki iki dosya üzerindedir:
+
+- `web/index.html` → arayüz
+- `web/server.py` → API/proxy + fundamentals refresh
 
 ## Çalıştırma
-
-`Bist` klasöründe terminal açıp:
 
 ```powershell
 python .\web\server.py
 ```
 
-Ardından tarayıcıda aç:
+Ardından:
 
 - http://localhost:5500
 
-## Özellikler
+## Güncel Özellikler
 
-- BIST hisseleri listesi (Yahoo `.IS` sembolleri keşfi + yedek liste)
-- Hisse kodu ile arama
-- Yıldızlama / favori listeleme (localStorage)
-- Ana sayfada favori hisseler
-- Fiyat ve günlük değişim yüzdesi
-- Her 10 saniyede otomatik güncelleme
-- Fiyat artışında yeşil, düşüşte kırmızı blink efekti
-- Mat siyah / mat gri modern arayüz
+- BIST sembol keşfi + yedek sembol listesi
+- 5 saniye fiyat güncelleme (delayed)
+- Favori/yıldızlama (localStorage)
+- Detay sayfasında fundamentals kartları
+- Günlük/Haftalık/Aylık/Yıllık/Tüm Zamanlar grafik
+- Grafik hover tooltip + crosshair
 
-## Not
+## Veri Kaynakları
 
-- Veri kaynağı: Yahoo delayed market data
-- Uygulama, CORS sorununu aşmak için local proxy (`/api/*`) üzerinden Yahoo çağırır
+- Fiyat/Chart: Yahoo Finance (`/api/chart`, `/api/prices`)
+- Fundamentals: Investing çekimi + TradingView fallback (backend tarafında)
 
-## Seans Override (önerilir)
+## Seans Override (opsiyonel)
 
-Beklenmedik kapanışlar, resmi duyuru ile tam gün tatil veya yarım gün seanslar için `web/session_overrides.json` dosyası oluşturabilirsin.
-
-Örnek format:
+`web/session_overrides.json` dosyası oluşturup özel gün/seans tanımlayabilirsin.
 
 ```json
 {
-	"2026-03-19": { "open": "10:00", "close": "13:00", "reason": "half_day", "label": "Arefe" },
-	"2026-03-20": { "closed": true, "reason": "manual_closed", "label": "Tam gün kapalı" }
+  "2026-03-19": { "open": "10:00", "close": "13:00", "reason": "half_day", "label": "Arefe" },
+  "2026-03-20": { "closed": true, "reason": "manual_closed", "label": "Tam gün kapalı" }
 }
 ```
-
-- `closed: true` => o gün tamamen kapalı
-- `open` / `close` => o güne özel seans saatleri
-- `reason` ve `label` => UI tarafında açıklama için

@@ -11,6 +11,11 @@ import time
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
+# Core backend for the currently active runtime:
+# - Serves static UI from web/
+# - Proxies Yahoo chart/price endpoints
+# - Manages daily fundamentals refresh pipeline
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(BASE_DIR)
 if PROJECT_DIR not in sys.path:
@@ -183,7 +188,7 @@ def _start_fundamentals_refresh(force: bool = False, symbols=None, reason: str =
     def worker():
         try:
             try:
-                import investing_daily_fundamentals as idf
+                import fundamentals_investing_fetcher as idf
             except Exception as import_exc:
                 raise RuntimeError(f"investing importer error: {import_exc}")
 

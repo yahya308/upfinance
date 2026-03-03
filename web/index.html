@@ -422,16 +422,7 @@
         background: #0f1116;
       }
 
-      .chart-canvas {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-
-      .tv-widget-host {
-        width: 100%;
-        height: 100%;
-      }
+      /* Active renderer uses inline SVG (legacy canvas/widget styles removed). */
 
       .chart-svg {
         width: 100%;
@@ -515,6 +506,11 @@
 
     <script type="text/babel">
       const { useEffect, useMemo, useRef, useState, useCallback } = React;
+
+      // Runtime architecture note for collaborators/AI agents:
+      // - List + detail UI is in this single file.
+      // - Price/market/chart/fundamentals data always comes from web/server.py API endpoints.
+      // - Chart period config below is the single source of truth for range/interval mapping.
 
       const FALLBACK_SYMBOLS = [
         'THYAO.IS','ASELS.IS','TUPRS.IS','SISE.IS','EREGL.IS','KCHOL.IS','AKBNK.IS','GARAN.IS','ISCTR.IS','YKBNK.IS',

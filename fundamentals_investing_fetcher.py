@@ -9,6 +9,9 @@ from urllib.parse import quote
 import cloudscraper
 from bs4 import BeautifulSoup
 
+# This module is imported by web/server.py for scheduled/on-demand fundamentals refresh.
+# Keep `run(symbols, write_file=True)` signature stable to avoid breaking runtime flow.
+
 OUT_FILE = Path(__file__).resolve().parent / "web" / "investing_fundamentals.json"
 URL_CACHE_FILE = Path(__file__).resolve().parent / "web" / "investing_symbol_urls.json"
 
