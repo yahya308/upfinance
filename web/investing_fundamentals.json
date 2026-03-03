@@ -1,0 +1,4558 @@
+{
+  "source": "investing.com",
+  "fetchedAt": "2026-02-14T13:46:50.243622+00:00",
+  "count": 565,
+  "symbols": {
+    "A1CAP": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "A1YEN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ACSEL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ADEL": {
+      "url": "https://tr.investing.com/equities/adel-kalemcilik",
+      "metrics": {
+        "avg_volume_3m": "3,05 M",
+        "change_1y_pct": "31,5068 %",
+        "market_cap": "9,98 B",
+        "revenue": "1,43 B",
+        "net_income": "-455,652",
+        "eps": "-1,7534",
+        "pe": "-21,93",
+        "roe_pct": "-30,5 %",
+        "pb": "6,79",
+        "ebitda": "241,82 M"
+      },
+      "status": "ok"
+    },
+    "ADESE": {
+      "url": "https://tr.investing.com/equities/adese-alisveris-ticaret",
+      "metrics": {
+        "avg_volume_3m": "441,87 M",
+        "change_1y_pct": "201,5075 %",
+        "market_cap": "6,05 B",
+        "revenue": "727,65 M",
+        "net_income": "955,781",
+        "eps": "0,1897",
+        "pe": "6,38",
+        "roe_pct": "8,8 %",
+        "pb": "0,5",
+        "ebitda": "315,95 M"
+      },
+      "status": "ok"
+    },
+    "ADGYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AEFES": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AFYON": {
+      "url": "https://tr.investing.com/equities/afyon-cimento",
+      "metrics": {
+        "avg_volume_3m": "2,69 M",
+        "change_1y_pct": "2,3368 %",
+        "market_cap": "5,96 B",
+        "revenue": "2,86 B",
+        "net_income": "242,57483",
+        "eps": "0,6133",
+        "pe": "24,29",
+        "roe_pct": "3,9 %",
+        "pb": "0,84",
+        "ebitda": "676,06 M"
+      },
+      "status": "ok"
+    },
+    "AGESA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AGHOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AGROT": {
+      "url": "https://tr.investing.com/equities/dollex-agrotech",
+      "metrics": {
+        "avg_volume_3m": "22,37 K",
+        "change_1y_pct": "-5,4449 %",
+        "market_cap": "888,86 M",
+        "revenue": "2,46 B",
+        "net_income": "41,449",
+        "eps": "2,9852",
+        "pe": "-",
+        "roe_pct": "4,6 %",
+        "pb": "0,76",
+        "ebitda": "134,95 M"
+      },
+      "status": "ok"
+    },
+    "AHGAZ": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AHSGY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AKBNK": {
+      "url": "https://tr.investing.com/equities/akbank",
+      "metrics": {
+        "avg_volume_3m": "113,84 M",
+        "change_1y_pct": "38,4856 %",
+        "market_cap": "461,24 B",
+        "revenue": "654,85 B",
+        "net_income": "57,25 K",
+        "eps": "11,0105",
+        "pe": "8,10",
+        "roe_pct": "20,8 %",
+        "pb": "1,53",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "AKCNS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AKENR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AKFIS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AKFYE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AKGRT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AKHAN": {
+      "url": "https://tr.investing.com/equities/akhan-un-fabrikasi-ve-tarim-urunler",
+      "metrics": {
+        "avg_volume_3m": "62,79 M",
+        "change_1y_pct": "-",
+        "market_cap": "7,67 B",
+        "revenue": "6,54 B",
+        "net_income": "-2,576623",
+        "eps": "-0,012",
+        "pe": "-2.427,02",
+        "roe_pct": "-",
+        "pb": "-",
+        "ebitda": "428,35 M"
+      },
+      "status": "ok"
+    },
+    "AKSA": {
+      "url": "https://tr.investing.com/equities/aksa",
+      "metrics": {
+        "avg_volume_3m": "17,65 M",
+        "change_1y_pct": "-1,1494 %",
+        "market_cap": "43,43 B",
+        "revenue": "23,98 B",
+        "net_income": "2,25 K",
+        "eps": "0,58",
+        "pe": "19,19",
+        "roe_pct": "8,6 %",
+        "pb": "1,43",
+        "ebitda": "4,93 B"
+      },
+      "status": "ok"
+    },
+    "AKSEN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AKSUE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AKYHO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ALARK": {
+      "url": "https://tr.investing.com/equities/alarko-gmyo",
+      "metrics": {
+        "avg_volume_3m": "31,16 M",
+        "change_1y_pct": "106,2075 %",
+        "market_cap": "11,06 B",
+        "revenue": "422,36 M",
+        "net_income": "464,405229",
+        "eps": "0,241",
+        "pe": "23,20",
+        "roe_pct": "2,9 %",
+        "pb": "0,65",
+        "ebitda": "251,06 M"
+      },
+      "status": "ok"
+    },
+    "ALBRK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ALCAR": {
+      "url": "https://tr.investing.com/equities/carmat",
+      "metrics": {
+        "avg_volume_3m": "806,32 K",
+        "change_1y_pct": "-89,2473 %",
+        "market_cap": "6,15 M",
+        "revenue": "7,34 M",
+        "net_income": "-",
+        "eps": "-1,15",
+        "pe": "-0,09",
+        "roe_pct": "-",
+        "pb": "-0,18",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "ALCTL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ALFAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ALKA": {
+      "url": "https://tr.investing.com/equities/alkami-technology",
+      "metrics": {
+        "avg_volume_3m": "1,53 M",
+        "change_1y_pct": "-50,5471 %",
+        "market_cap": "1,71 B",
+        "revenue": "412,5 M",
+        "net_income": "-43,854",
+        "eps": "-0,4265",
+        "pe": "-38,12",
+        "roe_pct": "-12,7 %",
+        "pb": "4,93",
+        "ebitda": "39,36 M"
+      },
+      "status": "ok"
+    },
+    "ALKIM": {
+      "url": "https://tr.investing.com/equities/alkim-kagit",
+      "metrics": {
+        "avg_volume_3m": "14,21 M",
+        "change_1y_pct": "52,9076 %",
+        "market_cap": "9,86 B",
+        "revenue": "2,25 B",
+        "net_income": "-105,255804",
+        "eps": "-0,1432",
+        "pe": "-94,20",
+        "roe_pct": "-5,6 %",
+        "pb": "4,57",
+        "ebitda": "71,68 M"
+      },
+      "status": "ok"
+    },
+    "ALKLC": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ALTIN": {
+      "url": "https://tr.investing.com/equities/koza-altin",
+      "metrics": {
+        "avg_volume_3m": "173,12 M",
+        "change_1y_pct": "112,6414 %",
+        "market_cap": "168,61 B",
+        "revenue": "11,97 B",
+        "net_income": "4,48 K",
+        "eps": "1,3995",
+        "pe": "37,87",
+        "roe_pct": "12,9 %",
+        "pb": "4,12",
+        "ebitda": "2,65 B"
+      },
+      "status": "ok"
+    },
+    "ALTNY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ALVES": {
+      "url": "https://tr.investing.com/equities/alves-kablo-sanayi-ve-ticaret-as",
+      "metrics": {
+        "avg_volume_3m": "137,35 M",
+        "change_1y_pct": "21,9512 %",
+        "market_cap": "6,4 B",
+        "revenue": "7,38 B",
+        "net_income": "-2,890107",
+        "eps": "-0,0018",
+        "pe": "-",
+        "roe_pct": "-0,1 %",
+        "pb": "2,52",
+        "ebitda": "1,37 B"
+      },
+      "status": "ok"
+    },
+    "ANELE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ANGEN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ANHYT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ANSGR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ARASE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ARCLK": {
+      "url": "https://tr.investing.com/equities/arcelik",
+      "metrics": {
+        "avg_volume_3m": "3,96 M",
+        "change_1y_pct": "2,4768 %",
+        "market_cap": "80,35 B",
+        "revenue": "523,93 B",
+        "net_income": "-8,36 K",
+        "eps": "-13,7299",
+        "pe": "-9,48",
+        "roe_pct": "-10,6 %",
+        "pb": "1,13",
+        "ebitda": "21,32 B"
+      },
+      "status": "ok"
+    },
+    "ARDYZ": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ARENA": {
+      "url": "https://tr.investing.com/equities/arena-group",
+      "metrics": {
+        "avg_volume_3m": "702,92 K",
+        "change_1y_pct": "-8,4399 %",
+        "market_cap": "1,45 B",
+        "revenue": "127,26 M",
+        "net_income": "154,886",
+        "eps": "0,3867",
+        "pe": "9,10",
+        "roe_pct": "12,3 %",
+        "pb": "1,1",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "ARFYE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ARMGD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ARSAN": {
+      "url": "https://tr.investing.com/equities/arsan-tekstil",
+      "metrics": {
+        "avg_volume_3m": "44,41 M",
+        "change_1y_pct": "-76,6599 %",
+        "market_cap": "8,05 B",
+        "revenue": "105,87 M",
+        "net_income": "-556,517511",
+        "eps": "-0,3158",
+        "pe": "-14,60",
+        "roe_pct": "-7 %",
+        "pb": "0,88",
+        "ebitda": "63,53 M"
+      },
+      "status": "ok"
+    },
+    "ARTMS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ARZUM": {
+      "url": "https://tr.investing.com/equities/arzum-elektrikli-ev-aletleri-sanayi",
+      "metrics": {
+        "avg_volume_3m": "22,34 M",
+        "change_1y_pct": "-16,4865 %",
+        "market_cap": "1,85 B",
+        "revenue": "4,8 B",
+        "net_income": "-469,988562",
+        "eps": "-0,8952",
+        "pe": "-2,70",
+        "roe_pct": "-192,4 %",
+        "pb": "11,93",
+        "ebitda": "172,81 M"
+      },
+      "status": "ok"
+    },
+    "ASELS": {
+      "url": "https://tr.investing.com/equities/aselsan",
+      "metrics": {
+        "avg_volume_3m": "39,12 M",
+        "change_1y_pct": "279,4727 %",
+        "market_cap": "1,38 T",
+        "revenue": "130,15 B",
+        "net_income": "18,76 K",
+        "eps": "4,1147",
+        "pe": "72,85",
+        "roe_pct": "12,1 %",
+        "pb": "7,4",
+        "ebitda": "33,95 B"
+      },
+      "status": "ok"
+    },
+    "ASTOR": {
+      "url": "https://tr.investing.com/equities/astory-co-ltd",
+      "metrics": {
+        "avg_volume_3m": "68,27 K",
+        "change_1y_pct": "-1,4085 %",
+        "market_cap": "63,08 B",
+        "revenue": "9,32 B",
+        "net_income": "-6,86 K",
+        "eps": "-755,9264",
+        "pe": "-9,70",
+        "roe_pct": "-12,1 %",
+        "pb": "1,21",
+        "ebitda": "6 B"
+      },
+      "status": "ok"
+    },
+    "ASUZU": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ATAKP": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ATATP": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ATEKS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ATLAS": {
+      "url": "https://tr.investing.com/equities/atlas-yat",
+      "metrics": {},
+      "status": "error",
+      "error": "HTTP 404"
+    },
+    "ATSYH": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AVGYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AVHOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AVOD": {
+      "url": "https://tr.investing.com/equities/a",
+      "metrics": {},
+      "status": "error",
+      "error": "HTTP 404"
+    },
+    "AYCES": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "AYDEM": {
+      "url": "https://tr.investing.com/equities/aydem-yenilenebilir-enerji-as",
+      "metrics": {
+        "avg_volume_3m": "4,71 M",
+        "change_1y_pct": "23,3522 %",
+        "market_cap": "18,31 B",
+        "revenue": "9,38 B",
+        "net_income": "-16,02 K",
+        "eps": "-22,9199",
+        "pe": "-1,14",
+        "roe_pct": "-41,4 %",
+        "pb": "0,51",
+        "ebitda": "2,71 B"
+      },
+      "status": "ok"
+    },
+    "AYEN": {
+      "url": "https://tr.investing.com/equities/ayen-enerji",
+      "metrics": {
+        "avg_volume_3m": "763,86 K",
+        "change_1y_pct": "5,1429 %",
+        "market_cap": "8,17 B",
+        "revenue": "6,43 B",
+        "net_income": "-93,965141",
+        "eps": "-0,3386",
+        "pe": "-86,59",
+        "roe_pct": "-0,7 %",
+        "pb": "0,5",
+        "ebitda": "1,59 B"
+      },
+      "status": "ok"
+    },
+    "AYES": {
+      "url": "https://tr.investing.com/equities/ayes-celik-hasir-ve-cit",
+      "metrics": {
+        "avg_volume_3m": "109,41 K",
+        "change_1y_pct": "174,6809 %",
+        "market_cap": "3,87 B",
+        "revenue": "7,71 B",
+        "net_income": "-47,629212",
+        "eps": "-0,3179",
+        "pe": "-81,28",
+        "roe_pct": "-3 %",
+        "pb": "2,32",
+        "ebitda": "52,83 M"
+      },
+      "status": "ok"
+    },
+    "AYGAZ": {
+      "url": "https://tr.investing.com/equities/aygaz",
+      "metrics": {
+        "avg_volume_3m": "467,89 K",
+        "change_1y_pct": "58,5156 %",
+        "market_cap": "52,58 B",
+        "revenue": "89,66 B",
+        "net_income": "5 K",
+        "eps": "14,15",
+        "pe": "14,91",
+        "roe_pct": "5,5 %",
+        "pb": "0,83",
+        "ebitda": "3,54 B"
+      },
+      "status": "ok"
+    },
+    "AZTEK": {
+      "url": "https://tr.investing.com/equities/aztek-teknoloji-urunleri-ticaret-as",
+      "metrics": {
+        "avg_volume_3m": "12,04 M",
+        "change_1y_pct": "18,5882 %",
+        "market_cap": "4,8 B",
+        "revenue": "6,94 B",
+        "net_income": "9,449844",
+        "eps": "0,0094",
+        "pe": "450,84",
+        "roe_pct": "0,5 %",
+        "pb": "2,25",
+        "ebitda": "629,52 M"
+      },
+      "status": "ok"
+    },
+    "BAGFS": {
+      "url": "https://tr.investing.com/equities/bagfas",
+      "metrics": {
+        "avg_volume_3m": "1,3 M",
+        "change_1y_pct": "39,3488 %",
+        "market_cap": "4,04 B",
+        "revenue": "4,27 B",
+        "net_income": "481,377548",
+        "eps": "3,5658",
+        "pe": "8,42",
+        "roe_pct": "8 %",
+        "pb": "0,58",
+        "ebitda": "1,27 B"
+      },
+      "status": "ok"
+    },
+    "BAHKM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BAKAB": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BALAT": {
+      "url": "https://tr.investing.com/equities/balatacilar-balatacilik-san-ve-tic",
+      "metrics": {
+        "avg_volume_3m": "81 K",
+        "change_1y_pct": "97,4545 %",
+        "market_cap": "1,51 B",
+        "revenue": "4,56 M",
+        "net_income": "-65,135217",
+        "eps": "-10,5273",
+        "pe": "-10,15",
+        "roe_pct": "-89,9 %",
+        "pb": "29,82",
+        "ebitda": "39,74 M"
+      },
+      "status": "ok"
+    },
+    "BALSU": {
+      "url": "https://tr.investing.com/equities/balsu-gida-sanayi-ve-ticaret-as",
+      "metrics": {
+        "avg_volume_3m": "9,68 M",
+        "change_1y_pct": "-",
+        "market_cap": "19,1 B",
+        "revenue": "13,06 B",
+        "net_income": "-796,205886",
+        "eps": "-6,9795",
+        "pe": "-2,32",
+        "roe_pct": "-27,7 %",
+        "pb": "5,04",
+        "ebitda": "334,63 M"
+      },
+      "status": "ok"
+    },
+    "BANVT": {
+      "url": "https://tr.investing.com/equities/banvit",
+      "metrics": {
+        "avg_volume_3m": "315,83 K",
+        "change_1y_pct": "-34,837 %",
+        "market_cap": "18,49 B",
+        "revenue": "26,14 B",
+        "net_income": "-1,82 K",
+        "eps": "-18,223",
+        "pe": "-10,31",
+        "roe_pct": "-17,6 %",
+        "pb": "1,58",
+        "ebitda": "349,87 M"
+      },
+      "status": "ok"
+    },
+    "BARMA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BASCM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BASGZ": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BAYRK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BEGYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BERA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BESLR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BESTE": {
+      "url": "https://tr.investing.com/equities/seah-bestee",
+      "metrics": {
+        "avg_volume_3m": "514,04 K",
+        "change_1y_pct": "304,6969 %",
+        "market_cap": "2,66 T",
+        "revenue": "3,62 T",
+        "net_income": "4,02 K",
+        "eps": "111,9355",
+        "pe": "307,77",
+        "roe_pct": "0,2 %",
+        "pb": "1,37",
+        "ebitda": "159,26 B"
+      },
+      "status": "ok"
+    },
+    "BEYAZ": {
+      "url": "https://tr.investing.com/equities/vestel-beyaz-esya",
+      "metrics": {
+        "avg_volume_3m": "8,4 M",
+        "change_1y_pct": "-41,3251 %",
+        "market_cap": "13,74 B",
+        "revenue": "60,66 B",
+        "net_income": "-3,48 K",
+        "eps": "-2,1721",
+        "pe": "-3,96",
+        "roe_pct": "-10,4 %",
+        "pb": "0,36",
+        "ebitda": "1,46 B"
+      },
+      "status": "ok"
+    },
+    "BFREN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BIENY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BIGCH": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BIGEN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BIGTK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BIMAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BINBN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BINHO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BIOEN": {
+      "url": "https://tr.investing.com/equities/neptunus-bioen-a",
+      "metrics": {
+        "avg_volume_3m": "243,17 M",
+        "change_1y_pct": "38,5542 %",
+        "market_cap": "9,08 B",
+        "revenue": "27,28 B",
+        "net_income": "-1,21 K",
+        "eps": "-0,4618",
+        "pe": "-7,49",
+        "roe_pct": "-50 %",
+        "pb": "4,98",
+        "ebitda": "30 M"
+      },
+      "status": "ok"
+    },
+    "BIZIM": {
+      "url": "https://tr.investing.com/equities/bizim-magazalari",
+      "metrics": {
+        "avg_volume_3m": "465,62 K",
+        "change_1y_pct": "20,1909 %",
+        "market_cap": "2,63 B",
+        "revenue": "30,73 B",
+        "net_income": "-1,22 K",
+        "eps": "-15,1757",
+        "pe": "-2,15",
+        "roe_pct": "-127 %",
+        "pb": "8,67",
+        "ebitda": "1,28 B"
+      },
+      "status": "ok"
+    },
+    "BJKAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BLCYT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BLUME": {
+      "url": "https://tr.investing.com/equities/blumetric-environmental-inc",
+      "metrics": {
+        "avg_volume_3m": "61,57 K",
+        "change_1y_pct": "42,8571 %",
+        "market_cap": "76,42 M",
+        "revenue": "62,58 M",
+        "net_income": "-2,299",
+        "eps": "-0,0613",
+        "pe": "-21,86",
+        "roe_pct": "-15,6 %",
+        "pb": "4,68",
+        "ebitda": "558 K"
+      },
+      "status": "ok"
+    },
+    "BMSCH": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BMSTL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BNTAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BOBET": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BORLS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BORSK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BOSSA": {
+      "url": "https://tr.investing.com/equities/bossa",
+      "metrics": {
+        "avg_volume_3m": "2,54 M",
+        "change_1y_pct": "13,9423 %",
+        "market_cap": "8,98 B",
+        "revenue": "5,43 B",
+        "net_income": "163,342458",
+        "eps": "0,1031",
+        "pe": "69,35",
+        "roe_pct": "1,9 %",
+        "pb": "0,92",
+        "ebitda": "688,07 M"
+      },
+      "status": "ok"
+    },
+    "BRISA": {
+      "url": "https://tr.investing.com/equities/brisa-bridgestone",
+      "metrics": {
+        "avg_volume_3m": "239,57 K",
+        "change_1y_pct": "10 %",
+        "market_cap": "28,72 B",
+        "revenue": "31,85 B",
+        "net_income": "-75,082687",
+        "eps": "-0,6339",
+        "pe": "-148,37",
+        "roe_pct": "-0,8 %",
+        "pb": "1,26",
+        "ebitda": "4,83 B"
+      },
+      "status": "ok"
+    },
+    "BRKO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BRKSN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BRKVY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BRLSM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BRMEN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BRSAN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BRYAT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BSOKE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BTCIM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BUCIM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BULGS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BURCE": {
+      "url": "https://tr.investing.com/equities/burcelik",
+      "metrics": {
+        "avg_volume_3m": "2,05 M",
+        "change_1y_pct": "280,2521 %",
+        "market_cap": "5,34 B",
+        "revenue": "580,68 M",
+        "net_income": "-45,424589",
+        "eps": "-0,5392",
+        "pe": "-116,84",
+        "roe_pct": "-4,7 %",
+        "pb": "4,54",
+        "ebitda": "91,45 M"
+      },
+      "status": "ok"
+    },
+    "BURVA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BVSAN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "BYDNR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CANTE": {
+      "url": "https://tr.investing.com/equities/canterbury-park",
+      "metrics": {
+        "avg_volume_3m": "1,76 K",
+        "change_1y_pct": "-25,9615 %",
+        "market_cap": "79,6 M",
+        "revenue": "59,1 M",
+        "net_income": "-1,384737",
+        "eps": "-0,2777",
+        "pe": "-56,21",
+        "roe_pct": "-1,6 %",
+        "pb": "0,93",
+        "ebitda": "5,97 M"
+      },
+      "status": "ok"
+    },
+    "CASA": {
+      "url": "https://tr.investing.com/equities/casa-inc",
+      "metrics": {
+        "avg_volume_3m": "25,78 K",
+        "change_1y_pct": "-11,0276 %",
+        "market_cap": "6,45 B",
+        "revenue": "12,65 B",
+        "net_income": "968",
+        "eps": "93,5325",
+        "pe": "7,61",
+        "roe_pct": "15 %",
+        "pb": "1",
+        "ebitda": "1,86 B"
+      },
+      "status": "ok"
+    },
+    "CATES": {
+      "url": "https://tr.investing.com/equities/cates-elektrik-uretim-as",
+      "metrics": {
+        "avg_volume_3m": "1,18 M",
+        "change_1y_pct": "23,8209 %",
+        "market_cap": "6,85 B",
+        "revenue": "4,83 B",
+        "net_income": "-3,5 K",
+        "eps": "-21,2033",
+        "pe": "-1,58",
+        "roe_pct": "-32,4 %",
+        "pb": "0,66",
+        "ebitda": "860,16 M"
+      },
+      "status": "ok"
+    },
+    "CCOLA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CELHA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CEMAS": {
+      "url": "https://tr.investing.com/equities/cemas-dokum",
+      "metrics": {
+        "avg_volume_3m": "43,57 M",
+        "change_1y_pct": "120,8904 %",
+        "market_cap": "5,1 B",
+        "revenue": "1,3 B",
+        "net_income": "-590,819248",
+        "eps": "-0,7469",
+        "pe": "-8,64",
+        "roe_pct": "-15,2 %",
+        "pb": "1,14",
+        "ebitda": "396,44 M"
+      },
+      "status": "ok"
+    },
+    "CEMTS": {
+      "url": "https://tr.investing.com/equities/cemtas",
+      "metrics": {
+        "avg_volume_3m": "5,14 M",
+        "change_1y_pct": "35,8811 %",
+        "market_cap": "6,4 B",
+        "revenue": "4,69 B",
+        "net_income": "19,613754",
+        "eps": "0,0392",
+        "pe": "326,28",
+        "roe_pct": "0,3 %",
+        "pb": "1",
+        "ebitda": "478,6 M"
+      },
+      "status": "ok"
+    },
+    "CEMZY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CEOEM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CGCAM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CIMSA": {
+      "url": "https://tr.investing.com/equities/cimsa",
+      "metrics": {
+        "avg_volume_3m": "11,59 M",
+        "change_1y_pct": "0,566 %",
+        "market_cap": "50,4 B",
+        "revenue": "36,61 B",
+        "net_income": "1,06 K",
+        "eps": "1,1216",
+        "pe": "47,34",
+        "roe_pct": "3,7 %",
+        "pb": "1,58",
+        "ebitda": "5,49 B"
+      },
+      "status": "ok"
+    },
+    "CLEBI": {
+      "url": "https://tr.investing.com/equities/celebi",
+      "metrics": {
+        "avg_volume_3m": "69,09 K",
+        "change_1y_pct": "-10,1599 %",
+        "market_cap": "46,41 B",
+        "revenue": "21,36 B",
+        "net_income": "3,3 K",
+        "eps": "130,5114",
+        "pe": "14,60",
+        "roe_pct": "44,7 %",
+        "pb": "5,86",
+        "ebitda": "5,2 B"
+      },
+      "status": "ok"
+    },
+    "CMBTN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CMENT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CONSE": {
+      "url": "https://tr.investing.com/equities/consensus-cloud-solutions",
+      "metrics": {
+        "avg_volume_3m": "213,99 K",
+        "change_1y_pct": "2,7768 %",
+        "market_cap": "561,36 M",
+        "revenue": "349,7 M",
+        "net_income": "84,527",
+        "eps": "4,35",
+        "pe": "5,21",
+        "roe_pct": "1.227,4 %",
+        "pb": "39,09",
+        "ebitda": "168,97 M"
+      },
+      "status": "ok"
+    },
+    "COSMO": {
+      "url": "https://tr.investing.com/equities/cosmos-yat",
+      "metrics": {},
+      "status": "error",
+      "error": "HTTP 404"
+    },
+    "CRDFA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CRFSA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CUSAN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CVKMD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "CWENE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DAGI": {
+      "url": "https://tr.investing.com/equities/dagi-giyim",
+      "metrics": {
+        "avg_volume_3m": "8,03 M",
+        "change_1y_pct": "20,4296 %",
+        "market_cap": "2,6 B",
+        "revenue": "2,36 B",
+        "net_income": "-194,025071",
+        "eps": "-0,4851",
+        "pe": "-13,32",
+        "roe_pct": "-13,2 %",
+        "pb": "1,63",
+        "ebitda": "115,09 M"
+      },
+      "status": "ok"
+    },
+    "DAPGM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DARDL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DCTTR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DENGE": {
+      "url": "https://tr.investing.com/equities/denge-yatirim-holding-as",
+      "metrics": {
+        "avg_volume_3m": "28,29 M",
+        "change_1y_pct": "-6,9909 %",
+        "market_cap": "1,84 B",
+        "revenue": "459,27 M",
+        "net_income": "-863,698553",
+        "eps": "-1,6451",
+        "pe": "-1,86",
+        "roe_pct": "-61,5 %",
+        "pb": "1,39",
+        "ebitda": "46,69 M"
+      },
+      "status": "ok"
+    },
+    "DERHL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DERIM": {
+      "url": "https://tr.investing.com/equities/derimod",
+      "metrics": {
+        "avg_volume_3m": "496,43 K",
+        "change_1y_pct": "11,3573 %",
+        "market_cap": "2,17 B",
+        "revenue": "3,51 B",
+        "net_income": "53,616659",
+        "eps": "0,9929",
+        "pe": "40,45",
+        "roe_pct": "11,9 %",
+        "pb": "3,92",
+        "ebitda": "253,09 M"
+      },
+      "status": "ok"
+    },
+    "DESA": {
+      "url": "https://tr.investing.com/equities/desay-a",
+      "metrics": {
+        "avg_volume_3m": "9,87 M",
+        "change_1y_pct": "10,3592 %",
+        "market_cap": "10,16 B",
+        "revenue": "22,01 B",
+        "net_income": "417,470718",
+        "eps": "1,0854",
+        "pe": "24,36",
+        "roe_pct": "6,4 %",
+        "pb": "1,55",
+        "ebitda": "917,35 M"
+      },
+      "status": "ok"
+    },
+    "DESPC": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DEVA": {
+      "url": "https://tr.investing.com/equities/deva-holding",
+      "metrics": {
+        "avg_volume_3m": "654 K",
+        "change_1y_pct": "13,2075 %",
+        "market_cap": "15,6 B",
+        "revenue": "14,59 B",
+        "net_income": "300,297617",
+        "eps": "1,5013",
+        "pe": "52,02",
+        "roe_pct": "1,3 %",
+        "pb": "0,59",
+        "ebitda": "1,29 B"
+      },
+      "status": "ok"
+    },
+    "DGATE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DGNMO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DIRIT": {
+      "url": "https://tr.investing.com/equities/diriteks-dirilis-tekstil",
+      "metrics": {
+        "avg_volume_3m": "84,27 K",
+        "change_1y_pct": "28,75 %",
+        "market_cap": "329,09 M",
+        "revenue": "3,77 M",
+        "net_income": "-51,952403",
+        "eps": "-4,8782",
+        "pe": "-6,07",
+        "roe_pct": "-21,2 %",
+        "pb": "1,98",
+        "ebitda": "3,88 M"
+      },
+      "status": "ok"
+    },
+    "DITAS": {
+      "url": "https://tr.investing.com/equities/ditas-dogan",
+      "metrics": {
+        "avg_volume_3m": "3,02 M",
+        "change_1y_pct": "198,2192 %",
+        "market_cap": "3,7 B",
+        "revenue": "1,62 B",
+        "net_income": "-297,355096",
+        "eps": "-3,4983",
+        "pe": "-12,49",
+        "roe_pct": "-46,5 %",
+        "pb": "3,73",
+        "ebitda": "109,54 M"
+      },
+      "status": "ok"
+    },
+    "DMLKT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DMRGD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DMSAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DNISI": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DOAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DOCO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DOFER": {
+      "url": "https://tr.investing.com/equities/dofer-yapi-malzemeleri-sanayi-ve",
+      "metrics": {
+        "avg_volume_3m": "2,5 M",
+        "change_1y_pct": "19,8491 %",
+        "market_cap": "1,77 B",
+        "revenue": "5,08 B",
+        "net_income": "-5,643771",
+        "eps": "-0,1012",
+        "pe": "-584,79",
+        "roe_pct": "-0,5 %",
+        "pb": "1,42",
+        "ebitda": "118,56 M"
+      },
+      "status": "ok"
+    },
+    "DOFRB": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DOGUB": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DOHOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DOKTA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DSTKF": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DUNYH": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DURDO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DURKN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DYOBY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "DZGYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EBEBK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ECILC": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ECOGR": {
+      "url": "https://tr.investing.com/equities/ecogreen-enerji-holding-as",
+      "metrics": {
+        "avg_volume_3m": "32,47 M",
+        "change_1y_pct": "-",
+        "market_cap": "10,85 B",
+        "revenue": "5,83 B",
+        "net_income": "93,478404",
+        "eps": "0,2051",
+        "pe": "104,45",
+        "roe_pct": "0,6 %",
+        "pb": "0,72",
+        "ebitda": "964,22 M"
+      },
+      "status": "ok"
+    },
+    "ECZYT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EDATA": {
+      "url": "https://tr.investing.com/equities/edata-teknoloji-pazarlama-as",
+      "metrics": {
+        "avg_volume_3m": "20,66 M",
+        "change_1y_pct": "141,8391 %",
+        "market_cap": "4,43 B",
+        "revenue": "1,79 B",
+        "net_income": "-18,64738",
+        "eps": "-0,0464",
+        "pe": "-118,62",
+        "roe_pct": "-2,4 %",
+        "pb": "5,1",
+        "ebitda": "71,16 M"
+      },
+      "status": "ok"
+    },
+    "EDIP": {
+      "url": "https://tr.investing.com/equities/edip-gayrimenkul",
+      "metrics": {
+        "avg_volume_3m": "1,46 M",
+        "change_1y_pct": "94,8144 %",
+        "market_cap": "2,49 B",
+        "revenue": "576,51 M",
+        "net_income": "839,522743",
+        "eps": "12,9157",
+        "pe": "2,98",
+        "roe_pct": "16,3 %",
+        "pb": "0,39",
+        "ebitda": "265,44 M"
+      },
+      "status": "ok"
+    },
+    "EFOR": {
+      "url": "https://tr.investing.com/equities/efora-energy",
+      "metrics": {
+        "avg_volume_3m": "2 K",
+        "change_1y_pct": "-60 %",
+        "market_cap": "22,08 M",
+        "revenue": "19,96 M",
+        "net_income": "-",
+        "eps": "-0,0252",
+        "pe": "-",
+        "roe_pct": "-",
+        "pb": "-",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "EGEEN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EGEGY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EGEPO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EGGUB": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EGPRO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EGSER": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EKIZ": {
+      "url": "https://tr.investing.com/equities/ekiz-yag-sanayii",
+      "metrics": {
+        "avg_volume_3m": "24,36 K",
+        "change_1y_pct": "160,1562 %",
+        "market_cap": "1,24 B",
+        "revenue": "289,71 M",
+        "net_income": "-27,909901",
+        "eps": "-2,9706",
+        "pe": "-44,20",
+        "roe_pct": "-8,7 %",
+        "pb": "3,36",
+        "ebitda": "9,1 M"
+      },
+      "status": "ok"
+    },
+    "EKOS": {
+      "url": "https://tr.investing.com/equities/ekos-teknoloji-ve-elektrik-as",
+      "metrics": {
+        "avg_volume_3m": "14,73 M",
+        "change_1y_pct": "4,5173 %",
+        "market_cap": "6,61 B",
+        "revenue": "2,68 B",
+        "net_income": "-57,198131",
+        "eps": "-0,0511",
+        "pe": "-117,29",
+        "roe_pct": "-1,9 %",
+        "pb": "1,99",
+        "ebitda": "157,15 M"
+      },
+      "status": "ok"
+    },
+    "EKSUN": {
+      "url": "https://tr.investing.com/equities/eksun-gida-tarim",
+      "metrics": {
+        "avg_volume_3m": "3,54 M",
+        "change_1y_pct": "-10,9306 %",
+        "market_cap": "3,62 B",
+        "revenue": "9,16 B",
+        "net_income": "-343,89311",
+        "eps": "-0,5732",
+        "pe": "-",
+        "roe_pct": "-15,9 %",
+        "pb": "1,55",
+        "ebitda": "55,73 M"
+      },
+      "status": "ok"
+    },
+    "ELITE": {
+      "url": "https://tr.investing.com/equities/elite-diagnostic-ltd",
+      "metrics": {
+        "avg_volume_3m": "141,14 K",
+        "change_1y_pct": "-13,6905 %",
+        "market_cap": "515,96 M",
+        "revenue": "868,26 M",
+        "net_income": "55,562",
+        "eps": "0,1572",
+        "pe": "9,92",
+        "roe_pct": "10,5 %",
+        "pb": "0,92",
+        "ebitda": "232 M"
+      },
+      "status": "ok"
+    },
+    "EMKEL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EMNIS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ENDAE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ENERY": {
+      "url": "https://tr.investing.com/equities/enerya-enerji-as",
+      "metrics": {
+        "avg_volume_3m": "23,19 M",
+        "change_1y_pct": "166,8555 %",
+        "market_cap": "84,78 B",
+        "revenue": "26,36 B",
+        "net_income": "3,27 K",
+        "eps": "0,3637",
+        "pe": "27,77",
+        "roe_pct": "9,1 %",
+        "pb": "1,77",
+        "ebitda": "4,47 B"
+      },
+      "status": "ok"
+    },
+    "ENJSA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ENKAI": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ENSRI": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ENTRA": {
+      "url": "https://tr.investing.com/equities/entra-asa",
+      "metrics": {
+        "avg_volume_3m": "87,06 K",
+        "change_1y_pct": "-2,069 %",
+        "market_cap": "20,69 B",
+        "revenue": "3,08 B",
+        "net_income": "1,15 K",
+        "eps": "6,33",
+        "pe": "17,93",
+        "roe_pct": "5,8 %",
+        "pb": "0,84",
+        "ebitda": "2,8 B"
+      },
+      "status": "ok"
+    },
+    "EPLAS": {
+      "url": "https://tr.investing.com/equities/egeplast",
+      "metrics": {
+        "avg_volume_3m": "6,42 M",
+        "change_1y_pct": "20,3072 %",
+        "market_cap": "1,34 B",
+        "revenue": "1,53 B",
+        "net_income": "-248,57266",
+        "eps": "-1,3036",
+        "pe": "-5,42",
+        "roe_pct": "-8,6 %",
+        "pb": "0,39",
+        "ebitda": "17,47 M"
+      },
+      "status": "ok"
+    },
+    "ERBOS": {
+      "url": "https://tr.investing.com/equities/erbosan",
+      "metrics": {
+        "avg_volume_3m": "95,53 K",
+        "change_1y_pct": "18,2499 %",
+        "market_cap": "4,11 B",
+        "revenue": "4,31 B",
+        "net_income": "-209,133735",
+        "eps": "-10,4567",
+        "pe": "-19,89",
+        "roe_pct": "-7,4 %",
+        "pb": "1,35",
+        "ebitda": "602,68 M"
+      },
+      "status": "ok"
+    },
+    "ERCB": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EREGL": {
+      "url": "https://tr.investing.com/equities/eregli-demir-celik",
+      "metrics": {
+        "avg_volume_3m": "175,4 M",
+        "change_1y_pct": "26,8439 %",
+        "market_cap": "207,06 B",
+        "revenue": "203,03 B",
+        "net_income": "5,08 K",
+        "eps": "0,7322",
+        "pe": "40,45",
+        "roe_pct": "2 %",
+        "pb": "0,74",
+        "ebitda": "15,01 B"
+      },
+      "status": "ok"
+    },
+    "ERSU": {
+      "url": "https://tr.investing.com/equities/ersu-gida",
+      "metrics": {
+        "avg_volume_3m": "437,58 K",
+        "change_1y_pct": "17,1354 %",
+        "market_cap": "644,76 M",
+        "revenue": "128,12 M",
+        "net_income": "-80,797726",
+        "eps": "-2,2444",
+        "pe": "-7,92",
+        "roe_pct": "-20,6 %",
+        "pb": "1,55",
+        "ebitda": "5,21 M"
+      },
+      "status": "ok"
+    },
+    "ESCAR": {
+      "url": "https://tr.investing.com/equities/escar-turizm-tasimacilik-ticaret",
+      "metrics": {
+        "avg_volume_3m": "6,41 M",
+        "change_1y_pct": "-43,1239 %",
+        "market_cap": "13,4 B",
+        "revenue": "2,74 B",
+        "net_income": "-1,78 K",
+        "eps": "-3,3916",
+        "pe": "-7,14",
+        "roe_pct": "-28,4 %",
+        "pb": "2,18",
+        "ebitda": "25,62 M"
+      },
+      "status": "ok"
+    },
+    "ESCOM": {
+      "url": "https://tr.investing.com/equities/j-escom-holdings-inc",
+      "metrics": {
+        "avg_volume_3m": "87,76 K",
+        "change_1y_pct": "10,828 %",
+        "market_cap": "2,01 B",
+        "revenue": "1,39 B",
+        "net_income": "-172",
+        "eps": "-14,87",
+        "pe": "-12,10",
+        "roe_pct": "-24,6 %",
+        "pb": "3,28",
+        "ebitda": "8,75 M"
+      },
+      "status": "ok"
+    },
+    "ESEN": {
+      "url": "https://tr.investing.com/equities/esentia-energy-dev",
+      "metrics": {
+        "avg_volume_3m": "145,9 K",
+        "change_1y_pct": "-",
+        "market_cap": "26,67 B",
+        "revenue": "433,5 M",
+        "net_income": "59,975",
+        "eps": "0,1123",
+        "pe": "23,79",
+        "roe_pct": "-",
+        "pb": "-",
+        "ebitda": "263,72 M"
+      },
+      "status": "ok"
+    },
+    "ETILR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ETYAT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EUHOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EUKYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EUPWR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EUREN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "EUYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "FADE": {
+      "url": "https://tr.investing.com/equities/fadel-partners",
+      "metrics": {
+        "avg_volume_3m": "666",
+        "change_1y_pct": "-7,1429 %",
+        "market_cap": "13,15 M",
+        "revenue": "12,42 M",
+        "net_income": "-4,590579",
+        "eps": "-0,2269",
+        "pe": "-",
+        "roe_pct": "-146 %",
+        "pb": "14,51",
+        "ebitda": "3,29 M"
+      },
+      "status": "ok"
+    },
+    "FENER": {
+      "url": "https://tr.investing.com/equities/fenerbahce-sportif",
+      "metrics": {
+        "avg_volume_3m": "158,1 M",
+        "change_1y_pct": "-16,023 %",
+        "market_cap": "4,01 B",
+        "revenue": "9,42 B",
+        "net_income": "-1,43 K",
+        "eps": "-5,2763",
+        "pe": "-0,61",
+        "roe_pct": "-",
+        "pb": "-19,95",
+        "ebitda": "136,29 M"
+      },
+      "status": "ok"
+    },
+    "FLAP": {
+      "url": "https://tr.investing.com/equities/flap-kong",
+      "metrics": {
+        "avg_volume_3m": "778,73 K",
+        "change_1y_pct": "24,8027 %",
+        "market_cap": "1,04 B",
+        "revenue": "342,27 M",
+        "net_income": "38,477656",
+        "eps": "0,4104",
+        "pe": "26,95",
+        "roe_pct": "4,6 %",
+        "pb": "1,02",
+        "ebitda": "1,91 M"
+      },
+      "status": "ok"
+    },
+    "FMIZP": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "FONET": {
+      "url": "https://tr.investing.com/equities/fonet-bilgi-teknolojileri-as",
+      "metrics": {
+        "avg_volume_3m": "39,73 M",
+        "change_1y_pct": "47,6287 %",
+        "market_cap": "3,18 B",
+        "revenue": "526,48 M",
+        "net_income": "138,50421",
+        "eps": "0,148",
+        "pe": "22,77",
+        "roe_pct": "11 %",
+        "pb": "2,11",
+        "ebitda": "116,21 M"
+      },
+      "status": "ok"
+    },
+    "FORMT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "FORTE": {
+      "url": "https://tr.investing.com/equities/forterra-plc",
+      "metrics": {
+        "avg_volume_3m": "444,23 K",
+        "change_1y_pct": "19,4103 %",
+        "market_cap": "409,02 M",
+        "revenue": "377,3 M",
+        "net_income": "15,7",
+        "eps": "0,074",
+        "pe": "26,43",
+        "roe_pct": "7 %",
+        "pb": "1,77",
+        "ebitda": "46,6 M"
+      },
+      "status": "ok"
+    },
+    "FRIGO": {
+      "url": "https://tr.investing.com/equities/frigoglass",
+      "metrics": {
+        "avg_volume_3m": "90 K",
+        "change_1y_pct": "80,3922 %",
+        "market_cap": "44,59 M",
+        "revenue": "3,47 M",
+        "net_income": "-0,705",
+        "eps": "-0,0069",
+        "pe": "-53,48",
+        "roe_pct": "-11,6 %",
+        "pb": "3,92",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "FRMPL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "FROTO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "FZLGY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GARAN": {
+      "url": "https://tr.investing.com/equities/garanti-yat",
+      "metrics": {},
+      "status": "error",
+      "error": "HTTP 404"
+    },
+    "GARFA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GATEG": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GEDIK": {
+      "url": "https://tr.investing.com/equities/gedik-y",
+      "metrics": {},
+      "status": "error",
+      "error": "HTTP 404"
+    },
+    "GEDZA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GENIL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GENTS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GEREL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GESAN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GIPTA": {
+      "url": "https://tr.investing.com/equities/gipta-ofis-kirtasiye-ve-promosyon",
+      "metrics": {
+        "avg_volume_3m": "8,95 M",
+        "change_1y_pct": "28,0908 %",
+        "market_cap": "8,34 B",
+        "revenue": "1,7 B",
+        "net_income": "575,564778",
+        "eps": "4,3603",
+        "pe": "13,68",
+        "roe_pct": "19,4 %",
+        "pb": "2,32",
+        "ebitda": "350,16 M"
+      },
+      "status": "ok"
+    },
+    "GLBMD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GLCVY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GLRMK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GLRYH": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GLYHO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GMTAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GOKNR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GOLTS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GOODY": {
+      "url": "https://tr.investing.com/equities/goodyear",
+      "metrics": {
+        "avg_volume_3m": "718",
+        "change_1y_pct": "14,5251 %",
+        "market_cap": "1,52 B",
+        "revenue": "6,77 B",
+        "net_income": "238,814",
+        "eps": "32,2722",
+        "pe": "6,35",
+        "roe_pct": "6,2 %",
+        "pb": "0,39",
+        "ebitda": "773,25 M"
+      },
+      "status": "ok"
+    },
+    "GOZDE": {
+      "url": "https://tr.investing.com/equities/gozde-girisim",
+      "metrics": {
+        "avg_volume_3m": "2,17 M",
+        "change_1y_pct": "20,7317 %",
+        "market_cap": "10,67 B",
+        "revenue": "50,95 M",
+        "net_income": "-4,81 K",
+        "eps": "-12,4926",
+        "pe": "-2,20",
+        "roe_pct": "-17,6 %",
+        "pb": "0,38",
+        "ebitda": "496,86 M"
+      },
+      "status": "ok"
+    },
+    "GRNYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GRSEL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GRTHO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GSDDE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GSDHO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GSRAY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GUBRF": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GUNDG": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GWIND": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "GZNMI": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "HALKB": {
+      "url": "https://tr.investing.com/equities/t",
+      "metrics": {},
+      "status": "error",
+      "error": "HTTP 404"
+    },
+    "HATEK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "HATSN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "HDFGS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "HEDEF": {
+      "url": "https://tr.investing.com/equities/hedef-holdings-as",
+      "metrics": {
+        "avg_volume_3m": "7,23 M",
+        "change_1y_pct": "1.508,8632 %",
+        "market_cap": "162,78 B",
+        "revenue": "1,17 B",
+        "net_income": "748,953747",
+        "eps": "0,3917",
+        "pe": "134,30",
+        "roe_pct": "21,8 %",
+        "pb": "36,71",
+        "ebitda": "1,14 B"
+      },
+      "status": "ok"
+    },
+    "HEKTS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "HKTM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "HOROZ": {
+      "url": "https://tr.investing.com/equities/horoz-lojistik-kargo-hizmetleri-ve",
+      "metrics": {
+        "avg_volume_3m": "924,79 K",
+        "change_1y_pct": "-2,5926 %",
+        "market_cap": "5,95 B",
+        "revenue": "8,9 B",
+        "net_income": "-246,294369",
+        "eps": "-1,256",
+        "pe": "-",
+        "roe_pct": "-3,5 %",
+        "pb": "1,63",
+        "ebitda": "781,28 M"
+      },
+      "status": "ok"
+    },
+    "HRKET": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "HTTBT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "HUBVC": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "HUNER": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "HURGZ": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ICBCT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ICUGS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "IEYHO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "IHAAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "IHEVA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "IHGZT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "IHLAS": {
+      "url": "https://tr.investing.com/equities/ihlas-holding",
+      "metrics": {
+        "avg_volume_3m": "158,47 M",
+        "change_1y_pct": "-13,7546 %",
+        "market_cap": "3,48 B",
+        "revenue": "9,89 B",
+        "net_income": "-1,91 K",
+        "eps": "-1,2735",
+        "pe": "-1,82",
+        "roe_pct": "-42,2 %",
+        "pb": "0,81",
+        "ebitda": "614,5 M"
+      },
+      "status": "ok"
+    },
+    "IHLGM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "IHYAY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "IMASM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "INDES": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "INFO": {
+      "url": "https://tr.investing.com/equities/info-yatirim",
+      "metrics": {
+        "avg_volume_3m": "36,32 M",
+        "change_1y_pct": "87,7119 %",
+        "market_cap": "4,25 B",
+        "revenue": "29,9 B",
+        "net_income": "564,835717",
+        "eps": "0,5868",
+        "pe": "7,57",
+        "roe_pct": "25,2 %",
+        "pb": "1,58",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "INGRM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "INTEK": {
+      "url": "https://tr.investing.com/equities/intekplus-co-ltd",
+      "metrics": {
+        "avg_volume_3m": "171,09 K",
+        "change_1y_pct": "20,8186 %",
+        "market_cap": "208,9 B",
+        "revenue": "73,98 B",
+        "net_income": "-11,16 K",
+        "eps": "-1.011,1192",
+        "pe": "-13,41",
+        "roe_pct": "-26,3 %",
+        "pb": "5,72",
+        "ebitda": "12,53 B"
+      },
+      "status": "ok"
+    },
+    "INTEM": {
+      "url": "https://tr.investing.com/equities/intema",
+      "metrics": {
+        "avg_volume_3m": "126,66 K",
+        "change_1y_pct": "94,8743 %",
+        "market_cap": "7,72 B",
+        "revenue": "1,33 B",
+        "net_income": "-74,598193",
+        "eps": "-3,8926",
+        "pe": "-104,24",
+        "roe_pct": "-9,7 %",
+        "pb": "9,16",
+        "ebitda": "108,2 M"
+      },
+      "status": "ok"
+    },
+    "INVEO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "INVES": {
+      "url": "https://tr.investing.com/equities/investco-holding-as",
+      "metrics": {
+        "avg_volume_3m": "306,76 K",
+        "change_1y_pct": "8,186 %",
+        "market_cap": "43,61 B",
+        "revenue": "-3,18 B",
+        "net_income": "-5,35 K",
+        "eps": "-28,5275",
+        "pe": "-10,39",
+        "roe_pct": "-24 %",
+        "pb": "1,87",
+        "ebitda": "4,62 B"
+      },
+      "status": "ok"
+    },
+    "ISBIR": {
+      "url": "https://tr.investing.com/equities/isbir-holding-as",
+      "metrics": {
+        "avg_volume_3m": "25,34 K",
+        "change_1y_pct": "-15,0051 %",
+        "market_cap": "2,71 B",
+        "revenue": "7,32 B",
+        "net_income": "-1,7 K",
+        "eps": "-52,6083",
+        "pe": "-1,58",
+        "roe_pct": "-33 %",
+        "pb": "0,48",
+        "ebitda": "117,09 M"
+      },
+      "status": "ok"
+    },
+    "ISBTR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ISCTR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ISDMR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ISFIN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ISKPL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ISMEN": {
+      "url": "https://tr.investing.com/equities/is-y",
+      "metrics": {},
+      "status": "error",
+      "error": "HTTP 404"
+    },
+    "ISSEN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "IZENR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "IZFAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "IZINV": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "IZMDC": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "JANTS": {
+      "url": "https://tr.investing.com/equities/jantsa-jant-sanayi-ve-ticaret",
+      "metrics": {
+        "avg_volume_3m": "3,17 M",
+        "change_1y_pct": "-16,5975 %",
+        "market_cap": "14,07 B",
+        "revenue": "4,28 B",
+        "net_income": "-25,028091",
+        "eps": "-0,0358",
+        "pe": "-563,69",
+        "roe_pct": "-0,5 %",
+        "pb": "2,22",
+        "ebitda": "364,47 M"
+      },
+      "status": "ok"
+    },
+    "KAPLM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KAREL": {
+      "url": "https://tr.investing.com/equities/karel-elektronik",
+      "metrics": {
+        "avg_volume_3m": "7,54 M",
+        "change_1y_pct": "14,2026 %",
+        "market_cap": "7,91 B",
+        "revenue": "13,11 B",
+        "net_income": "-1,9 K",
+        "eps": "-2,3579",
+        "pe": "-4,19",
+        "roe_pct": "-103,8 %",
+        "pb": "6,23",
+        "ebitda": "165,12 M"
+      },
+      "status": "ok"
+    },
+    "KARSN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KARTN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KATMR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KAYSE": {
+      "url": "https://tr.investing.com/equities/kayseri-seker-fabrikasi-as",
+      "metrics": {
+        "avg_volume_3m": "17,96 M",
+        "change_1y_pct": "6,6557 %",
+        "market_cap": "15,12 B",
+        "revenue": "20,97 B",
+        "net_income": "-552,083894",
+        "eps": "-0,1841",
+        "pe": "-",
+        "roe_pct": "-1,6 %",
+        "pb": "0,38",
+        "ebitda": "2,14 B"
+      },
+      "status": "ok"
+    },
+    "KBORU": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KCAER": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KCHOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KENT": {
+      "url": "https://tr.investing.com/equities/kent-gida",
+      "metrics": {
+        "avg_volume_3m": "6,07 K",
+        "change_1y_pct": "-37,3936 %",
+        "market_cap": "129,47 B",
+        "revenue": "12,45 B",
+        "net_income": "-677,155738",
+        "eps": "-3,078",
+        "pe": "-191,68",
+        "roe_pct": "-10,8 %",
+        "pb": "19,51",
+        "ebitda": "140,23 M"
+      },
+      "status": "ok"
+    },
+    "KERVN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KFEIN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KIMMR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KLKIM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KLMSN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KLNMA": {
+      "url": "https://tr.investing.com/equities/t",
+      "metrics": {},
+      "status": "error",
+      "error": "HTTP 404"
+    },
+    "KLRHO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KLSER": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KLSYN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KLYPV": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KMPUR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KNFRT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KOCMT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KONKA": {
+      "url": "https://tr.investing.com/equities/konka",
+      "metrics": {
+        "avg_volume_3m": "1,83 M",
+        "change_1y_pct": "-6,9307 %",
+        "market_cap": "7,88 B",
+        "revenue": "10,67 B",
+        "net_income": "-2,67 K",
+        "eps": "-1,1092",
+        "pe": "-3,55",
+        "roe_pct": "-100,6 %",
+        "pb": "5,5",
+        "ebitda": "1,36 B"
+      },
+      "status": "ok"
+    },
+    "KONTR": {
+      "url": "https://tr.investing.com/equities/kontrol-energy",
+      "metrics": {
+        "avg_volume_3m": "52,32 K",
+        "change_1y_pct": "-44,1176 %",
+        "market_cap": "3,99 M",
+        "revenue": "5,84 M",
+        "net_income": "0,065308",
+        "eps": "0,0012",
+        "pe": "79,17",
+        "roe_pct": "0,5 %",
+        "pb": "0,35",
+        "ebitda": "1,92 M"
+      },
+      "status": "ok"
+    },
+    "KONYA": {
+      "url": "https://tr.investing.com/equities/konya-cimento",
+      "metrics": {
+        "avg_volume_3m": "11,28 K",
+        "change_1y_pct": "-25,6068 %",
+        "market_cap": "22,41 B",
+        "revenue": "4,45 B",
+        "net_income": "114,632547",
+        "eps": "23,5219",
+        "pe": "194,39",
+        "roe_pct": "3,2 %",
+        "pb": "5,4",
+        "ebitda": "315,54 M"
+      },
+      "status": "ok"
+    },
+    "KOPOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KORDS": {
+      "url": "https://tr.investing.com/equities/kordsa-global",
+      "metrics": {
+        "avg_volume_3m": "612,54 K",
+        "change_1y_pct": "-13,2771 %",
+        "market_cap": "10,99 B",
+        "revenue": "31,24 B",
+        "net_income": "-1,68 K",
+        "eps": "-8,6605",
+        "pe": "-6,50",
+        "roe_pct": "-11,5 %",
+        "pb": "0,72",
+        "ebitda": "200,54 M"
+      },
+      "status": "ok"
+    },
+    "KOTON": {
+      "url": "https://tr.investing.com/equities/koton-magazacilik-tekstil-sanayi",
+      "metrics": {
+        "avg_volume_3m": "3,59 M",
+        "change_1y_pct": "-1,0477 %",
+        "market_cap": "14,1 B",
+        "revenue": "24,15 B",
+        "net_income": "-1,75 K",
+        "eps": "-2,1365",
+        "pe": "-",
+        "roe_pct": "-24,9 %",
+        "pb": "2,07",
+        "ebitda": "1,46 B"
+      },
+      "status": "ok"
+    },
+    "KOZAA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KOZAL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KRDMA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KRDMB": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KRDMD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KRONT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KRPLS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KRSTL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KRTEK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KRVGD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KSTUR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KTLEV": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KTSKR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KUTPO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KUVVA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "KZGYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "LIDER": {
+      "url": "https://tr.investing.com/equities/lider-faktoring",
+      "metrics": {
+        "avg_volume_3m": "19,11 M",
+        "change_1y_pct": "104,8816 %",
+        "market_cap": "3,39 B",
+        "revenue": "4,35 B",
+        "net_income": "857,918",
+        "eps": "0,7879",
+        "pe": "3,95",
+        "roe_pct": "33 %",
+        "pb": "1,3",
+        "ebitda": "545,17 M"
+      },
+      "status": "ok"
+    },
+    "LIDFA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "LILAK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "LINK": {
+      "url": "https://tr.investing.com/equities/link-net",
+      "metrics": {
+        "avg_volume_3m": "268,29 K",
+        "change_1y_pct": "31,6038 %",
+        "market_cap": "7,68 T",
+        "revenue": "3,27 T",
+        "net_income": "-1,41 M",
+        "eps": "-514",
+        "pe": "-5,43",
+        "roe_pct": "-30,2 %",
+        "pb": "1,94",
+        "ebitda": "575,46 B"
+      },
+      "status": "ok"
+    },
+    "LKMNH": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "LMKDC": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "LOGO": {
+      "url": "https://tr.investing.com/equities/logo-yazilim",
+      "metrics": {
+        "avg_volume_3m": "538,17 K",
+        "change_1y_pct": "52,3179 %",
+        "market_cap": "15,3 B",
+        "revenue": "4,48 B",
+        "net_income": "1,3 K",
+        "eps": "13,9332",
+        "pe": "11,27",
+        "roe_pct": "35,9 %",
+        "pb": "3,49",
+        "ebitda": "670,29 M"
+      },
+      "status": "ok"
+    },
+    "LRSHO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "LUKSK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "LYDHO": {
+      "url": "https://tr.investing.com/equities/milpa",
+      "metrics": {
+        "avg_volume_3m": "906,54 K",
+        "change_1y_pct": "98,0498 %",
+        "market_cap": "64,34 B",
+        "revenue": "43,84 M",
+        "net_income": "8,07009",
+        "eps": "0,0388",
+        "pe": "-",
+        "roe_pct": "0,3 %",
+        "pb": "24,24",
+        "ebitda": "79,32 M"
+      },
+      "status": "ok"
+    },
+    "LYDYE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MAALT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MACKO": {
+      "url": "https://tr.investing.com/equities/mackolik-internet-hizmetleri",
+      "metrics": {
+        "avg_volume_3m": "1,76 M",
+        "change_1y_pct": "15,8055 %",
+        "market_cap": "3,05 B",
+        "revenue": "869,18 M",
+        "net_income": "342,424894",
+        "eps": "4,8773",
+        "pe": "-",
+        "roe_pct": "70,2 %",
+        "pb": "4,74",
+        "ebitda": "480,19 M"
+      },
+      "status": "ok"
+    },
+    "MAGEN": {
+      "url": "https://tr.investing.com/equities/magenta-lifecare-bo",
+      "metrics": {
+        "avg_volume_3m": "12,47 K",
+        "change_1y_pct": "-43,3557 %",
+        "market_cap": "86,97 M",
+        "revenue": "97,78 M",
+        "net_income": "0,934",
+        "eps": "0,1411",
+        "pe": "-",
+        "roe_pct": "0,7 %",
+        "pb": "0,62",
+        "ebitda": "8,28 M"
+      },
+      "status": "ok"
+    },
+    "MAKIM": {
+      "url": "https://tr.investing.com/equities/makim-makina-teknolojileri-sanayi",
+      "metrics": {
+        "avg_volume_3m": "879,99 K",
+        "change_1y_pct": "-15,3537 %",
+        "market_cap": "1,89 B",
+        "revenue": "974,47 M",
+        "net_income": "-108,36232",
+        "eps": "-1,0018",
+        "pe": "-14,92",
+        "roe_pct": "-11,5 %",
+        "pb": "1,83",
+        "ebitda": "31,94 M"
+      },
+      "status": "ok"
+    },
+    "MAKTK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MANAS": {
+      "url": "https://tr.investing.com/equities/manas-properties",
+      "metrics": {
+        "avg_volume_3m": "300",
+        "change_1y_pct": "0 %",
+        "market_cap": "1,62 B",
+        "revenue": "379,67 M",
+        "net_income": "292,463001",
+        "eps": "70,2964",
+        "pe": "5,55",
+        "roe_pct": "26,9 %",
+        "pb": "1,31",
+        "ebitda": "330,8 M"
+      },
+      "status": "ok"
+    },
+    "MARBL": {
+      "url": "https://tr.investing.com/equities/dhyaani-tile-marblez",
+      "metrics": {
+        "avg_volume_3m": "73,23 K",
+        "change_1y_pct": "-53,0028 %",
+        "market_cap": "145,21 M",
+        "revenue": "238,79 M",
+        "net_income": "2,203",
+        "eps": "0,0944",
+        "pe": "101,69",
+        "roe_pct": "0,6 %",
+        "pb": "0,42",
+        "ebitda": "4,78 M"
+      },
+      "status": "ok"
+    },
+    "MARKA": {
+      "url": "https://tr.investing.com/equities/marka",
+      "metrics": {
+        "avg_volume_3m": "113",
+        "change_1y_pct": "-39,3939 %",
+        "market_cap": "806,46 K",
+        "revenue": "40,07 K",
+        "net_income": "-0,275879",
+        "eps": "-0,0684",
+        "pe": "-2,92",
+        "roe_pct": "-",
+        "pb": "-0,03",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "MARMR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MARTI": {
+      "url": "https://tr.investing.com/equities/martifer",
+      "metrics": {
+        "avg_volume_3m": "9,78 K",
+        "change_1y_pct": "42,0455 %",
+        "market_cap": "244,46 M",
+        "revenue": "270,74 M",
+        "net_income": "19,445559",
+        "eps": "0,1989",
+        "pe": "12,57",
+        "roe_pct": "27,5 %",
+        "pb": "3,32",
+        "ebitda": "29,45 M"
+      },
+      "status": "ok"
+    },
+    "MAVI": {
+      "url": "https://tr.investing.com/equities/mavi-giyim-sanayi-ve-ticaret-as",
+      "metrics": {
+        "avg_volume_3m": "9,03 M",
+        "change_1y_pct": "40,0226 %",
+        "market_cap": "39,36 B",
+        "revenue": "36,13 B",
+        "net_income": "1,71 K",
+        "eps": "2,1524",
+        "pe": "22,92",
+        "roe_pct": "15,1 %",
+        "pb": "2,98",
+        "ebitda": "4,78 B"
+      },
+      "status": "ok"
+    },
+    "MEDTR": {
+      "url": "https://tr.investing.com/equities/medtronic",
+      "metrics": {
+        "avg_volume_3m": "7,77 M",
+        "change_1y_pct": "7,1975 %",
+        "market_cap": "127,55 B",
+        "revenue": "34,76 B",
+        "net_income": "4,76 K",
+        "eps": "3,6901",
+        "pe": "26,99",
+        "roe_pct": "9,8 %",
+        "pb": "2,63",
+        "ebitda": "9,57 B"
+      },
+      "status": "ok"
+    },
+    "MEGAP": {
+      "url": "https://tr.investing.com/equities/megaport-ltd",
+      "metrics": {
+        "avg_volume_3m": "847,32 K",
+        "change_1y_pct": "21,267 %",
+        "market_cap": "1,9 B",
+        "revenue": "227,06 M",
+        "net_income": "-0,292",
+        "eps": "-0,0018",
+        "pe": "-",
+        "roe_pct": "-0,2 %",
+        "pb": "10,65",
+        "ebitda": "20,56 M"
+      },
+      "status": "ok"
+    },
+    "MEGMT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MEKAG": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MEPET": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MERCN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MERIT": {
+      "url": "https://tr.investing.com/equities/merit-packages",
+      "metrics": {
+        "avg_volume_3m": "371,61 K",
+        "change_1y_pct": "27,0747 %",
+        "market_cap": "2,45 B",
+        "revenue": "4,7 B",
+        "net_income": "-92,695526",
+        "eps": "-0,4636",
+        "pe": "-26,42",
+        "roe_pct": "-3,3 %",
+        "pb": "0,89",
+        "ebitda": "166,22 M"
+      },
+      "status": "ok"
+    },
+    "MERKO": {
+      "url": "https://tr.investing.com/equities/merko-gida",
+      "metrics": {
+        "avg_volume_3m": "5,9 M",
+        "change_1y_pct": "22,2385 %",
+        "market_cap": "1,92 B",
+        "revenue": "647,85 M",
+        "net_income": "415,691074",
+        "eps": "4,1106",
+        "pe": "4,07",
+        "roe_pct": "25,7 %",
+        "pb": "0,98",
+        "ebitda": "8,84 M"
+      },
+      "status": "ok"
+    },
+    "METRO": {
+      "url": "https://tr.investing.com/equities/metro-inc",
+      "metrics": {
+        "avg_volume_3m": "532,88 K",
+        "change_1y_pct": "6,4311 %",
+        "market_cap": "20,7 B",
+        "revenue": "22,18 B",
+        "net_income": "983,7",
+        "eps": "4,5215",
+        "pe": "21,44",
+        "roe_pct": "13,9 %",
+        "pb": "2,95",
+        "ebitda": "1,87 B"
+      },
+      "status": "ok"
+    },
+    "MEYSU": {
+      "url": "https://tr.investing.com/equities/meysu-gida-san-ve-tic-as",
+      "metrics": {
+        "avg_volume_3m": "124,33 M",
+        "change_1y_pct": "-",
+        "market_cap": "11,89 B",
+        "revenue": "2,78 B",
+        "net_income": "-",
+        "eps": "-",
+        "pe": "-",
+        "roe_pct": "-",
+        "pb": "-",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "MGROS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MHRGY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MIATK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MMCAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MNDRS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MNDTR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MOBTL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MOGAN": {
+      "url": "https://tr.investing.com/equities/mogan-enerji-yatirim-holding-as",
+      "metrics": {
+        "avg_volume_3m": "4,64 M",
+        "change_1y_pct": "0,7701 %",
+        "market_cap": "22,35 B",
+        "revenue": "9,71 B",
+        "net_income": "-8,7 K",
+        "eps": "-3,5652",
+        "pe": "-",
+        "roe_pct": "-14,3 %",
+        "pb": "0,33",
+        "ebitda": "5,08 B"
+      },
+      "status": "ok"
+    },
+    "MOPAS": {
+      "url": "https://tr.investing.com/equities/mopas-marketcilik-gida-san-ve-tic-a",
+      "metrics": {
+        "avg_volume_3m": "5,53 M",
+        "change_1y_pct": "99,0176 %",
+        "market_cap": "16,04 B",
+        "revenue": "13,9 B",
+        "net_income": "317,371832",
+        "eps": "1,1767",
+        "pe": "31,31",
+        "roe_pct": "9,5 %",
+        "pb": "3,48",
+        "ebitda": "842,86 M"
+      },
+      "status": "ok"
+    },
+    "MPARK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MRSHL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MTRKS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MTRYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "MZHLD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "NATEN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "NETAS": {
+      "url": "https://tr.investing.com/equities/netas-telekom",
+      "metrics": {},
+      "status": "error",
+      "error": "HTTP 404"
+    },
+    "NETCD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "NIBAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "NTGAZ": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "NTHOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "NUHCM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "OBAMS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "OBASE": {
+      "url": "https://tr.investing.com/equities/obase-bilgisayar-ve-danismanlik",
+      "metrics": {
+        "avg_volume_3m": "618,4 K",
+        "change_1y_pct": "31,3916 %",
+        "market_cap": "1,85 B",
+        "revenue": "654,99 M",
+        "net_income": "16,095633",
+        "eps": "0,3538",
+        "pe": "95,83",
+        "roe_pct": "2,7 %",
+        "pb": "2,74",
+        "ebitda": "27,87 M"
+      },
+      "status": "ok"
+    },
+    "ODAS": {
+      "url": "https://tr.investing.com/equities/odas-elektrik",
+      "metrics": {
+        "avg_volume_3m": "48,03 M",
+        "change_1y_pct": "7,772 %",
+        "market_cap": "8,74 B",
+        "revenue": "7,26 B",
+        "net_income": "503,153062",
+        "eps": "0,3594",
+        "pe": "17,36",
+        "roe_pct": "3,6 %",
+        "pb": "0,55",
+        "ebitda": "993,06 M"
+      },
+      "status": "ok"
+    },
+    "ODINE": {
+      "url": "https://tr.investing.com/equities/odine-solutions-teknoloji-ticaret",
+      "metrics": {
+        "avg_volume_3m": "697,02 K",
+        "change_1y_pct": "189,8975 %",
+        "market_cap": "43,76 B",
+        "revenue": "1,59 B",
+        "net_income": "358,588521",
+        "eps": "3,2446",
+        "pe": "-",
+        "roe_pct": "20,5 %",
+        "pb": "21,34",
+        "ebitda": "232,06 M"
+      },
+      "status": "ok"
+    },
+    "OFSYM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ONCSM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ONRYT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ORCAY": {
+      "url": "https://tr.investing.com/equities/orcay-ortakoy-cay-sanayi-ticaret-as",
+      "metrics": {
+        "avg_volume_3m": "3,45 M",
+        "change_1y_pct": "-56,6402 %",
+        "market_cap": "305,6 M",
+        "revenue": "554,1 M",
+        "net_income": "-94,215466",
+        "eps": "-1,1777",
+        "pe": "-3,35",
+        "roe_pct": "-20,9 %",
+        "pb": "0,66",
+        "ebitda": "126,76 M"
+      },
+      "status": "ok"
+    },
+    "ORGE": {
+      "url": "https://tr.investing.com/equities/orgenesis-inc",
+      "metrics": {
+        "avg_volume_3m": "1,42 K",
+        "change_1y_pct": "-64,2857 %",
+        "market_cap": "5,41 M",
+        "revenue": "899 K",
+        "net_income": "-",
+        "eps": "-9,2916",
+        "pe": "-0,016",
+        "roe_pct": "-",
+        "pb": "-",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "ORMA": {
+      "url": "https://tr.investing.com/equities/orma-ormann",
+      "metrics": {
+        "avg_volume_3m": "9,38 K",
+        "change_1y_pct": "-3,9316 %",
+        "market_cap": "4,59 B",
+        "revenue": "3,43 B",
+        "net_income": "-393,174965",
+        "eps": "-14,455",
+        "pe": "-11,57",
+        "roe_pct": "-6,8 %",
+        "pb": "0,71",
+        "ebitda": "345,18 M"
+      },
+      "status": "ok"
+    },
+    "OSMEN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "OSTIM": {
+      "url": "https://tr.investing.com/equities/ostim-endustriyel-yat-ve-isletme",
+      "metrics": {
+        "avg_volume_3m": "18,71 M",
+        "change_1y_pct": "19,9136 %",
+        "market_cap": "1,96 B",
+        "revenue": "205,15 M",
+        "net_income": "222,994731",
+        "eps": "0,378",
+        "pe": "8,86",
+        "roe_pct": "10,8 %",
+        "pb": "0,8",
+        "ebitda": "113,44 M"
+      },
+      "status": "ok"
+    },
+    "OTKAR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "OTTO": {
+      "url": "https://tr.investing.com/equities/ottoenergy",
+      "metrics": {
+        "avg_volume_3m": "3,71 M",
+        "change_1y_pct": "-60 %",
+        "market_cap": "19,18 M",
+        "revenue": "15,56 M",
+        "net_income": "0,74",
+        "eps": "0,0002",
+        "pe": "17,72",
+        "roe_pct": "2,1 %",
+        "pb": "0,68",
+        "ebitda": "602 K"
+      },
+      "status": "ok"
+    },
+    "OYAKC": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "OYAYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "OYLUM": {
+      "url": "https://tr.investing.com/equities/oylum-sinai-yatirimlar-as",
+      "metrics": {
+        "avg_volume_3m": "1,35 M",
+        "change_1y_pct": "3,4272 %",
+        "market_cap": "718,25 M",
+        "revenue": "586,54 M",
+        "net_income": "-92,502014",
+        "eps": "-1,0883",
+        "pe": "-7,72",
+        "roe_pct": "-11,9 %",
+        "pb": "0,83",
+        "ebitda": "28,54 M"
+      },
+      "status": "ok"
+    },
+    "OYYAT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "OZATD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "OZRDN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "OZSUB": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "OZYSR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PAHOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PAMEL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PAPIL": {
+      "url": "https://tr.investing.com/equities/papilon-savunma-guvenlik-sistemleri",
+      "metrics": {
+        "avg_volume_3m": "16,6 M",
+        "change_1y_pct": "38,5228 %",
+        "market_cap": "3,94 B",
+        "revenue": "233,09 M",
+        "net_income": "-7,669297",
+        "eps": "-0,0373",
+        "pe": "-421,08",
+        "roe_pct": "-1,7 %",
+        "pb": "7,71",
+        "ebitda": "59,61 M"
+      },
+      "status": "ok"
+    },
+    "PARSN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PASEU": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PATEK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PCILT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PENGD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PENTA": {
+      "url": "https://tr.investing.com/equities/pentair",
+      "metrics": {
+        "avg_volume_3m": "1,61 M",
+        "change_1y_pct": "4,7969 %",
+        "market_cap": "16,59 B",
+        "revenue": "4,18 B",
+        "net_income": "653,8",
+        "eps": "3,93",
+        "pe": "25,76",
+        "roe_pct": "17,5 %",
+        "pb": "4,29",
+        "ebitda": "975,2 M"
+      },
+      "status": "ok"
+    },
+    "PETKM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PETUN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PGSUS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PINSU": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PKART": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PKENT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PLTUR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PNLSN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PNSUT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "POLHO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "POLTK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PRDGS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PRKAB": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PRKME": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PRZMA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "PSDTC": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "QNBFK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "QNBTR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "QUAGR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "RALYH": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "RAYSG": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "REEDR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "RGYAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "RNPOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "RODRG": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "RTALB": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "RUBNS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "RUZYE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "RYSAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SAFKR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SAHOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SAMAT": {
+      "url": "https://tr.investing.com/equities/samata-leather-complex-ltd",
+      "metrics": {
+        "avg_volume_3m": "73,24 K",
+        "change_1y_pct": "110,1896 %",
+        "market_cap": "915,38 M",
+        "revenue": "79,14 M",
+        "net_income": "-0,186937",
+        "eps": "-0,0181",
+        "pe": "-",
+        "roe_pct": "-",
+        "pb": "-",
+        "ebitda": "3,03 M"
+      },
+      "status": "ok"
+    },
+    "SANEL": {
+      "url": "https://tr.investing.com/equities/sanel-muhendislik",
+      "metrics": {
+        "avg_volume_3m": "615,49 K",
+        "change_1y_pct": "78,177 %",
+        "market_cap": "742,26 M",
+        "revenue": "161,73 M",
+        "net_income": "-",
+        "eps": "-0,1404",
+        "pe": "-291,17",
+        "roe_pct": "-",
+        "pb": "-",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "SANFM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SANKO": {
+      "url": "https://tr.investing.com/equities/sanko-co-ltd",
+      "metrics": {
+        "avg_volume_3m": "5,79 K",
+        "change_1y_pct": "19,5876 %",
+        "market_cap": "6,18 B",
+        "revenue": "18,22 B",
+        "net_income": "479",
+        "eps": "53,9823",
+        "pe": "12,73",
+        "roe_pct": "3 %",
+        "pb": "0,38",
+        "ebitda": "1,48 B"
+      },
+      "status": "ok"
+    },
+    "SARKY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SASA": {
+      "url": "https://tr.investing.com/equities/sasa-polyester",
+      "metrics": {
+        "avg_volume_3m": "1,81 B",
+        "change_1y_pct": "-23,7288 %",
+        "market_cap": "118,3 B",
+        "revenue": "39,83 B",
+        "net_income": "-14,87 K",
+        "eps": "-0,3394",
+        "pe": "-7,96",
+        "roe_pct": "-12 %",
+        "pb": "0,86",
+        "ebitda": "10,87 B"
+      },
+      "status": "ok"
+    },
+    "SAYAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SDTTR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SEGMN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SEGYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SEKFK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SEKUR": {
+      "url": "https://tr.investing.com/equities/panin-sekurita",
+      "metrics": {
+        "avg_volume_3m": "166,59 K",
+        "change_1y_pct": "-0,3125 %",
+        "market_cap": "1,13 T",
+        "revenue": "356,79 B",
+        "net_income": "96,67 K",
+        "eps": "135,8817",
+        "pe": "11,74",
+        "roe_pct": "6,4 %",
+        "pb": "0,75",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "SELEC": {
+      "url": "https://tr.investing.com/equities/selectquote-inc",
+      "metrics": {
+        "avg_volume_3m": "1,26 M",
+        "change_1y_pct": "-85,0867 %",
+        "market_cap": "157,74 M",
+        "revenue": "1,62 B",
+        "net_income": "77,724",
+        "eps": "-0,0267",
+        "pe": "-33,67",
+        "roe_pct": "5,7 %",
+        "pb": "0,44",
+        "ebitda": "58,33 M"
+      },
+      "status": "ok"
+    },
+    "SELVA": {
+      "url": "https://tr.investing.com/equities/selvaag-bolig",
+      "metrics": {
+        "avg_volume_3m": "65,55 K",
+        "change_1y_pct": "-5,7564 %",
+        "market_cap": "3,3 B",
+        "revenue": "1,49 B",
+        "net_income": "50,466",
+        "eps": "0,6179",
+        "pe": "56,56",
+        "roe_pct": "2,2 %",
+        "pb": "1,45",
+        "ebitda": "1,79 M"
+      },
+      "status": "ok"
+    },
+    "SERNT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SEYKM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SILVR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SISE": {
+      "url": "https://tr.investing.com/equities/sise-cam",
+      "metrics": {
+        "avg_volume_3m": "61,09 M",
+        "change_1y_pct": "32,7438 %",
+        "market_cap": "151,75 B",
+        "revenue": "166,17 B",
+        "net_income": "2,62 K",
+        "eps": "0,9363",
+        "pe": "52,91",
+        "roe_pct": "1,3 %",
+        "pb": "0,66",
+        "ebitda": "12,85 B"
+      },
+      "status": "ok"
+    },
+    "SKBNK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SKTAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SKYLP": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SKYMD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SMART": {
+      "url": "https://tr.investing.com/equities/smart-tunisie",
+      "metrics": {
+        "avg_volume_3m": "4,32 K",
+        "change_1y_pct": "48,4848 %",
+        "market_cap": "198,42 M",
+        "revenue": "284,24 B",
+        "net_income": "-",
+        "eps": "1.933,6331",
+        "pe": "0,01",
+        "roe_pct": "-",
+        "pb": "-",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "SMRTG": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SMRVA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SNICA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SNPAM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SODSN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SOKE": {
+      "url": "https://tr.investing.com/equities/sokensha-co-ltd",
+      "metrics": {
+        "avg_volume_3m": "992",
+        "change_1y_pct": "13,9141 %",
+        "market_cap": "2,02 B",
+        "revenue": "4,88 B",
+        "net_income": "37",
+        "eps": "52,8756",
+        "pe": "54,66",
+        "roe_pct": "3,3 %",
+        "pb": "1,77",
+        "ebitda": "78 M"
+      },
+      "status": "ok"
+    },
+    "SOKM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SONME": {
+      "url": "https://tr.investing.com/equities/sonmez-pamuklu",
+      "metrics": {
+        "avg_volume_3m": "77,08 K",
+        "change_1y_pct": "68,545 %",
+        "market_cap": "9,41 B",
+        "revenue": "709,96 M",
+        "net_income": "93,48227",
+        "eps": "0,2615",
+        "pe": "92,39",
+        "roe_pct": "2,1 %",
+        "pb": "1,29",
+        "ebitda": "135,17 M"
+      },
+      "status": "ok"
+    },
+    "SRVGY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SUMAS": {
+      "url": "https://tr.investing.com/equities/sumasapo",
+      "metrics": {
+        "avg_volume_3m": "8,02 K",
+        "change_1y_pct": "-4,9606 %",
+        "market_cap": "2,9 B",
+        "revenue": "2,79 B",
+        "net_income": "101",
+        "eps": "41,853",
+        "pe": "-",
+        "roe_pct": "19,5 %",
+        "pb": "5,12",
+        "ebitda": "212,5 M"
+      },
+      "status": "ok"
+    },
+    "SUNTK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SURGY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "SUWEN": {
+      "url": "https://tr.investing.com/equities/suwen-electric-energy-technology",
+      "metrics": {
+        "avg_volume_3m": "7,42 M",
+        "change_1y_pct": "34,312 %",
+        "market_cap": "4,72 B",
+        "revenue": "1,72 B",
+        "net_income": "9,031269",
+        "eps": "0,045",
+        "pe": "416,94",
+        "roe_pct": "0,3 %",
+        "pb": "1,62",
+        "ebitda": "79,17 M"
+      },
+      "status": "ok"
+    },
+    "TABGD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TARKM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TATEN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TATGD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TAVHL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TBORG": {
+      "url": "https://tr.investing.com/equities/t",
+      "metrics": {},
+      "status": "error",
+      "error": "HTTP 404"
+    },
+    "TCELL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TCKRC": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TDGYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TEKTU": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TERA": {
+      "url": "https://tr.investing.com/equities/tera-software",
+      "metrics": {
+        "avg_volume_3m": "23,23 K",
+        "change_1y_pct": "76,2497 %",
+        "market_cap": "4,87 B",
+        "revenue": "1,97 B",
+        "net_income": "208,681",
+        "eps": "16,6799",
+        "pe": "23,52",
+        "roe_pct": "16,6 %",
+        "pb": "3,67",
+        "ebitda": "334,23 M"
+      },
+      "status": "ok"
+    },
+    "TEZOL": {
+      "url": "https://tr.investing.com/equities/europap-tezol-kagit-sanayi",
+      "metrics": {
+        "avg_volume_3m": "3,63 M",
+        "change_1y_pct": "-28,2587 %",
+        "market_cap": "7,05 B",
+        "revenue": "4,54 B",
+        "net_income": "-60,899748",
+        "eps": "-0,1218",
+        "pe": "-100,15",
+        "roe_pct": "-1,2 %",
+        "pb": "1,2",
+        "ebitda": "82,36 M"
+      },
+      "status": "ok"
+    },
+    "TGSAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "THYAO": {
+      "url": "https://tr.investing.com/equities/turk-hava-yollari",
+      "metrics": {
+        "avg_volume_3m": "45,93 M",
+        "change_1y_pct": "8,9272 %",
+        "market_cap": "479,87 B",
+        "revenue": "23,43 B",
+        "net_income": "2,74 K",
+        "eps": "1,98",
+        "pe": "4,01",
+        "roe_pct": "14,2 %",
+        "pb": "0,54",
+        "ebitda": "2,85 B"
+      },
+      "status": "ok"
+    },
+    "TKFEN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TKNSA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TLMAN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TMPOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TMSN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TNZTP": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TOASO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TRALT": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TRCAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TRENJ": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TRHOL": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TRILC": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TRMET": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TSKB": {
+      "url": "https://tr.investing.com/equities/tskb-gmyo",
+      "metrics": {
+        "avg_volume_3m": "3,54 M",
+        "change_1y_pct": "27,2441 %",
+        "market_cap": "5,25 B",
+        "revenue": "252,09 M",
+        "net_income": "15,618196",
+        "eps": "0,024",
+        "pe": "337,92",
+        "roe_pct": "0,3 %",
+        "pb": "0,83",
+        "ebitda": "76,57 M"
+      },
+      "status": "ok"
+    },
+    "TSPOR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TTKOM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TTRAK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TUCLK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TUKAS": {
+      "url": "https://tr.investing.com/equities/tukas",
+      "metrics": {
+        "avg_volume_3m": "173,7 M",
+        "change_1y_pct": "46 %",
+        "market_cap": "13,14 B",
+        "revenue": "7,16 B",
+        "net_income": "1,3 K",
+        "eps": "0,2824",
+        "pe": "10,34",
+        "roe_pct": "10 %",
+        "pb": "0,84",
+        "ebitda": "2,43 B"
+      },
+      "status": "ok"
+    },
+    "TUPRS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TUREX": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TURGG": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "TURSG": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "UCAYM": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "UFUK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ULAS": {
+      "url": "https://tr.investing.com/equities/ulaslar-turizm-yatirimlari",
+      "metrics": {
+        "avg_volume_3m": "464,58 K",
+        "change_1y_pct": "-3,0395 %",
+        "market_cap": "809,69 M",
+        "revenue": "50,07 M",
+        "net_income": "64,76308",
+        "eps": "2,5515",
+        "pe": "12,34",
+        "roe_pct": "18,2 %",
+        "pb": "1,83",
+        "ebitda": "6,24 M"
+      },
+      "status": "ok"
+    },
+    "ULKER": {
+      "url": "https://tr.investing.com/equities/ulker-biskuvi",
+      "metrics": {
+        "avg_volume_3m": "6 M",
+        "change_1y_pct": "10,9766 %",
+        "market_cap": "50,78 B",
+        "revenue": "87,69 B",
+        "net_income": "6,13 K",
+        "eps": "16,5894",
+        "pe": "8,26",
+        "roe_pct": "18,2 %",
+        "pb": "1,27",
+        "ebitda": "15,36 B"
+      },
+      "status": "ok"
+    },
+    "ULUFA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ULUSE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ULUUN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "UNLU": {
+      "url": "https://tr.investing.com/equities/unlu-yatirim-holding-as",
+      "metrics": {
+        "avg_volume_3m": "2,61 M",
+        "change_1y_pct": "28,7681 %",
+        "market_cap": "3,07 B",
+        "revenue": "41,74 B",
+        "net_income": "-90,017787",
+        "eps": "-0,5126",
+        "pe": "-30,31",
+        "roe_pct": "-3,7 %",
+        "pb": "1,14",
+        "ebitda": "-"
+      },
+      "status": "ok"
+    },
+    "USAK": {
+      "url": "https://tr.investing.com/equities/usak-seramik",
+      "metrics": {
+        "avg_volume_3m": "106,53 M",
+        "change_1y_pct": "-21,8487 %",
+        "market_cap": "2,28 B",
+        "revenue": "3,67 B",
+        "net_income": "93,080375",
+        "eps": "0,076",
+        "pe": "24,74",
+        "roe_pct": "2,5 %",
+        "pb": "0,51",
+        "ebitda": "810,2 M"
+      },
+      "status": "ok"
+    },
+    "VAKBN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "VAKFA": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "VAKFN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "VAKKO": {
+      "url": "https://tr.investing.com/equities/vakko-tekstil",
+      "metrics": {
+        "avg_volume_3m": "417,7 K",
+        "change_1y_pct": "-7,4526 %",
+        "market_cap": "10,93 B",
+        "revenue": "14,94 B",
+        "net_income": "69,224319",
+        "eps": "0,4325",
+        "pe": "157,57",
+        "roe_pct": "0,8 %",
+        "pb": "1,19",
+        "ebitda": "829,71 M"
+      },
+      "status": "ok"
+    },
+    "VANGD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "VBTYZ": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "VERUS": {
+      "url": "https://tr.investing.com/equities/verusa-holding",
+      "metrics": {
+        "avg_volume_3m": "402,14 K",
+        "change_1y_pct": "12,3452 %",
+        "market_cap": "18,41 B",
+        "revenue": "861,14 M",
+        "net_income": "760,181556",
+        "eps": "10,8597",
+        "pe": "24,36",
+        "roe_pct": "16,9 %",
+        "pb": "3,37",
+        "ebitda": "25,33 M"
+      },
+      "status": "ok"
+    },
+    "VESBE": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "VESTL": {
+      "url": "https://tr.investing.com/equities/vestland-bhd",
+      "metrics": {
+        "avg_volume_3m": "264,71 K",
+        "change_1y_pct": "-20,339 %",
+        "market_cap": "443,83 M",
+        "revenue": "777,92 M",
+        "net_income": "41,060027",
+        "eps": "0,0435",
+        "pe": "-",
+        "roe_pct": "20,4 %",
+        "pb": "2",
+        "ebitda": "76,61 M"
+      },
+      "status": "ok"
+    },
+    "VKFYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "VKING": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "VRGYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "VSNMD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "XU100": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "YAPRK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "YATAS": {
+      "url": "https://tr.investing.com/equities/yatas",
+      "metrics": {
+        "avg_volume_3m": "1,24 M",
+        "change_1y_pct": "74,7187 %",
+        "market_cap": "6,7 B",
+        "revenue": "16,4 B",
+        "net_income": "-147,798663",
+        "eps": "-0,9833",
+        "pe": "-47,27",
+        "roe_pct": "-1,8 %",
+        "pb": "0,67",
+        "ebitda": "1,92 B"
+      },
+      "status": "ok"
+    },
+    "YAYLA": {
+      "url": "https://tr.investing.com/equities/yayla-enerji",
+      "metrics": {
+        "avg_volume_3m": "1,56 M",
+        "change_1y_pct": "30,6977 %",
+        "market_cap": "1,4 B",
+        "revenue": "-",
+        "net_income": "-43,162921",
+        "eps": "-0,8686",
+        "pe": "-32,28",
+        "roe_pct": "-6 %",
+        "pb": "1,77",
+        "ebitda": "7,79 M"
+      },
+      "status": "ok"
+    },
+    "YBTAS": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "YEOTK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "YESIL": {
+      "url": "https://tr.investing.com/equities/yesil-gmyo",
+      "metrics": {
+        "avg_volume_3m": "3,74 M",
+        "change_1y_pct": "71,4286 %",
+        "market_cap": "2,37 B",
+        "revenue": "-3,75 B",
+        "net_income": "-5,45 K",
+        "eps": "-4,1411",
+        "pe": "-0,43",
+        "roe_pct": "-42,4 %",
+        "pb": "0,2",
+        "ebitda": "3,57 B"
+      },
+      "status": "ok"
+    },
+    "YIGIT": {
+      "url": "https://tr.investing.com/equities/yigit-aku-malzemeleri-nakliyat",
+      "metrics": {
+        "avg_volume_3m": "2,77 M",
+        "change_1y_pct": "-9,451 %",
+        "market_cap": "7,83 B",
+        "revenue": "9,57 B",
+        "net_income": "434,254268",
+        "eps": "1,4451",
+        "pe": "-",
+        "roe_pct": "7,9 %",
+        "pb": "1,2",
+        "ebitda": "673,06 M"
+      },
+      "status": "ok"
+    },
+    "YKBNK": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "YKSLN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "YONGA": {
+      "url": "https://tr.investing.com/equities/yongan-futures",
+      "metrics": {},
+      "status": "empty"
+    },
+    "YUNSA": {
+      "url": "https://tr.investing.com/equities/yunsa",
+      "metrics": {
+        "avg_volume_3m": "8,99 M",
+        "change_1y_pct": "71,4286 %",
+        "market_cap": "4,84 B",
+        "revenue": "1,99 B",
+        "net_income": "334,510053",
+        "eps": "0,6968",
+        "pe": "14,61",
+        "roe_pct": "8,6 %",
+        "pb": "1,08",
+        "ebitda": "320,15 M"
+      },
+      "status": "ok"
+    },
+    "YYAPI": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "YYLGD": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ZEDUR": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ZERGY": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ZGYO": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    },
+    "ZOREN": {
+      "url": "https://tr.investing.com/equities/europe",
+      "metrics": {},
+      "status": "empty"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "2026-03-19": {
+    "open": "10:00",
+    "close": "13:00",
+    "reason": "half_day",
+    "label": "Arefe"
+  },
+  "2026-03-20": {
+    "closed": true,
+    "reason": "manual_closed",
+    "label": "Tam gün kapalı"
+  }
+}
