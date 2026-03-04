@@ -1,1421 +1,1430 @@
 <!doctype html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BIST Hisse İzleme</title>
-    <link rel="icon" href="data:," />
-    <style>
-      :root {
-        --bg: #121212;
-        --surface: #1b1b1b;
-        --surface-2: #222;
-        --border: #2f2f2f;
-        --text: #f2f2f2;
-        --muted: #a7a7a7;
-        --up: #23c55e;
-        --down: #ef4444;
-        --accent: #8b8b8b;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIST Hisse İzleme</title>
+  <link rel="icon" href="data:," />
+  <style>
+    :root {
+      --bg: #121212;
+      --surface: #1b1b1b;
+      --surface-2: #222;
+      --border: #2f2f2f;
+      --text: #f2f2f2;
+      --muted: #a7a7a7;
+      --up: #23c55e;
+      --down: #ef4444;
+      --accent: #8b8b8b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #0f0f0f 0%, #151515 100%);
+      color: var(--text);
+      font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    #root {
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(1200px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 20px 0 28px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .badge {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    .card {
+      background: rgba(28, 28, 28, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-wrap {
+      margin-bottom: 14px;
+      padding: 14px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: #121212;
+      border: 1px solid #303030;
+      color: var(--text);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: #4a4a4a;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: #d6d6d6;
+    }
+
+    .favorites {
+      margin-bottom: 16px;
+      padding: 14px;
+    }
+
+    .fav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 10px;
+    }
+
+    .fav-item {
+      position: relative;
+      background: #151515;
+      border: 1px solid #2c2c2c;
+      border-radius: 12px;
+      padding: 10px 12px;
+      transition: transform 0.12s ease;
+    }
+
+    .fav-item:hover {
+      transform: translateY(-1px);
+    }
+
+    .flash-up {
+      animation: flashUp 0.7s ease;
+    }
+
+    .flash-down {
+      animation: flashDown 0.7s ease;
+    }
+
+    @keyframes flashUp {
+      0% {
+        background-color: rgba(35, 197, 94, 0.38);
       }
 
-      * {
-        box-sizing: border-box;
+      100% {
+        background-color: #151515;
+      }
+    }
+
+    @keyframes flashDown {
+      0% {
+        background-color: rgba(239, 68, 68, 0.38);
       }
 
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(180deg, #0f0f0f 0%, #151515 100%);
-        color: var(--text);
-        font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+      100% {
+        background-color: #151515;
+      }
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .symbol {
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      font-size: 14px;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .live-pulse {
+      border-radius: 6px;
+      padding: 2px 6px;
+      display: inline-block;
+    }
+
+    .live-up {
+      animation: pulseUp 0.7s ease-in-out infinite;
+    }
+
+    .live-down {
+      animation: pulseDown 0.7s ease-in-out infinite;
+    }
+
+    @keyframes pulseUp {
+
+      0%,
+      100% {
+        background-color: rgba(35, 197, 94, 0.08);
       }
 
-      #root {
-        min-height: 100vh;
+      50% {
+        background-color: rgba(35, 197, 94, 0.35);
+      }
+    }
+
+    @keyframes pulseDown {
+
+      0%,
+      100% {
+        background-color: rgba(239, 68, 68, 0.08);
       }
 
-      .container {
-        width: min(1200px, calc(100vw - 32px));
-        margin: 0 auto;
-        padding: 20px 0 28px;
+      50% {
+        background-color: rgba(239, 68, 68, 0.35);
+      }
+    }
+
+    .chg-up {
+      color: var(--up);
+      font-weight: 600;
+    }
+
+    .chg-down {
+      color: var(--down);
+      font-weight: 600;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .time-pulse {
+      animation: timePulse 0.55s ease;
+      display: inline-block;
+      border-radius: 6px;
+      padding: 1px 4px;
+    }
+
+    @keyframes timePulse {
+      0% {
+        background-color: rgba(139, 139, 139, 0.35);
       }
 
+      100% {
+        background-color: transparent;
+      }
+    }
+
+    .num-cell {
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .num-fixed {
+      display: inline-block;
+      width: 132px;
+      text-align: right;
+    }
+
+    .price-pack {
+      display: inline-flex;
+      width: 132px;
+      justify-content: flex-end;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .price-value {
+      display: inline-block;
+      width: 88px;
+      text-align: right;
+    }
+
+    .price-ccy {
+      display: inline-block;
+      width: 32px;
+      text-align: left;
+      color: #b8b8b8;
+    }
+
+    .pct-fixed {
+      display: inline-block;
+      width: 112px;
+      text-align: right;
+    }
+
+    .time-fixed {
+      display: inline-block;
+      width: 96px;
+      text-align: right;
+    }
+
+    .star-btn {
+      background: transparent;
+      border: none;
+      color: #888;
+      cursor: pointer;
+      font-size: 18px;
+      padding: 0;
+    }
+
+    .star-btn.active {
+      color: #f5c542;
+    }
+
+    .stocks {
+      padding: 14px;
+    }
+
+    .table-wrap {
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    thead {
+      background: #181818;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #2a2a2a;
+      font-size: 13px;
+    }
+
+    tbody tr {
+      background: #141414;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #161616;
+    }
+
+    tbody tr:hover {
+      background: #1b1b1b;
+    }
+
+    .footer-note {
+      margin-top: 10px;
+      color: #8a8a8a;
+      font-size: 12px;
+    }
+
+    .back-btn {
+      background: #171717;
+      border: 1px solid #303030;
+      color: var(--text);
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .detail-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 10px;
+    }
+
+    .detail-item {
+      background: #151515;
+      border: 1px solid #2c2c2c;
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+
+    .detail-label {
+      font-size: 12px;
+      color: #a8a8a8;
+      margin-bottom: 6px;
+    }
+
+    .detail-value {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .clickable-row {
+      cursor: pointer;
+    }
+
+    .chart-wrap {
+      background: #151515;
+      border: 1px solid #2c2c2c;
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .chart-toolbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .chart-btn {
+      background: #171717;
+      border: 1px solid #303030;
+      color: #d5d5d5;
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .chart-btn.active {
+      border-color: #5b9dff;
+      background: #1b2330;
+      color: #ffffff;
+    }
+
+    .chart-canvas-wrap {
+      position: relative;
+      height: 320px;
+      border: 1px solid #252525;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #0f1116;
+    }
+
+    /* Active renderer uses inline SVG (legacy canvas/widget styles removed). */
+
+    .chart-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .chart-grid {
+      stroke: #1a1f27;
+      stroke-width: 1;
+    }
+
+    .chart-area {
+      fill: rgba(90, 162, 255, 0.22);
+    }
+
+    .chart-line {
+      fill: none;
+      stroke: #5aa2ff;
+      stroke-width: 2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    .chart-crosshair {
+      stroke: #3a4554;
+      stroke-width: 1;
+      stroke-dasharray: 4 4;
+    }
+
+    .chart-hover-dot {
+      fill: #8ec0ff;
+    }
+
+    .chart-tooltip {
+      position: absolute;
+      z-index: 12;
+      pointer-events: none;
+      min-width: 120px;
+      background: rgba(20, 24, 30, 0.95);
+      border: 1px solid #3b4656;
+      border-radius: 8px;
+      color: #e8ecf2;
+      padding: 8px 10px;
+      font-size: 12px;
+      line-height: 1.35;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      display: none;
+    }
+
+    .chart-tooltip .tp-price {
+      font-size: 13px;
+      font-weight: 700;
+      color: #8ec0ff;
+    }
+
+    .pill {
+      border: 1px solid #313131;
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 11px;
+      color: #b8b8b8;
+      background: #171717;
+    }
+
+    @media (max-width: 700px) {
       .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-        gap: 12px;
-        margin-bottom: 16px;
-      }
-
-      .title {
-        margin: 0;
-        font-size: 24px;
-        letter-spacing: 0.2px;
-      }
-
-      .subtitle {
-        margin: 4px 0 0;
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      .badge {
-        background: var(--surface-2);
-        border: 1px solid var(--border);
-        color: var(--muted);
-        border-radius: 999px;
-        padding: 6px 10px;
-        font-size: 12px;
-      }
-
-      .card {
-        background: rgba(28, 28, 28, 0.95);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .search-wrap {
-        margin-bottom: 14px;
-        padding: 14px;
-      }
-
-      .search-input {
-        width: 100%;
-        background: #121212;
-        border: 1px solid #303030;
-        color: var(--text);
-        border-radius: 10px;
-        padding: 12px 14px;
-        font-size: 14px;
-        outline: none;
-      }
-
-      .search-input:focus {
-        border-color: #4a4a4a;
-      }
-
-      .section-title {
-        margin: 0 0 10px;
-        font-size: 15px;
-        color: #d6d6d6;
-      }
-
-      .favorites {
-        margin-bottom: 16px;
-        padding: 14px;
-      }
-
-      .fav-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 10px;
-      }
-
-      .fav-item {
-        position: relative;
-        background: #151515;
-        border: 1px solid #2c2c2c;
-        border-radius: 12px;
-        padding: 10px 12px;
-        transition: transform 0.12s ease;
-      }
-
-      .fav-item:hover {
-        transform: translateY(-1px);
-      }
-
-      .flash-up {
-        animation: flashUp 0.7s ease;
-      }
-
-      .flash-down {
-        animation: flashDown 0.7s ease;
-      }
-
-      @keyframes flashUp {
-        0% {
-          background-color: rgba(35, 197, 94, 0.38);
-        }
-        100% {
-          background-color: #151515;
-        }
-      }
-
-      @keyframes flashDown {
-        0% {
-          background-color: rgba(239, 68, 68, 0.38);
-        }
-        100% {
-          background-color: #151515;
-        }
-      }
-
-      .row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .symbol {
-        font-weight: 700;
-        letter-spacing: 0.3px;
-        font-size: 14px;
-      }
-
-      .price {
-        font-weight: 700;
-        font-size: 18px;
-      }
-
-      .live-pulse {
-        border-radius: 6px;
-        padding: 2px 6px;
-        display: inline-block;
-      }
-
-      .live-up {
-        animation: pulseUp 0.7s ease-in-out infinite;
-      }
-
-      .live-down {
-        animation: pulseDown 0.7s ease-in-out infinite;
-      }
-
-      @keyframes pulseUp {
-        0%,
-        100% {
-          background-color: rgba(35, 197, 94, 0.08);
-        }
-        50% {
-          background-color: rgba(35, 197, 94, 0.35);
-        }
-      }
-
-      @keyframes pulseDown {
-        0%,
-        100% {
-          background-color: rgba(239, 68, 68, 0.08);
-        }
-        50% {
-          background-color: rgba(239, 68, 68, 0.35);
-        }
-      }
-
-      .chg-up {
-        color: var(--up);
-        font-weight: 600;
-      }
-
-      .chg-down {
-        color: var(--down);
-        font-weight: 600;
-      }
-
-      .muted {
-        color: var(--muted);
-        font-size: 12px;
-      }
-
-      .time-pulse {
-        animation: timePulse 0.55s ease;
-        display: inline-block;
-        border-radius: 6px;
-        padding: 1px 4px;
-      }
-
-      @keyframes timePulse {
-        0% {
-          background-color: rgba(139, 139, 139, 0.35);
-        }
-        100% {
-          background-color: transparent;
-        }
-      }
-
-      .num-cell {
-        font-variant-numeric: tabular-nums;
-        white-space: nowrap;
-        text-align: right;
-      }
-
-      .num-fixed {
-        display: inline-block;
-        width: 132px;
-        text-align: right;
-      }
-
-      .price-pack {
-        display: inline-flex;
-        width: 132px;
-        justify-content: flex-end;
-        align-items: baseline;
-        gap: 6px;
-      }
-
-      .price-value {
-        display: inline-block;
-        width: 88px;
-        text-align: right;
-      }
-
-      .price-ccy {
-        display: inline-block;
-        width: 32px;
-        text-align: left;
-        color: #b8b8b8;
-      }
-
-      .pct-fixed {
-        display: inline-block;
-        width: 112px;
-        text-align: right;
-      }
-
-      .time-fixed {
-        display: inline-block;
-        width: 96px;
-        text-align: right;
-      }
-
-      .star-btn {
-        background: transparent;
-        border: none;
-        color: #888;
-        cursor: pointer;
-        font-size: 18px;
-        padding: 0;
-      }
-
-      .star-btn.active {
-        color: #f5c542;
-      }
-
-      .stocks {
-        padding: 14px;
-      }
-
-      .table-wrap {
-        border: 1px solid #2a2a2a;
-        border-radius: 12px;
-        overflow: hidden;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        table-layout: fixed;
-      }
-
-      thead {
-        background: #181818;
-      }
-
-      th,
-      td {
-        padding: 10px 12px;
-        text-align: left;
-        border-bottom: 1px solid #2a2a2a;
-        font-size: 13px;
-      }
-
-      tbody tr {
-        background: #141414;
-      }
-
-      tbody tr:nth-child(even) {
-        background: #161616;
-      }
-
-      tbody tr:hover {
-        background: #1b1b1b;
-      }
-
-      .footer-note {
-        margin-top: 10px;
-        color: #8a8a8a;
-        font-size: 12px;
-      }
-
-      .back-btn {
-        background: #171717;
-        border: 1px solid #303030;
-        color: var(--text);
-        border-radius: 8px;
-        padding: 8px 12px;
-        cursor: pointer;
-      }
-
-      .detail-wrap {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .detail-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-        gap: 10px;
-      }
-
-      .detail-item {
-        background: #151515;
-        border: 1px solid #2c2c2c;
-        border-radius: 10px;
-        padding: 10px 12px;
-      }
-
-      .detail-label {
-        font-size: 12px;
-        color: #a8a8a8;
-        margin-bottom: 6px;
-      }
-
-      .detail-value {
-        font-size: 15px;
-        font-weight: 600;
-      }
-
-      .clickable-row {
-        cursor: pointer;
-      }
-
-      .chart-wrap {
-        background: #151515;
-        border: 1px solid #2c2c2c;
-        border-radius: 10px;
-        padding: 12px;
-      }
-
-      .chart-toolbar {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin-bottom: 12px;
-      }
-
-      .chart-btn {
-        background: #171717;
-        border: 1px solid #303030;
-        color: #d5d5d5;
-        border-radius: 8px;
-        padding: 7px 12px;
-        font-size: 12px;
-        cursor: pointer;
-      }
-
-      .chart-btn.active {
-        border-color: #5b9dff;
-        background: #1b2330;
-        color: #ffffff;
-      }
-
-      .chart-canvas-wrap {
-        position: relative;
-        height: 320px;
-        border: 1px solid #252525;
-        border-radius: 10px;
-        overflow: hidden;
-        background: #0f1116;
-      }
-
-      /* Active renderer uses inline SVG (legacy canvas/widget styles removed). */
-
-      .chart-svg {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-
-      .chart-grid {
-        stroke: #1a1f27;
-        stroke-width: 1;
-      }
-
-      .chart-area {
-        fill: rgba(90, 162, 255, 0.22);
-      }
-
-      .chart-line {
-        fill: none;
-        stroke: #5aa2ff;
-        stroke-width: 2;
-        stroke-linejoin: round;
-        stroke-linecap: round;
-      }
-
-      .chart-crosshair {
-        stroke: #3a4554;
-        stroke-width: 1;
-        stroke-dasharray: 4 4;
-      }
-
-      .chart-hover-dot {
-        fill: #8ec0ff;
-      }
-
-      .chart-tooltip {
-        position: absolute;
-        z-index: 12;
-        pointer-events: none;
-        min-width: 120px;
-        background: rgba(20, 24, 30, 0.95);
-        border: 1px solid #3b4656;
-        border-radius: 8px;
-        color: #e8ecf2;
-        padding: 8px 10px;
-        font-size: 12px;
-        line-height: 1.35;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-        display: none;
-      }
-
-      .chart-tooltip .tp-price {
-        font-size: 13px;
-        font-weight: 700;
-        color: #8ec0ff;
-      }
-
-      .pill {
-        border: 1px solid #313131;
-        border-radius: 999px;
-        padding: 3px 8px;
-        font-size: 11px;
-        color: #b8b8b8;
-        background: #171717;
-      }
-
-      @media (max-width: 700px) {
-        .header {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-    </style>
-
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  </head>
-
-  <body>
-    <div id="root"></div>
-
-    <script type="text/babel">
-      const { useEffect, useMemo, useRef, useState, useCallback } = React;
-
-      // Runtime architecture note for collaborators/AI agents:
-      // - List + detail UI is in this single file.
-      // - Price/market/chart/fundamentals data always comes from web/server.py API endpoints.
-      // - Chart period config below is the single source of truth for range/interval mapping.
-
-      const FALLBACK_SYMBOLS = [
-        'THYAO.IS','ASELS.IS','TUPRS.IS','SISE.IS','EREGL.IS','KCHOL.IS','AKBNK.IS','GARAN.IS','ISCTR.IS','YKBNK.IS',
-        'BIMAS.IS','FROTO.IS','TOASO.IS','SASA.IS','HEKTS.IS','ENKAI.IS','PETKM.IS','SAHOL.IS','TCELL.IS','PGSUS.IS',
-        'VAKBN.IS','HALKB.IS','DOHOL.IS','KOZAL.IS','KOZAA.IS','ALARK.IS','ARCLK.IS','CIMSA.IS','KRDMD.IS','GUBRF.IS',
-        'MAVI.IS','CCOLA.IS','AEFES.IS','ODAS.IS','SMRTG.IS','ASTOR.IS','GESAN.IS','EUPWR.IS','MIATK.IS','KONTR.IS',
-        'XU100.IS'
-      ];
-
-      const STORAGE_KEY = 'bist-favorites-v1';
-      const PRICE_STORAGE_KEY = 'bist-last-prices-v1';
-      const POLL_MS = 5000;
-      const ANIM_TICK_MS = 250;
-      const FUNDAMENTAL_FIELDS = [
-        { key: 'pe', label: 'F/K' },
-        { key: 'ebitda', label: 'FAVÖK' },
-        { key: 'market_cap', label: 'Piyasa Değeri' },
-        { key: 'avg_volume_3m', label: 'Ortalama Hacim (3Ay)' },
-        { key: 'change_1y_pct', label: '1 Yıllık Değişim' },
-        { key: 'revenue', label: 'Gelir' },
-        { key: 'net_income', label: 'Net Kâr' },
-        { key: 'eps', label: 'Hisse Başına Kar (EPS)' },
-        { key: 'roe_pct', label: 'Özkaynak Getirisi (ROE)' },
-        { key: 'pb', label: 'PD/DD' }
-      ];
-      const CHART_PERIODS = [
-        { id: 'daily', label: 'Günlük', range: '1d', interval: '5m' },
-        { id: 'weekly', label: 'Haftalık', range: '5d', interval: '30m' },
-        { id: 'monthly', label: 'Aylık', range: '1mo', interval: '1d' },
-        { id: 'yearly', label: 'Yıllık', range: '1y', interval: '1d' },
-        { id: 'all', label: 'Tüm Zamanlar', range: 'max', interval: '1wk' }
-      ];
-
-      const toNum = (v) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
-      const sameSymbols = (a, b) => {
-        if (!Array.isArray(a) || !Array.isArray(b)) return false;
-        if (a.length !== b.length) return false;
-        for (let i = 0; i < a.length; i++) {
-          if (a[i] !== b[i]) return false;
-        }
-        return true;
-      };
-
-      const normalizeSymbol = (v) => {
-        if (!v || typeof v !== 'string') return '';
-        const raw = v.trim().toUpperCase();
-        return raw.endsWith('.IS') ? raw.slice(0, -3) : raw;
-      };
-
-      const formatCompact = (value, digits = 2) => {
-        const num = Number(value);
-        if (!Number.isFinite(num)) return '—';
-
-        const abs = Math.abs(num);
-        const sign = num < 0 ? '-' : '';
-        if (abs >= 1e12) return `${sign}${(abs / 1e12).toFixed(digits).replace('.', ',')}T`;
-        if (abs >= 1e9) return `${sign}${(abs / 1e9).toFixed(digits).replace('.', ',')}B`;
-        if (abs >= 1e6) return `${sign}${(abs / 1e6).toFixed(digits).replace('.', ',')}M`;
-        if (abs >= 1e3) return `${sign}${(abs / 1e3).toFixed(digits).replace('.', ',')}K`;
-        return `${sign}${abs.toFixed(digits).replace('.', ',')}`;
-      };
-
-      const formatRatio = (value, digits = 2) => {
-        const num = Number(value);
-        if (!Number.isFinite(num)) return '—';
-        return num.toFixed(digits).replace('.', ',');
-      };
-
-      const formatPercent = (value, digits = 2) => {
-        const num = Number(value);
-        if (!Number.isFinite(num)) return '—';
-        return `${num.toFixed(digits).replace('.', ',')}%`;
-      };
-
-      const formatFundamentalValue = (key, value) => {
-        if (value === null || value === undefined || value === '') return '—';
-        if (typeof value === 'string') return value;
-
-        if (key === 'pe' || key === 'pb') return formatRatio(value, 2);
-        if (key === 'change_1y_pct' || key === 'roe_pct') return formatPercent(value, 2);
-        if (key === 'eps') return formatRatio(value, 2);
-        return formatCompact(value, 2);
-      };
-
-      const toBistSymbol = (v) => {
-        const clean = normalizeSymbol(v);
-        return clean ? `${clean}.IS` : '';
-      };
-
-      const readRouteSymbol = () => {
-        const m = window.location.hash.match(/^#\/stock\/([A-Z0-9.\-]+)/i);
-        return m ? normalizeSymbol(decodeURIComponent(m[1])) : '';
-      };
-
-      const formatChartDate = (unixTs, periodId) => {
-        const dt = new Date(Number(unixTs) * 1000);
-        if (!Number.isFinite(dt.getTime())) return '—';
-        if (periodId === 'daily' || periodId === 'weekly') {
-          return dt.toLocaleString('tr-TR', {
-            timeZone: 'Europe/Istanbul',
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-          });
-        }
-        return dt.toLocaleDateString('tr-TR', {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+
+  <script src="basketStorage.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useEffect, useMemo, useRef, useState, useCallback } = React;
+
+    // Runtime architecture note for collaborators/AI agents:
+    // - List + detail UI is in this single file.
+    // - Price/market/chart/fundamentals data always comes from web/server.py API endpoints.
+    // - Chart period config below is the single source of truth for range/interval mapping.
+
+    const FALLBACK_SYMBOLS = [
+      'THYAO.IS', 'ASELS.IS', 'TUPRS.IS', 'SISE.IS', 'EREGL.IS', 'KCHOL.IS', 'AKBNK.IS', 'GARAN.IS', 'ISCTR.IS', 'YKBNK.IS',
+      'BIMAS.IS', 'FROTO.IS', 'TOASO.IS', 'SASA.IS', 'HEKTS.IS', 'ENKAI.IS', 'PETKM.IS', 'SAHOL.IS', 'TCELL.IS', 'PGSUS.IS',
+      'VAKBN.IS', 'HALKB.IS', 'DOHOL.IS', 'KOZAL.IS', 'KOZAA.IS', 'ALARK.IS', 'ARCLK.IS', 'CIMSA.IS', 'KRDMD.IS', 'GUBRF.IS',
+      'MAVI.IS', 'CCOLA.IS', 'AEFES.IS', 'ODAS.IS', 'SMRTG.IS', 'ASTOR.IS', 'GESAN.IS', 'EUPWR.IS', 'MIATK.IS', 'KONTR.IS',
+      'XU100.IS'
+    ];
+
+    const STORAGE_KEY = 'bist-favorites-v1';
+    const PRICE_STORAGE_KEY = 'bist-last-prices-v1';
+    const POLL_MS = 5000;
+    const ANIM_TICK_MS = 250;
+    const FUNDAMENTAL_FIELDS = [
+      { key: 'pe', label: 'F/K' },
+      { key: 'ebitda', label: 'FAVÖK' },
+      { key: 'market_cap', label: 'Piyasa Değeri' },
+      { key: 'avg_volume_3m', label: 'Ortalama Hacim (3Ay)' },
+      { key: 'change_1y_pct', label: '1 Yıllık Değişim' },
+      { key: 'revenue', label: 'Gelir' },
+      { key: 'net_income', label: 'Net Kâr' },
+      { key: 'eps', label: 'Hisse Başına Kar (EPS)' },
+      { key: 'roe_pct', label: 'Özkaynak Getirisi (ROE)' },
+      { key: 'pb', label: 'PD/DD' }
+    ];
+    const CHART_PERIODS = [
+      { id: 'daily', label: 'Günlük', range: '1d', interval: '5m' },
+      { id: 'weekly', label: 'Haftalık', range: '5d', interval: '30m' },
+      { id: 'monthly', label: 'Aylık', range: '1mo', interval: '1d' },
+      { id: 'yearly', label: 'Yıllık', range: '1y', interval: '1d' },
+      { id: 'all', label: 'Tüm Zamanlar', range: 'max', interval: '1wk' }
+    ];
+
+    const toNum = (v) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
+    const sameSymbols = (a, b) => {
+      if (!Array.isArray(a) || !Array.isArray(b)) return false;
+      if (a.length !== b.length) return false;
+      for (let i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) return false;
+      }
+      return true;
+    };
+
+    const normalizeSymbol = (v) => {
+      if (!v || typeof v !== 'string') return '';
+      const raw = v.trim().toUpperCase();
+      return raw.endsWith('.IS') ? raw.slice(0, -3) : raw;
+    };
+
+    const formatCompact = (value, digits = 2) => {
+      const num = Number(value);
+      if (!Number.isFinite(num)) return '—';
+
+      const abs = Math.abs(num);
+      const sign = num < 0 ? '-' : '';
+      if (abs >= 1e12) return `${sign}${(abs / 1e12).toFixed(digits).replace('.', ',')}T`;
+      if (abs >= 1e9) return `${sign}${(abs / 1e9).toFixed(digits).replace('.', ',')}B`;
+      if (abs >= 1e6) return `${sign}${(abs / 1e6).toFixed(digits).replace('.', ',')}M`;
+      if (abs >= 1e3) return `${sign}${(abs / 1e3).toFixed(digits).replace('.', ',')}K`;
+      return `${sign}${abs.toFixed(digits).replace('.', ',')}`;
+    };
+
+    const formatRatio = (value, digits = 2) => {
+      const num = Number(value);
+      if (!Number.isFinite(num)) return '—';
+      return num.toFixed(digits).replace('.', ',');
+    };
+
+    const formatPercent = (value, digits = 2) => {
+      const num = Number(value);
+      if (!Number.isFinite(num)) return '—';
+      return `${num.toFixed(digits).replace('.', ',')}%`;
+    };
+
+    const formatFundamentalValue = (key, value) => {
+      if (value === null || value === undefined || value === '') return '—';
+      if (typeof value === 'string') return value;
+
+      if (key === 'pe' || key === 'pb') return formatRatio(value, 2);
+      if (key === 'change_1y_pct' || key === 'roe_pct') return formatPercent(value, 2);
+      if (key === 'eps') return formatRatio(value, 2);
+      return formatCompact(value, 2);
+    };
+
+    const toBistSymbol = (v) => {
+      const clean = normalizeSymbol(v);
+      return clean ? `${clean}.IS` : '';
+    };
+
+    const readRouteSymbol = () => {
+      const m = window.location.hash.match(/^#\/stock\/([A-Z0-9.\-]+)/i);
+      return m ? normalizeSymbol(decodeURIComponent(m[1])) : '';
+    };
+
+    const formatChartDate = (unixTs, periodId) => {
+      const dt = new Date(Number(unixTs) * 1000);
+      if (!Number.isFinite(dt.getTime())) return '—';
+      if (periodId === 'daily' || periodId === 'weekly') {
+        return dt.toLocaleString('tr-TR', {
           timeZone: 'Europe/Istanbul',
           day: '2-digit',
           month: '2-digit',
           year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
         });
+      }
+      return dt.toLocaleDateString('tr-TR', {
+        timeZone: 'Europe/Istanbul',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+      });
+    };
+
+    async function fetchChartMeta(symbol) {
+      const url = `/api/chart?symbol=${encodeURIComponent(symbol)}&range=1d&interval=5m`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`${symbol} ${res.status}`);
+      const data = await res.json();
+      const meta = data?.chart?.result?.[0]?.meta;
+      if (!meta) throw new Error(`${symbol} no meta`);
+      return {
+        symbol: meta.symbol,
+        price: Number(meta.regularMarketPrice ?? 0),
+        prevClose: Number(meta.previousClose ?? 0),
+        marketTs: Number(meta.regularMarketTime ?? 0),
+        currency: meta.currency,
+        dayHigh: meta.regularMarketDayHigh,
+        dayLow: meta.regularMarketDayLow
       };
+    }
 
-      async function fetchChartMeta(symbol) {
-        const url = `/api/chart?symbol=${encodeURIComponent(symbol)}&range=1d&interval=5m`;
-        const res = await fetch(url);
-        if (!res.ok) throw new Error(`${symbol} ${res.status}`);
-        const data = await res.json();
-        const meta = data?.chart?.result?.[0]?.meta;
-        if (!meta) throw new Error(`${symbol} no meta`);
-        return {
-          symbol: meta.symbol,
-          price: Number(meta.regularMarketPrice ?? 0),
-          prevClose: Number(meta.previousClose ?? 0),
-          marketTs: Number(meta.regularMarketTime ?? 0),
-          currency: meta.currency,
-          dayHigh: meta.regularMarketDayHigh,
-          dayLow: meta.regularMarketDayLow
-        };
-      }
+    async function fetchBistSymbols(refresh = false) {
+      const url = `/api/symbols${refresh ? '?refresh=1' : ''}`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`symbols ${res.status}`);
+      const data = await res.json();
+      const symbols = Array.isArray(data?.symbols) ? data.symbols : [];
+      const merged = Array.from(new Set([...symbols, ...FALLBACK_SYMBOLS])).sort((a, b) => a.localeCompare(b));
+      return {
+        symbols: merged,
+        scanning: Boolean(data?.scanning),
+        count: Number(data?.count || merged.length)
+      };
+    }
 
-      async function fetchBistSymbols(refresh = false) {
-        const url = `/api/symbols${refresh ? '?refresh=1' : ''}`;
-        const res = await fetch(url);
-        if (!res.ok) throw new Error(`symbols ${res.status}`);
-        const data = await res.json();
-        const symbols = Array.isArray(data?.symbols) ? data.symbols : [];
-        const merged = Array.from(new Set([...symbols, ...FALLBACK_SYMBOLS])).sort((a, b) => a.localeCompare(b));
-        return {
-          symbols: merged,
-          scanning: Boolean(data?.scanning),
-          count: Number(data?.count || merged.length)
-        };
-      }
-
-      function useFavorites() {
-        const [favorites, setFavorites] = useState(() => {
-          try {
-            const raw = localStorage.getItem(STORAGE_KEY);
-            if (!raw) return [];
-            const parsed = JSON.parse(raw);
-            return Array.isArray(parsed) ? parsed : [];
-          } catch {
-            return [];
-          }
-        });
-
-        useEffect(() => {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
-        }, [favorites]);
-
-        function toggle(symbol) {
-          setFavorites((prev) => (prev.includes(symbol) ? prev.filter((s) => s !== symbol) : [...prev, symbol]));
+    function useFavorites() {
+      const [favorites, setFavorites] = useState(() => {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return [];
+          const parsed = JSON.parse(raw);
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
         }
+      });
 
-        return { favorites, toggle };
+      useEffect(() => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+      }, [favorites]);
+
+      function toggle(symbol) {
+        setFavorites((prev) => (prev.includes(symbol) ? prev.filter((s) => s !== symbol) : [...prev, symbol]));
       }
 
-      function App() {
-        const [symbols, setSymbols] = useState(FALLBACK_SYMBOLS);
-        const [search, setSearch] = useState('');
-        const [selectedSymbol, setSelectedSymbol] = useState(() => readRouteSymbol());
-        const [loadingSymbols, setLoadingSymbols] = useState(true);
-        const [prices, setPrices] = useState(() => {
-          try {
-            const raw = localStorage.getItem(PRICE_STORAGE_KEY);
-            if (!raw) return {};
-            const parsed = JSON.parse(raw);
-            return parsed && typeof parsed === 'object' ? parsed : {};
-          } catch {
-            return {};
+      return { favorites, toggle };
+    }
+
+    function App() {
+      const [symbols, setSymbols] = useState(FALLBACK_SYMBOLS);
+      const [search, setSearch] = useState('');
+      const [selectedSymbol, setSelectedSymbol] = useState(() => readRouteSymbol());
+      const [loadingSymbols, setLoadingSymbols] = useState(true);
+      const [prices, setPrices] = useState(() => {
+        try {
+          const raw = localStorage.getItem(PRICE_STORAGE_KEY);
+          if (!raw) return {};
+          const parsed = JSON.parse(raw);
+          return parsed && typeof parsed === 'object' ? parsed : {};
+        } catch {
+          return {};
+        }
+      });
+      const [flashMap, setFlashMap] = useState({});
+      const [lastUpdated, setLastUpdated] = useState(null);
+      const [error, setError] = useState('');
+      const [symbolsScanning, setSymbolsScanning] = useState(false);
+      const [loadingAllPrices, setLoadingAllPrices] = useState(false);
+      const [timePulseMap, setTimePulseMap] = useState({});
+      const [marketStatus, setMarketStatus] = useState(null);
+      const [fundamentalsBySymbol, setFundamentalsBySymbol] = useState({});
+      const [fundamentalsLoading, setFundamentalsLoading] = useState(false);
+      const [fundamentalsError, setFundamentalsError] = useState('');
+      const [chartPeriod, setChartPeriod] = useState('daily');
+      const [chartByKey, setChartByKey] = useState({});
+      const [chartLoading, setChartLoading] = useState(false);
+      const [chartError, setChartError] = useState('');
+
+      const pricesRef = useRef({});
+      const targetPricesRef = useRef({});
+      const prevPriceRef = useRef({});
+      const transitionsRef = useRef({});
+      const animationIntervalRef = useRef(null);
+      const pollCursorRef = useRef(0);
+      const visibleSymbolsRef = useRef([]);
+      const tableWrapRef = useRef(null);
+      const chartSvgWrapRef = useRef(null);
+      const refreshInFlightRef = useRef(false);
+      const closedSnapshotDoneRef = useRef(false);
+      const [hoveredPoint, setHoveredPoint] = useState(null);
+      const { favorites, toggle } = useFavorites();
+
+      useEffect(() => {
+        pricesRef.current = prices;
+        try {
+          localStorage.setItem(PRICE_STORAGE_KEY, JSON.stringify(prices));
+        } catch { }
+      }, [prices]);
+
+      useEffect(() => {
+        return () => {
+          if (animationIntervalRef.current) {
+            clearInterval(animationIntervalRef.current);
+            animationIntervalRef.current = null;
           }
-        });
-        const [flashMap, setFlashMap] = useState({});
-        const [lastUpdated, setLastUpdated] = useState(null);
-        const [error, setError] = useState('');
-        const [symbolsScanning, setSymbolsScanning] = useState(false);
-        const [loadingAllPrices, setLoadingAllPrices] = useState(false);
-        const [timePulseMap, setTimePulseMap] = useState({});
-        const [marketStatus, setMarketStatus] = useState(null);
-        const [fundamentalsBySymbol, setFundamentalsBySymbol] = useState({});
-        const [fundamentalsLoading, setFundamentalsLoading] = useState(false);
-        const [fundamentalsError, setFundamentalsError] = useState('');
-        const [chartPeriod, setChartPeriod] = useState('daily');
-        const [chartByKey, setChartByKey] = useState({});
-        const [chartLoading, setChartLoading] = useState(false);
-        const [chartError, setChartError] = useState('');
+        };
+      }, []);
 
-        const pricesRef = useRef({});
-        const targetPricesRef = useRef({});
-        const prevPriceRef = useRef({});
-        const transitionsRef = useRef({});
-        const animationIntervalRef = useRef(null);
-        const pollCursorRef = useRef(0);
-        const visibleSymbolsRef = useRef([]);
-        const tableWrapRef = useRef(null);
-        const chartSvgWrapRef = useRef(null);
-        const refreshInFlightRef = useRef(false);
-        const closedSnapshotDoneRef = useRef(false);
-        const [hoveredPoint, setHoveredPoint] = useState(null);
-        const { favorites, toggle } = useFavorites();
+      useEffect(() => {
+        const onHash = () => setSelectedSymbol(readRouteSymbol());
+        window.addEventListener('hashchange', onHash);
+        return () => window.removeEventListener('hashchange', onHash);
+      }, []);
 
-        useEffect(() => {
-          pricesRef.current = prices;
-          try {
-            localStorage.setItem(PRICE_STORAGE_KEY, JSON.stringify(prices));
-          } catch {}
-        }, [prices]);
+      const openSymbolDetail = useCallback((symbol) => {
+        const clean = normalizeSymbol(symbol);
+        if (!clean) return;
+        window.location.hash = `/stock/${encodeURIComponent(clean)}`;
+      }, []);
 
-        useEffect(() => {
-          return () => {
-            if (animationIntervalRef.current) {
-              clearInterval(animationIntervalRef.current);
-              animationIntervalRef.current = null;
-            }
-          };
-        }, []);
+      const closeSymbolDetail = useCallback(() => {
+        window.location.hash = '/';
+      }, []);
 
-        useEffect(() => {
-          const onHash = () => setSelectedSymbol(readRouteSymbol());
-          window.addEventListener('hashchange', onHash);
-          return () => window.removeEventListener('hashchange', onHash);
-        }, []);
+      const fetchChartSeries = useCallback(async (symbol, periodId) => {
+        const cfg = CHART_PERIODS.find((p) => p.id === periodId) || CHART_PERIODS[0];
+        const key = `${symbol}:${cfg.id}`;
+        setChartLoading(true);
+        setChartError('');
+        setHoveredPoint(null);
 
-        const openSymbolDetail = useCallback((symbol) => {
-          const clean = normalizeSymbol(symbol);
-          if (!clean) return;
-          window.location.hash = `/stock/${encodeURIComponent(clean)}`;
-        }, []);
-
-        const closeSymbolDetail = useCallback(() => {
-          window.location.hash = '/';
-        }, []);
-
-        const fetchChartSeries = useCallback(async (symbol, periodId) => {
-          const cfg = CHART_PERIODS.find((p) => p.id === periodId) || CHART_PERIODS[0];
-          const key = `${symbol}:${cfg.id}`;
-          setChartLoading(true);
-          setChartError('');
-          setHoveredPoint(null);
-
-          try {
-            const url = `/api/chart?symbol=${encodeURIComponent(symbol)}&range=${encodeURIComponent(cfg.range)}&interval=${encodeURIComponent(cfg.interval)}`;
-            const res = await fetch(url);
-            if (!res.ok) throw new Error(`chart ${res.status}`);
-            const payload = await res.json();
-            const result = payload?.chart?.result?.[0];
-            const ts = Array.isArray(result?.timestamp) ? result.timestamp : [];
-            const closes = Array.isArray(result?.indicators?.quote?.[0]?.close) ? result.indicators.quote[0].close : [];
-            const adjCloses = Array.isArray(result?.indicators?.adjclose?.[0]?.adjclose) ? result.indicators.adjclose[0].adjclose : [];
-            const points = [];
-            const seenTs = new Set();
-
-            for (let i = 0; i < ts.length; i++) {
-              const t = Number(ts[i]);
-              const rawClose = Number(closes[i]);
-              const rawAdjClose = Number(adjCloses[i]);
-              const c = Number.isFinite(rawClose) ? rawClose : rawAdjClose;
-              if (Number.isFinite(t) && t > 0 && Number.isFinite(c) && !seenTs.has(t)) {
-                seenTs.add(t);
-                points.push({ ts: t, close: c });
-              }
-            }
-
-            points.sort((a, b) => a.ts - b.ts);
-
-            setChartByKey((prev) => ({
-              ...prev,
-              [key]: {
-                points,
-                symbol,
-                periodId: cfg.id,
-                range: cfg.range,
-                interval: cfg.interval,
-                currency: result?.meta?.currency || 'TRY',
-                asOf: Date.now(),
-              },
-            }));
-          } catch {
-            setChartError('Grafik verisi alınamadı.');
-          } finally {
-            setChartLoading(false);
-          }
-        }, []);
-
-        const formatPrice = useCallback((price, symbol) => {
-          if (typeof price !== 'number') return '—';
-          const animating = Boolean(transitionsRef.current[symbol]);
-          return animating ? price.toFixed(3) : price.toFixed(2);
-        }, []);
-
-        const formatPct = useCallback((value, symbol) => {
-          if (typeof value !== 'number') return '—';
-          const animating = Boolean(transitionsRef.current[symbol]);
-          const decimals = animating ? 3 : 2;
-          return `${value >= 0 ? '+' : ''}${value.toFixed(decimals)}%`;
-        }, []);
-
-        const getDisplayTs = useCallback((item) => {
-          if (!item) return null;
-          return item.asOfTs || item.marketTs || null;
-        }, []);
-
-        const getLiveDirection = useCallback((symbol) => {
-          const tr = transitionsRef.current[symbol];
-          if (!tr) return '';
-          if (tr.toPrice > tr.fromPrice) return 'live-up';
-          if (tr.toPrice < tr.fromPrice) return 'live-down';
-          return '';
-        }, []);
-
-        const ensureAnimationLoop = useCallback(() => {
-          if (animationIntervalRef.current) return;
-
-          animationIntervalRef.current = setInterval(() => {
-            const now = Date.now();
-            const active = transitionsRef.current;
-            const symbols = Object.keys(active);
-
-            if (!symbols.length) {
-              clearInterval(animationIntervalRef.current);
-              animationIntervalRef.current = null;
-              return;
-            }
-
-            setPrices((prev) => {
-              let changed = false;
-              const next = { ...prev };
-
-              for (const symbol of symbols) {
-                const tr = active[symbol];
-                if (!tr) continue;
-
-                const p = Math.min(1, Math.max(0, (now - tr.start) / tr.duration));
-                const eased = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
-                const target = targetPricesRef.current[symbol] || tr.target;
-
-                const cur = next[symbol] || target;
-                const basePrice = tr.fromPrice + (tr.toPrice - tr.fromPrice) * eased;
-                const basePct = tr.fromPct + (tr.toPct - tr.fromPct) * eased;
-                const deltaPrice = tr.toPrice - tr.fromPrice;
-                const deltaPct = tr.toPct - tr.fromPct;
-                const jitterWave = Math.sin((now - tr.start) / 220);
-                const jitterDecay = (1 - p) * 0.02;
-                const price = basePrice + deltaPrice * jitterWave * jitterDecay;
-                const dayChangePct = basePct + deltaPct * jitterWave * jitterDecay;
-
-                next[symbol] = {
-                  ...cur,
-                  symbol,
-                  price: toNum(price),
-                  dayChangePct: toNum(dayChangePct),
-                  asOfTs: target.asOfTs,
-                  marketTs: target.marketTs,
-                  currency: target.currency
-                };
-                changed = true;
-
-                if (p >= 1) {
-                  next[symbol] = { ...target };
-                  delete active[symbol];
-                }
-              }
-
-              return changed ? next : prev;
-            });
-          }, ANIM_TICK_MS);
-        }, []);
-
-        const computeVisibleSymbols = useCallback((allSymbols) => {
-          if (!allSymbols.length) {
-            visibleSymbolsRef.current = [];
-            return;
-          }
-
-          const wrap = tableWrapRef.current;
-          if (!wrap) {
-            visibleSymbolsRef.current = allSymbols.slice(0, 60);
-            return;
-          }
-
-          const rect = wrap.getBoundingClientRect();
-          const rowHeight = 43;
-          const headHeight = 42;
-          const viewportTop = Math.max(0, -rect.top);
-          const viewportBottom = Math.max(0, Math.min(rect.height, window.innerHeight - rect.top));
-
-          const start = Math.max(0, Math.floor((viewportTop - headHeight) / rowHeight));
-          const end = Math.min(allSymbols.length, Math.ceil((viewportBottom - headHeight) / rowHeight) + 15);
-
-          if (end > start) {
-            visibleSymbolsRef.current = allSymbols.slice(start, end);
-          } else {
-            visibleSymbolsRef.current = allSymbols.slice(0, 60);
-          }
-        }, []);
-
-        useEffect(() => {
-          let mounted = true;
-          let scanPollId = null;
-
-          const syncSymbols = async (forceRefresh = false) => {
-            const payload = await fetchBistSymbols(forceRefresh);
-            if (!mounted) return;
-            if (payload.symbols.length) {
-              setSymbols((prev) => (sameSymbols(prev, payload.symbols) ? prev : payload.symbols));
-            }
-            setSymbolsScanning(payload.scanning);
-            setLoadingSymbols(false);
-          };
-
-          (async () => {
-            try {
-              await syncSymbols(true);
-              scanPollId = setInterval(async () => {
-                try {
-                  await syncSymbols(false);
-                } catch {}
-              }, 15000);
-            } catch {
-              if (mounted) {
-                setError('Sembol keşfi sırasında hata oluştu, yedek liste gösteriliyor.');
-                setLoadingSymbols(false);
-              }
-            }
-          })();
-
-          return () => {
-            mounted = false;
-            if (scanPollId) clearInterval(scanPollId);
-          };
-        }, []);
-
-        useEffect(() => {
-          let active = true;
-
-          const fetchMarketStatus = async () => {
-            try {
-              const res = await fetch('/api/market-status');
-              if (!res.ok) return;
-              const data = await res.json();
-              if (active) setMarketStatus(data);
-            } catch {}
-          };
-
-          fetchMarketStatus();
-          const id = setInterval(fetchMarketStatus, 30000);
-          return () => {
-            active = false;
-            clearInterval(id);
-          };
-        }, []);
-
-        const fetchPricesSnapshot = useCallback(async (targetSymbols) => {
-          const controller = new AbortController();
-          const timer = setTimeout(() => controller.abort(), 4500);
-          const res = await fetch('/api/prices', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ symbols: targetSymbols, range: '1d', interval: '5m' }),
-            signal: controller.signal
-          });
-          clearTimeout(timer);
-          if (!res.ok) throw new Error(`prices ${res.status}`);
+        try {
+          const url = `/api/chart?symbol=${encodeURIComponent(symbol)}&range=${encodeURIComponent(cfg.range)}&interval=${encodeURIComponent(cfg.interval)}`;
+          const res = await fetch(url);
+          if (!res.ok) throw new Error(`chart ${res.status}`);
           const payload = await res.json();
-          return Array.isArray(payload?.items) ? payload.items : [];
-        }, []);
+          const result = payload?.chart?.result?.[0];
+          const ts = Array.isArray(result?.timestamp) ? result.timestamp : [];
+          const closes = Array.isArray(result?.indicators?.quote?.[0]?.close) ? result.indicators.quote[0].close : [];
+          const adjCloses = Array.isArray(result?.indicators?.adjclose?.[0]?.adjclose) ? result.indicators.adjclose[0].adjclose : [];
+          const points = [];
+          const seenTs = new Set();
 
-        const refreshPrices = useCallback(async (targetSymbols) => {
-          if (!targetSymbols.length) return;
-          if (refreshInFlightRef.current) return;
-          refreshInFlightRef.current = true;
-
-          const immediateUpdates = {};
-          const flashNext = {};
-          const timePulsesNext = {};
-          let hasTransition = false;
-
-          try {
-            const items = await fetchPricesSnapshot(targetSymbols);
-
-            for (const q of items) {
-              const symbol = q.symbol;
-              if (!symbol) continue;
-
-              const dayChange = q.prevClose ? q.price - q.prevClose : 0;
-              const dayChangePct = q.prevClose ? (dayChange / q.prevClose) * 100 : 0;
-
-              const incoming = {
-                symbol,
-                price: toNum(q.price),
-                dayChangePct: toNum(dayChangePct),
-                asOfTs: Number(q.asOfTs || Math.floor(Date.now() / 1000)),
-                marketTs: q.marketTs,
-                currency: q.currency || 'TRY'
-              };
-              targetPricesRef.current[symbol] = incoming;
-
-              const displayed = pricesRef.current[symbol];
-              const displayedPrice = displayed?.price;
-              const displayedPct = displayed?.dayChangePct;
-
-              if (typeof displayedPrice !== 'number') {
-                immediateUpdates[symbol] = incoming;
-              } else if (incoming.price !== displayedPrice) {
-                transitionsRef.current[symbol] = {
-                  fromPrice: displayedPrice,
-                  toPrice: incoming.price,
-                  fromPct: typeof displayedPct === 'number' ? displayedPct : incoming.dayChangePct,
-                  toPct: incoming.dayChangePct,
-                  target: incoming,
-                  start: Date.now(),
-                  duration: POLL_MS
-                };
-                immediateUpdates[symbol] = {
-                  ...displayed,
-                  symbol,
-                  asOfTs: incoming.asOfTs,
-                  marketTs: incoming.marketTs,
-                  currency: incoming.currency
-                };
-                hasTransition = true;
-
-                flashNext[symbol] = incoming.price > displayedPrice ? 'up' : 'down';
-              } else {
-                immediateUpdates[symbol] = {
-                  ...displayed,
-                  symbol,
-                  asOfTs: incoming.asOfTs,
-                  marketTs: incoming.marketTs,
-                  currency: incoming.currency
-                };
-                timePulsesNext[symbol] = Date.now();
-              }
-              prevPriceRef.current[symbol] = incoming.price;
+          for (let i = 0; i < ts.length; i++) {
+            const t = Number(ts[i]);
+            const rawClose = Number(closes[i]);
+            const rawAdjClose = Number(adjCloses[i]);
+            const c = Number.isFinite(rawClose) ? rawClose : rawAdjClose;
+            if (Number.isFinite(t) && t > 0 && Number.isFinite(c) && !seenTs.has(t)) {
+              seenTs.add(t);
+              points.push({ ts: t, close: c });
             }
-          } catch {
-            await Promise.all(
-              targetSymbols.map(async (symbol) => {
-                try {
-                  const q = await fetchChartMeta(symbol);
-                  const dayChange = q.prevClose ? q.price - q.prevClose : 0;
-                  const dayChangePct = q.prevClose ? (dayChange / q.prevClose) * 100 : 0;
+          }
 
-                  const incoming = {
-                    symbol,
-                    price: toNum(q.price),
-                    dayChangePct: toNum(dayChangePct),
-                    asOfTs: Number(q.asOfTs || Math.floor(Date.now() / 1000)),
-                    marketTs: q.marketTs,
-                    currency: q.currency || 'TRY'
-                  };
-                  targetPricesRef.current[symbol] = incoming;
+          points.sort((a, b) => a.ts - b.ts);
 
-                  const displayed = pricesRef.current[symbol];
-                  const displayedPrice = displayed?.price;
-                  const displayedPct = displayed?.dayChangePct;
+          setChartByKey((prev) => ({
+            ...prev,
+            [key]: {
+              points,
+              symbol,
+              periodId: cfg.id,
+              range: cfg.range,
+              interval: cfg.interval,
+              currency: result?.meta?.currency || 'TRY',
+              asOf: Date.now(),
+            },
+          }));
+        } catch {
+          setChartError('Grafik verisi alınamadı.');
+        } finally {
+          setChartLoading(false);
+        }
+      }, []);
 
-                  if (typeof displayedPrice !== 'number') {
-                    immediateUpdates[symbol] = incoming;
-                  } else if (incoming.price !== displayedPrice) {
-                    transitionsRef.current[symbol] = {
-                      fromPrice: displayedPrice,
-                      toPrice: incoming.price,
-                      fromPct: typeof displayedPct === 'number' ? displayedPct : incoming.dayChangePct,
-                      toPct: incoming.dayChangePct,
-                      target: incoming,
-                      start: Date.now(),
-                      duration: POLL_MS
-                    };
-                    immediateUpdates[symbol] = {
-                      ...displayed,
-                      symbol,
-                      asOfTs: incoming.asOfTs,
-                      marketTs: incoming.marketTs,
-                      currency: incoming.currency
-                    };
-                    hasTransition = true;
+      const formatPrice = useCallback((price, symbol) => {
+        if (typeof price !== 'number') return '—';
+        const animating = Boolean(transitionsRef.current[symbol]);
+        return animating ? price.toFixed(3) : price.toFixed(2);
+      }, []);
 
-                    flashNext[symbol] = incoming.price > displayedPrice ? 'up' : 'down';
-                  } else {
-                    immediateUpdates[symbol] = {
-                      ...displayed,
-                      symbol,
-                      asOfTs: incoming.asOfTs,
-                      marketTs: incoming.marketTs,
-                      currency: incoming.currency
-                    };
-                    timePulsesNext[symbol] = Date.now();
-                  }
+      const formatPct = useCallback((value, symbol) => {
+        if (typeof value !== 'number') return '—';
+        const animating = Boolean(transitionsRef.current[symbol]);
+        const decimals = animating ? 3 : 2;
+        return `${value >= 0 ? '+' : ''}${value.toFixed(decimals)}%`;
+      }, []);
 
-                  prevPriceRef.current[symbol] = incoming.price;
-                } catch {
-                  if (!immediateUpdates[symbol] && pricesRef.current[symbol]) immediateUpdates[symbol] = pricesRef.current[symbol];
-                }
-              })
-            );
-          } finally {
-            refreshInFlightRef.current = false;
+      const getDisplayTs = useCallback((item) => {
+        if (!item) return null;
+        return item.asOfTs || item.marketTs || null;
+      }, []);
+
+      const getLiveDirection = useCallback((symbol) => {
+        const tr = transitionsRef.current[symbol];
+        if (!tr) return '';
+        if (tr.toPrice > tr.fromPrice) return 'live-up';
+        if (tr.toPrice < tr.fromPrice) return 'live-down';
+        return '';
+      }, []);
+
+      const ensureAnimationLoop = useCallback(() => {
+        if (animationIntervalRef.current) return;
+
+        animationIntervalRef.current = setInterval(() => {
+          const now = Date.now();
+          const active = transitionsRef.current;
+          const symbols = Object.keys(active);
+
+          if (!symbols.length) {
+            clearInterval(animationIntervalRef.current);
+            animationIntervalRef.current = null;
+            return;
           }
 
           setPrices((prev) => {
             let changed = false;
-            const merged = { ...prev };
+            const next = { ...prev };
 
-            for (const symbol of Object.keys(immediateUpdates)) {
-              const oldItem = prev[symbol];
-              const newItem = immediateUpdates[symbol];
-              if (
-                !oldItem ||
-                oldItem.price !== newItem.price ||
-                oldItem.dayChangePct !== newItem.dayChangePct ||
-                oldItem.asOfTs !== newItem.asOfTs ||
-                oldItem.marketTs !== newItem.marketTs ||
-                oldItem.currency !== newItem.currency
-              ) {
-                merged[symbol] = newItem;
-                changed = true;
+            for (const symbol of symbols) {
+              const tr = active[symbol];
+              if (!tr) continue;
+
+              const p = Math.min(1, Math.max(0, (now - tr.start) / tr.duration));
+              const eased = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+              const target = targetPricesRef.current[symbol] || tr.target;
+
+              const cur = next[symbol] || target;
+              const basePrice = tr.fromPrice + (tr.toPrice - tr.fromPrice) * eased;
+              const basePct = tr.fromPct + (tr.toPct - tr.fromPct) * eased;
+              const deltaPrice = tr.toPrice - tr.fromPrice;
+              const deltaPct = tr.toPct - tr.fromPct;
+              const jitterWave = Math.sin((now - tr.start) / 220);
+              const jitterDecay = (1 - p) * 0.02;
+              const price = basePrice + deltaPrice * jitterWave * jitterDecay;
+              const dayChangePct = basePct + deltaPct * jitterWave * jitterDecay;
+
+              next[symbol] = {
+                ...cur,
+                symbol,
+                price: toNum(price),
+                dayChangePct: toNum(dayChangePct),
+                asOfTs: target.asOfTs,
+                marketTs: target.marketTs,
+                currency: target.currency
+              };
+              changed = true;
+
+              if (p >= 1) {
+                next[symbol] = { ...target };
+                delete active[symbol];
               }
             }
 
-            return changed ? merged : prev;
+            return changed ? next : prev;
           });
-          setFlashMap((prev) => ({ ...prev, ...flashNext }));
-          if (Object.keys(timePulsesNext).length) {
-            setTimePulseMap((prev) => ({ ...prev, ...timePulsesNext }));
-            setTimeout(() => {
-              setTimePulseMap((prev) => {
-                const cloned = { ...prev };
-                Object.keys(timePulsesNext).forEach((s) => delete cloned[s]);
-                return cloned;
-              });
-            }, 550);
+        }, ANIM_TICK_MS);
+      }, []);
+
+      const computeVisibleSymbols = useCallback((allSymbols) => {
+        if (!allSymbols.length) {
+          visibleSymbolsRef.current = [];
+          return;
+        }
+
+        const wrap = tableWrapRef.current;
+        if (!wrap) {
+          visibleSymbolsRef.current = allSymbols.slice(0, 60);
+          return;
+        }
+
+        const rect = wrap.getBoundingClientRect();
+        const rowHeight = 43;
+        const headHeight = 42;
+        const viewportTop = Math.max(0, -rect.top);
+        const viewportBottom = Math.max(0, Math.min(rect.height, window.innerHeight - rect.top));
+
+        const start = Math.max(0, Math.floor((viewportTop - headHeight) / rowHeight));
+        const end = Math.min(allSymbols.length, Math.ceil((viewportBottom - headHeight) / rowHeight) + 15);
+
+        if (end > start) {
+          visibleSymbolsRef.current = allSymbols.slice(start, end);
+        } else {
+          visibleSymbolsRef.current = allSymbols.slice(0, 60);
+        }
+      }, []);
+
+      useEffect(() => {
+        let mounted = true;
+        let scanPollId = null;
+
+        const syncSymbols = async (forceRefresh = false) => {
+          const payload = await fetchBistSymbols(forceRefresh);
+          if (!mounted) return;
+          if (payload.symbols.length) {
+            setSymbols((prev) => (sameSymbols(prev, payload.symbols) ? prev : payload.symbols));
           }
-          setLastUpdated(new Date());
+          setSymbolsScanning(payload.scanning);
+          setLoadingSymbols(false);
+        };
 
-          if (hasTransition) {
-            ensureAnimationLoop();
-          }
-
-          if (Object.keys(flashNext).length) {
-            setTimeout(() => {
-              setFlashMap((prev) => {
-                const cloned = { ...prev };
-                Object.keys(flashNext).forEach((s) => delete cloned[s]);
-                return cloned;
-              });
-            }, 700);
-          }
-        }, []);
-
-        useEffect(() => {
-          const initialTargets = symbols.slice(0, 220);
-          refreshPrices(initialTargets);
-        }, [symbols]);
-
-        useEffect(() => {
-          if (!marketStatus || !symbols.length) return;
-
-          if (marketStatus.isOpen) {
-            closedSnapshotDoneRef.current = false;
-            return;
-          }
-
-          if (closedSnapshotDoneRef.current) return;
-          closedSnapshotDoneRef.current = true;
-          refreshPrices(symbols);
-        }, [marketStatus, symbols, refreshPrices]);
-
-        useEffect(() => {
-          if (!symbols.length) return;
-          let cancelled = false;
-
-          const preloadAllPrices = async () => {
-            setLoadingAllPrices(true);
-            const batchSize = 220;
-            const concurrency = 4;
-            const chunks = [];
-
-            for (let i = 0; i < symbols.length; i += batchSize) {
-              chunks.push(symbols.slice(i, i + batchSize));
+        (async () => {
+          try {
+            await syncSymbols(true);
+            scanPollId = setInterval(async () => {
+              try {
+                await syncSymbols(false);
+              } catch { }
+            }, 15000);
+          } catch {
+            if (mounted) {
+              setError('Sembol keşfi sırasında hata oluştu, yedek liste gösteriliyor.');
+              setLoadingSymbols(false);
             }
+          }
+        })();
 
-            let idx = 0;
-            const worker = async () => {
-              while (!cancelled && idx < chunks.length) {
-                const current = chunks[idx++];
-                await refreshPrices(current);
-              }
+        return () => {
+          mounted = false;
+          if (scanPollId) clearInterval(scanPollId);
+        };
+      }, []);
+
+      useEffect(() => {
+        let active = true;
+
+        const fetchMarketStatus = async () => {
+          try {
+            const res = await fetch('/api/market-status');
+            if (!res.ok) return;
+            const data = await res.json();
+            if (active) setMarketStatus(data);
+          } catch { }
+        };
+
+        fetchMarketStatus();
+        const id = setInterval(fetchMarketStatus, 30000);
+        return () => {
+          active = false;
+          clearInterval(id);
+        };
+      }, []);
+
+      const fetchPricesSnapshot = useCallback(async (targetSymbols) => {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 4500);
+        const res = await fetch('/api/prices', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ symbols: targetSymbols, range: '1d', interval: '5m' }),
+          signal: controller.signal
+        });
+        clearTimeout(timer);
+        if (!res.ok) throw new Error(`prices ${res.status}`);
+        const payload = await res.json();
+        return Array.isArray(payload?.items) ? payload.items : [];
+      }, []);
+
+      const refreshPrices = useCallback(async (targetSymbols) => {
+        if (!targetSymbols.length) return;
+        if (refreshInFlightRef.current) return;
+        refreshInFlightRef.current = true;
+
+        const immediateUpdates = {};
+        const flashNext = {};
+        const timePulsesNext = {};
+        let hasTransition = false;
+
+        try {
+          const items = await fetchPricesSnapshot(targetSymbols);
+
+          for (const q of items) {
+            const symbol = q.symbol;
+            if (!symbol) continue;
+
+            const dayChange = q.prevClose ? q.price - q.prevClose : 0;
+            const dayChangePct = q.prevClose ? (dayChange / q.prevClose) * 100 : 0;
+
+            const incoming = {
+              symbol,
+              price: toNum(q.price),
+              dayChangePct: toNum(dayChangePct),
+              asOfTs: Number(q.asOfTs || Math.floor(Date.now() / 1000)),
+              marketTs: q.marketTs,
+              currency: q.currency || 'TRY'
             };
+            targetPricesRef.current[symbol] = incoming;
 
-            await Promise.all(Array.from({ length: concurrency }, () => worker()));
+            const displayed = pricesRef.current[symbol];
+            const displayedPrice = displayed?.price;
+            const displayedPct = displayed?.dayChangePct;
 
-            if (!cancelled) {
-              await refreshPrices(symbols);
+            if (typeof displayedPrice !== 'number') {
+              immediateUpdates[symbol] = incoming;
+            } else if (incoming.price !== displayedPrice) {
+              transitionsRef.current[symbol] = {
+                fromPrice: displayedPrice,
+                toPrice: incoming.price,
+                fromPct: typeof displayedPct === 'number' ? displayedPct : incoming.dayChangePct,
+                toPct: incoming.dayChangePct,
+                target: incoming,
+                start: Date.now(),
+                duration: POLL_MS
+              };
+              immediateUpdates[symbol] = {
+                ...displayed,
+                symbol,
+                asOfTs: incoming.asOfTs,
+                marketTs: incoming.marketTs,
+                currency: incoming.currency
+              };
+              hasTransition = true;
+
+              flashNext[symbol] = incoming.price > displayedPrice ? 'up' : 'down';
+            } else {
+              immediateUpdates[symbol] = {
+                ...displayed,
+                symbol,
+                asOfTs: incoming.asOfTs,
+                marketTs: incoming.marketTs,
+                currency: incoming.currency
+              };
+              timePulsesNext[symbol] = Date.now();
             }
-            if (!cancelled) setLoadingAllPrices(false);
-          };
+            prevPriceRef.current[symbol] = incoming.price;
+          }
+        } catch {
+          await Promise.all(
+            targetSymbols.map(async (symbol) => {
+              try {
+                const q = await fetchChartMeta(symbol);
+                const dayChange = q.prevClose ? q.price - q.prevClose : 0;
+                const dayChangePct = q.prevClose ? (dayChange / q.prevClose) * 100 : 0;
 
-          preloadAllPrices();
+                const incoming = {
+                  symbol,
+                  price: toNum(q.price),
+                  dayChangePct: toNum(dayChangePct),
+                  asOfTs: Number(q.asOfTs || Math.floor(Date.now() / 1000)),
+                  marketTs: q.marketTs,
+                  currency: q.currency || 'TRY'
+                };
+                targetPricesRef.current[symbol] = incoming;
 
-          return () => {
-            cancelled = true;
-            setLoadingAllPrices(false);
-          };
-        }, [symbols, refreshPrices]);
+                const displayed = pricesRef.current[symbol];
+                const displayedPrice = displayed?.price;
+                const displayedPct = displayed?.dayChangePct;
 
-        useEffect(() => {
-          if (!selectedSymbol) return;
-          setChartPeriod('daily');
-          let cancelled = false;
+                if (typeof displayedPrice !== 'number') {
+                  immediateUpdates[symbol] = incoming;
+                } else if (incoming.price !== displayedPrice) {
+                  transitionsRef.current[symbol] = {
+                    fromPrice: displayedPrice,
+                    toPrice: incoming.price,
+                    fromPct: typeof displayedPct === 'number' ? displayedPct : incoming.dayChangePct,
+                    toPct: incoming.dayChangePct,
+                    target: incoming,
+                    start: Date.now(),
+                    duration: POLL_MS
+                  };
+                  immediateUpdates[symbol] = {
+                    ...displayed,
+                    symbol,
+                    asOfTs: incoming.asOfTs,
+                    marketTs: incoming.marketTs,
+                    currency: incoming.currency
+                  };
+                  hasTransition = true;
 
-          const loadFundamentals = async () => {
-            setFundamentalsLoading(true);
-            setFundamentalsError('');
-            try {
-              const res = await fetch(`/api/fundamentals?symbol=${encodeURIComponent(selectedSymbol)}`);
-              if (!res.ok) throw new Error(`fundamentals ${res.status}`);
-              const payload = await res.json();
-              if (cancelled) return;
+                  flashNext[symbol] = incoming.price > displayedPrice ? 'up' : 'down';
+                } else {
+                  immediateUpdates[symbol] = {
+                    ...displayed,
+                    symbol,
+                    asOfTs: incoming.asOfTs,
+                    marketTs: incoming.marketTs,
+                    currency: incoming.currency
+                  };
+                  timePulsesNext[symbol] = Date.now();
+                }
 
-              const info = payload?.data || null;
-              setFundamentalsBySymbol((prev) => ({
-                ...prev,
-                [selectedSymbol]: {
-                  status: info?.status || (payload?.running ? 'loading' : 'missing'),
-                  url: info?.url || null,
-                  metrics: info?.metrics || {},
-                  fetchedAt: payload?.fetchedAt || null,
-                  running: Boolean(payload?.running),
-                  error: payload?.lastError || info?.error || null,
-                },
-              }));
-            } catch (err) {
-              if (cancelled) return;
-              setFundamentalsError('Fundamentals verisi alınamadı.');
-            } finally {
-              if (!cancelled) setFundamentalsLoading(false);
-            }
-          };
-
-          loadFundamentals();
-          return () => {
-            cancelled = true;
-          };
-        }, [selectedSymbol]);
-
-        useEffect(() => {
-          const activeSymbol = toBistSymbol(selectedSymbol);
-          if (!activeSymbol || !chartPeriod) return;
-          const key = `${activeSymbol}:${chartPeriod}`;
-          if (chartByKey[key]?.points?.length) return;
-          fetchChartSeries(activeSymbol, chartPeriod);
-        }, [selectedSymbol, chartPeriod, chartByKey, fetchChartSeries]);
-
-        useEffect(() => {
-          setHoveredPoint(null);
-        }, [selectedSymbol, chartPeriod]);
-
-        const chartGeometry = useMemo(() => {
-          const activeSymbol = toBistSymbol(selectedSymbol);
-          const activeChart = activeSymbol ? chartByKey[`${activeSymbol}:${chartPeriod}`] : null;
-          const points = activeChart?.points || [];
-          if (!points.length) return null;
-
-          const width = 1000;
-          const height = 320;
-          const padX = 14;
-          const padY = 12;
-          const plotW = width - padX * 2;
-          const plotH = height - padY * 2;
-
-          const min = Math.min(...points.map((p) => p.close));
-          const max = Math.max(...points.map((p) => p.close));
-          const span = max - min || 1;
-
-          const coords = points.map((p, idx) => {
-            const x = padX + (idx / Math.max(points.length - 1, 1)) * plotW;
-            const y = padY + (1 - (p.close - min) / span) * plotH;
-            return { ...p, x, y };
-          });
-
-          const linePath = coords
-            .map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`)
-            .join(' ');
-          const areaPath = `${linePath} L ${coords[coords.length - 1].x.toFixed(2)} ${(height - padY).toFixed(2)} L ${coords[0].x.toFixed(2)} ${(height - padY).toFixed(2)} Z`;
-
-          return { width, height, padX, padY, plotW, plotH, coords, linePath, areaPath };
-        }, [selectedSymbol, chartByKey, chartPeriod]);
-
-        const onChartMouseMove = useCallback(
-          (e) => {
-            if (!chartGeometry || !chartSvgWrapRef.current) return;
-            const rect = chartSvgWrapRef.current.getBoundingClientRect();
-            const relX = ((e.clientX - rect.left) / rect.width) * chartGeometry.width;
-            let nearest = null;
-            let best = Number.POSITIVE_INFINITY;
-            for (const p of chartGeometry.coords) {
-              const d = Math.abs(p.x - relX);
-              if (d < best) {
-                best = d;
-                nearest = p;
+                prevPriceRef.current[symbol] = incoming.price;
+              } catch {
+                if (!immediateUpdates[symbol] && pricesRef.current[symbol]) immediateUpdates[symbol] = pricesRef.current[symbol];
               }
+            })
+          );
+        } finally {
+          refreshInFlightRef.current = false;
+        }
+
+        setPrices((prev) => {
+          let changed = false;
+          const merged = { ...prev };
+
+          for (const symbol of Object.keys(immediateUpdates)) {
+            const oldItem = prev[symbol];
+            const newItem = immediateUpdates[symbol];
+            if (
+              !oldItem ||
+              oldItem.price !== newItem.price ||
+              oldItem.dayChangePct !== newItem.dayChangePct ||
+              oldItem.asOfTs !== newItem.asOfTs ||
+              oldItem.marketTs !== newItem.marketTs ||
+              oldItem.currency !== newItem.currency
+            ) {
+              merged[symbol] = newItem;
+              changed = true;
             }
-            setHoveredPoint(nearest);
-          },
-          [chartGeometry]
-        );
+          }
 
-        const onChartMouseLeave = useCallback(() => {
-          setHoveredPoint(null);
-        }, []);
+          return changed ? merged : prev;
+        });
+        setFlashMap((prev) => ({ ...prev, ...flashNext }));
+        if (Object.keys(timePulsesNext).length) {
+          setTimePulseMap((prev) => ({ ...prev, ...timePulsesNext }));
+          setTimeout(() => {
+            setTimePulseMap((prev) => {
+              const cloned = { ...prev };
+              Object.keys(timePulsesNext).forEach((s) => delete cloned[s]);
+              return cloned;
+            });
+          }, 550);
+        }
+        setLastUpdated(new Date());
 
-        useEffect(() => {
-          if (!marketStatus?.isOpen) return;
+        if (hasTransition) {
+          ensureAnimationLoop();
+        }
 
-          const id = setInterval(() => {
-            const dynamicChunkSize = 260;
-            const total = symbols.length;
-            const start = pollCursorRef.current % Math.max(total, 1);
-            const rotating = [];
+        if (Object.keys(flashNext).length) {
+          setTimeout(() => {
+            setFlashMap((prev) => {
+              const cloned = { ...prev };
+              Object.keys(flashNext).forEach((s) => delete cloned[s]);
+              return cloned;
+            });
+          }, 700);
+        }
+      }, []);
 
-            for (let i = 0; i < Math.min(dynamicChunkSize, total); i++) {
-              rotating.push(symbols[(start + i) % total]);
+      useEffect(() => {
+        const initialTargets = symbols.slice(0, 220);
+        refreshPrices(initialTargets);
+      }, [symbols]);
+
+      useEffect(() => {
+        if (!marketStatus || !symbols.length) return;
+
+        if (marketStatus.isOpen) {
+          closedSnapshotDoneRef.current = false;
+          return;
+        }
+
+        refreshPrices(symbols);
+      }, [marketStatus, symbols, refreshPrices]);
+
+      useEffect(() => {
+        if (!symbols.length) return;
+        let cancelled = false;
+
+        const preloadAllPrices = async () => {
+          setLoadingAllPrices(true);
+          const batchSize = 220;
+          const concurrency = 4;
+          const chunks = [];
+
+          for (let i = 0; i < symbols.length; i += batchSize) {
+            chunks.push(symbols.slice(i, i + batchSize));
+          }
+
+          let idx = 0;
+          const worker = async () => {
+            while (!cancelled && idx < chunks.length) {
+              const current = chunks[idx++];
+              await refreshPrices(current);
             }
-
-            pollCursorRef.current = start + dynamicChunkSize;
-            const visible = visibleSymbolsRef.current || [];
-            const anchors = symbols.slice(0, 80);
-            const pollTargets = Array.from(new Set([...favorites, ...visible, ...anchors, ...rotating]));
-            refreshPrices(pollTargets);
-          }, POLL_MS);
-          return () => clearInterval(id);
-        }, [favorites, symbols, marketStatus, refreshPrices]);
-
-        const filteredSymbols = useMemo(() => {
-          const q = search.trim().toUpperCase();
-          if (!q) return symbols;
-          return symbols.filter((s) => s.includes(q));
-        }, [symbols, search]);
-
-        useEffect(() => {
-          computeVisibleSymbols(filteredSymbols);
-          const onScroll = () => computeVisibleSymbols(filteredSymbols);
-          const onResize = () => computeVisibleSymbols(filteredSymbols);
-          window.addEventListener('scroll', onScroll, { passive: true });
-          window.addEventListener('resize', onResize);
-          return () => {
-            window.removeEventListener('scroll', onScroll);
-            window.removeEventListener('resize', onResize);
           };
-        }, [filteredSymbols, computeVisibleSymbols]);
 
-        const favoriteRows = useMemo(() => favorites.map((s) => prices[s]).filter(Boolean), [favorites, prices]);
-        const marketBadge = useMemo(() => {
-          if (!marketStatus) return 'Piyasa: durum alınıyor • Güncelleme: 5 sn • Veri: Delayed';
-          const state = marketStatus.isOpen ? 'Piyasa: AÇIK' : 'Piyasa: KAPALI';
-          const session = marketStatus.session ? `${marketStatus.session.open}-${marketStatus.session.close}` : '—';
-          const reasonMap = {
-            open: 'Seans içi',
-            before_open: 'Açılış öncesi',
-            after_close: 'Kapanış sonrası',
-            half_day: marketStatus.sessionLabel ? `Yarım gün (${marketStatus.sessionLabel})` : 'Yarım gün seans',
-            half_day_closed: marketStatus.sessionLabel ? `Yarım gün kapanış (${marketStatus.sessionLabel})` : 'Yarım gün kapanış',
-            weekend: 'Hafta sonu',
-            holiday: marketStatus.holidayName ? `Resmi tatil (${marketStatus.holidayName})` : 'Resmi tatil',
-            manual_closed: marketStatus.sessionLabel ? `Kapalı (${marketStatus.sessionLabel})` : 'Manuel kapalı',
-            unexpected_halt: 'Beklenmedik kapanış / işlem duruşu'
-          };
-          const reason = reasonMap[marketStatus.reason] || marketStatus.reason;
-          return `${state} • ${reason} • Seans: ${session} • Güncelleme: 5 sn • Veri: Delayed`;
-        }, [marketStatus]);
+          await Promise.all(Array.from({ length: concurrency }, () => worker()));
 
-        const selectedBistSymbol = useMemo(() => (selectedSymbol ? toBistSymbol(selectedSymbol) : ''), [selectedSymbol]);
-        const selectedPrice = selectedBistSymbol ? prices[selectedBistSymbol] : null;
-        const selectedFundamentals = selectedSymbol ? fundamentalsBySymbol[selectedSymbol] : null;
-        const selectedIsFavorite = selectedBistSymbol ? favorites.includes(selectedBistSymbol) : false;
-        const selectedChart = useMemo(() => {
-          if (!selectedBistSymbol) return null;
-          return chartByKey[`${selectedBistSymbol}:${chartPeriod}`] || null;
-        }, [selectedBistSymbol, chartPeriod, chartByKey]);
+          if (!cancelled) {
+            await refreshPrices(symbols);
+          }
+          if (!cancelled) setLoadingAllPrices(false);
+        };
 
-        return (
-          <div className="container">
-            <header className="header">
-              <div>
-                <h1 className="title">BIST Hisse İzleme</h1>
-                <p className="subtitle">BIST sembolleri, arama, yıldızlama ve 5 saniye fiyat güncellemesi</p>
-              </div>
-              <div className="badge">{marketBadge}</div>
-            </header>
+        preloadAllPrices();
 
-            {!selectedSymbol && (
+        return () => {
+          cancelled = true;
+          setLoadingAllPrices(false);
+        };
+      }, [symbols, refreshPrices]);
+
+      useEffect(() => {
+        if (!selectedSymbol) return;
+        setChartPeriod('daily');
+        let cancelled = false;
+
+        const loadFundamentals = async () => {
+          setFundamentalsLoading(true);
+          setFundamentalsError('');
+          try {
+            const res = await fetch(`/api/fundamentals?symbol=${encodeURIComponent(selectedSymbol)}`);
+            if (!res.ok) throw new Error(`fundamentals ${res.status}`);
+            const payload = await res.json();
+            if (cancelled) return;
+
+            const info = payload?.data || null;
+            setFundamentalsBySymbol((prev) => ({
+              ...prev,
+              [selectedSymbol]: {
+                status: info?.status || (payload?.running ? 'loading' : 'missing'),
+                url: info?.url || null,
+                metrics: info?.metrics || {},
+                fetchedAt: payload?.fetchedAt || null,
+                running: Boolean(payload?.running),
+                error: payload?.lastError || info?.error || null,
+              },
+            }));
+          } catch (err) {
+            if (cancelled) return;
+            setFundamentalsError('Fundamentals verisi alınamadı.');
+          } finally {
+            if (!cancelled) setFundamentalsLoading(false);
+          }
+        };
+
+        loadFundamentals();
+        return () => {
+          cancelled = true;
+        };
+      }, [selectedSymbol]);
+
+      useEffect(() => {
+        const activeSymbol = toBistSymbol(selectedSymbol);
+        if (!activeSymbol || !chartPeriod) return;
+        const key = `${activeSymbol}:${chartPeriod}`;
+        if (chartByKey[key]?.points?.length) return;
+        fetchChartSeries(activeSymbol, chartPeriod);
+      }, [selectedSymbol, chartPeriod, chartByKey, fetchChartSeries]);
+
+      useEffect(() => {
+        setHoveredPoint(null);
+      }, [selectedSymbol, chartPeriod]);
+
+      const chartGeometry = useMemo(() => {
+        const activeSymbol = toBistSymbol(selectedSymbol);
+        const activeChart = activeSymbol ? chartByKey[`${activeSymbol}:${chartPeriod}`] : null;
+        const points = activeChart?.points || [];
+        if (!points.length) return null;
+
+        const width = 1000;
+        const height = 320;
+        const padX = 14;
+        const padY = 12;
+        const plotW = width - padX * 2;
+        const plotH = height - padY * 2;
+
+        const min = Math.min(...points.map((p) => p.close));
+        const max = Math.max(...points.map((p) => p.close));
+        const span = max - min || 1;
+
+        const coords = points.map((p, idx) => {
+          const x = padX + (idx / Math.max(points.length - 1, 1)) * plotW;
+          const y = padY + (1 - (p.close - min) / span) * plotH;
+          return { ...p, x, y };
+        });
+
+        const linePath = coords
+          .map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`)
+          .join(' ');
+        const areaPath = `${linePath} L ${coords[coords.length - 1].x.toFixed(2)} ${(height - padY).toFixed(2)} L ${coords[0].x.toFixed(2)} ${(height - padY).toFixed(2)} Z`;
+
+        return { width, height, padX, padY, plotW, plotH, coords, linePath, areaPath };
+      }, [selectedSymbol, chartByKey, chartPeriod]);
+
+      const onChartMouseMove = useCallback(
+        (e) => {
+          if (!chartGeometry || !chartSvgWrapRef.current) return;
+          const rect = chartSvgWrapRef.current.getBoundingClientRect();
+          const relX = ((e.clientX - rect.left) / rect.width) * chartGeometry.width;
+          let nearest = null;
+          let best = Number.POSITIVE_INFINITY;
+          for (const p of chartGeometry.coords) {
+            const d = Math.abs(p.x - relX);
+            if (d < best) {
+              best = d;
+              nearest = p;
+            }
+          }
+          setHoveredPoint(nearest);
+        },
+        [chartGeometry]
+      );
+
+      const onChartMouseLeave = useCallback(() => {
+        setHoveredPoint(null);
+      }, []);
+
+      useEffect(() => {
+        if (!symbols.length) return;
+
+        const interval = marketStatus?.isOpen ? POLL_MS : 30000;
+
+        const id = setInterval(() => {
+          const dynamicChunkSize = 260;
+          const total = symbols.length;
+          const start = pollCursorRef.current % Math.max(total, 1);
+          const rotating = [];
+
+          for (let i = 0; i < Math.min(dynamicChunkSize, total); i++) {
+            rotating.push(symbols[(start + i) % total]);
+          }
+
+          pollCursorRef.current = start + dynamicChunkSize;
+          const visible = visibleSymbolsRef.current || [];
+          const anchors = symbols.slice(0, 80);
+          const pollTargets = Array.from(new Set([...favorites, ...visible, ...anchors, ...rotating]));
+          refreshPrices(pollTargets);
+        }, interval);
+        return () => clearInterval(id);
+      }, [favorites, symbols, marketStatus, refreshPrices]);
+
+      const filteredSymbols = useMemo(() => {
+        const q = search.trim().toUpperCase();
+        if (!q) return symbols;
+        return symbols.filter((s) => s.includes(q));
+      }, [symbols, search]);
+
+      useEffect(() => {
+        computeVisibleSymbols(filteredSymbols);
+        const onScroll = () => computeVisibleSymbols(filteredSymbols);
+        const onResize = () => computeVisibleSymbols(filteredSymbols);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onResize);
+        return () => {
+          window.removeEventListener('scroll', onScroll);
+          window.removeEventListener('resize', onResize);
+        };
+      }, [filteredSymbols, computeVisibleSymbols]);
+
+      const favoriteRows = useMemo(() => favorites.map((s) => prices[s]).filter(Boolean), [favorites, prices]);
+      const marketBadge = useMemo(() => {
+        if (!marketStatus) return 'Piyasa: durum alınıyor • Güncelleme: 5 sn • Veri: Delayed';
+        const state = marketStatus.isOpen ? 'Piyasa: AÇIK' : 'Piyasa: KAPALI';
+        const session = marketStatus.session ? `${marketStatus.session.open}-${marketStatus.session.close}` : '—';
+        const reasonMap = {
+          open: 'Seans içi',
+          before_open: 'Açılış öncesi',
+          after_close: 'Kapanış sonrası',
+          half_day: marketStatus.sessionLabel ? `Yarım gün (${marketStatus.sessionLabel})` : 'Yarım gün seans',
+          half_day_closed: marketStatus.sessionLabel ? `Yarım gün kapanış (${marketStatus.sessionLabel})` : 'Yarım gün kapanış',
+          weekend: 'Hafta sonu',
+          holiday: marketStatus.holidayName ? `Resmi tatil (${marketStatus.holidayName})` : 'Resmi tatil',
+          manual_closed: marketStatus.sessionLabel ? `Kapalı (${marketStatus.sessionLabel})` : 'Manuel kapalı',
+          unexpected_halt: 'Beklenmedik kapanış / işlem duruşu'
+        };
+        const reason = reasonMap[marketStatus.reason] || marketStatus.reason;
+        return `${state} • ${reason} • Seans: ${session} • Güncelleme: 5 sn • Veri: Delayed`;
+      }, [marketStatus]);
+
+      const selectedBistSymbol = useMemo(() => (selectedSymbol ? toBistSymbol(selectedSymbol) : ''), [selectedSymbol]);
+      const selectedPrice = selectedBistSymbol ? prices[selectedBistSymbol] : null;
+      const selectedFundamentals = selectedSymbol ? fundamentalsBySymbol[selectedSymbol] : null;
+      const selectedIsFavorite = selectedBistSymbol ? favorites.includes(selectedBistSymbol) : false;
+      const selectedChart = useMemo(() => {
+        if (!selectedBistSymbol) return null;
+        return chartByKey[`${selectedBistSymbol}:${chartPeriod}`] || null;
+      }, [selectedBistSymbol, chartPeriod, chartByKey]);
+
+      return (
+        <div className="container">
+          <header className="header">
+            <div>
+              <h1 className="title">BIST Hisse İzleme</h1>
+              <p className="subtitle">BIST sembolleri, arama, yıldızlama ve 5 saniye fiyat güncellemesi</p>
+            </div>
+            <div className="badge">{marketBadge}</div>
+          </header>
+
+          {!selectedSymbol && (
             <section className="card search-wrap">
               <input
                 className="search-input"
@@ -1441,133 +1450,133 @@
               )}
               {error && <p className="footer-note">{error}</p>}
             </section>
-            )}
+          )}
 
-            {selectedSymbol ? (
-              <section className="card favorites detail-wrap">
-                <div className="row">
-                  <h2 className="section-title" style={{ margin: 0 }}>Hisse Detay • {selectedSymbol}</h2>
-                  <button className="back-btn" onClick={closeSymbolDetail}>← Listeye Dön</button>
+          {selectedSymbol ? (
+            <section className="card favorites detail-wrap">
+              <div className="row">
+                <h2 className="section-title" style={{ margin: 0 }}>Hisse Detay • {selectedSymbol}</h2>
+                <button className="back-btn" onClick={closeSymbolDetail}>← Listeye Dön</button>
+              </div>
+
+              <div className="fav-grid">
+                <div className="fav-item">
+                  <div className="row" style={{ marginBottom: 6 }}>
+                    <span className="symbol">{selectedSymbol}</span>
+                    <button
+                      className={selectedIsFavorite ? 'star-btn active' : 'star-btn'}
+                      onClick={() => selectedBistSymbol && toggle(selectedBistSymbol)}
+                      title={selectedIsFavorite ? 'Yıldızdan çıkar' : 'Yıldızla'}
+                    >
+                      ★
+                    </button>
+                  </div>
+                  <div className="row">
+                    <span className="price-pack">
+                      <span className="price-value">{selectedPrice ? formatPrice(selectedPrice.price, selectedBistSymbol) : '—'}</span>
+                      <span className="price-ccy">{selectedPrice?.currency || 'TRY'}</span>
+                    </span>
+                    <span className={typeof selectedPrice?.dayChangePct === 'number' ? (selectedPrice.dayChangePct >= 0 ? 'chg-up' : 'chg-down') : ''}>
+                      {typeof selectedPrice?.dayChangePct === 'number' ? formatPct(selectedPrice.dayChangePct, selectedBistSymbol) : '—'}
+                    </span>
+                  </div>
+                  <div className="muted" style={{ marginTop: 6 }}>
+                    Zaman: {getDisplayTs(selectedPrice) ? new Date(getDisplayTs(selectedPrice) * 1000).toLocaleTimeString('tr-TR') : '—'}
+                  </div>
                 </div>
+              </div>
 
-                <div className="fav-grid">
-                  <div className="fav-item">
-                    <div className="row" style={{ marginBottom: 6 }}>
-                      <span className="symbol">{selectedSymbol}</span>
+              <div className="card" style={{ padding: 14 }}>
+                <h3 className="section-title">Fiyat Grafiği</h3>
+                <div className="chart-wrap">
+                  <div className="chart-toolbar">
+                    {CHART_PERIODS.map((p) => (
                       <button
-                        className={selectedIsFavorite ? 'star-btn active' : 'star-btn'}
-                        onClick={() => selectedBistSymbol && toggle(selectedBistSymbol)}
-                        title={selectedIsFavorite ? 'Yıldızdan çıkar' : 'Yıldızla'}
+                        key={p.id}
+                        className={chartPeriod === p.id ? 'chart-btn active' : 'chart-btn'}
+                        onClick={() => {
+                          setChartPeriod(p.id);
+                          if (selectedBistSymbol) fetchChartSeries(selectedBistSymbol, p.id);
+                        }}
                       >
-                        ★
+                        {p.label}
                       </button>
-                    </div>
-                    <div className="row">
-                      <span className="price-pack">
-                        <span className="price-value">{selectedPrice ? formatPrice(selectedPrice.price, selectedBistSymbol) : '—'}</span>
-                        <span className="price-ccy">{selectedPrice?.currency || 'TRY'}</span>
-                      </span>
-                      <span className={typeof selectedPrice?.dayChangePct === 'number' ? (selectedPrice.dayChangePct >= 0 ? 'chg-up' : 'chg-down') : ''}>
-                        {typeof selectedPrice?.dayChangePct === 'number' ? formatPct(selectedPrice.dayChangePct, selectedBistSymbol) : '—'}
-                      </span>
-                    </div>
-                    <div className="muted" style={{ marginTop: 6 }}>
-                      Zaman: {getDisplayTs(selectedPrice) ? new Date(getDisplayTs(selectedPrice) * 1000).toLocaleTimeString('tr-TR') : '—'}
-                    </div>
+                    ))}
                   </div>
-                </div>
 
-                <div className="card" style={{ padding: 14 }}>
-                  <h3 className="section-title">Fiyat Grafiği</h3>
-                  <div className="chart-wrap">
-                    <div className="chart-toolbar">
-                      {CHART_PERIODS.map((p) => (
-                        <button
-                          key={p.id}
-                          className={chartPeriod === p.id ? 'chart-btn active' : 'chart-btn'}
-                          onClick={() => {
-                            setChartPeriod(p.id);
-                            if (selectedBistSymbol) fetchChartSeries(selectedBistSymbol, p.id);
-                          }}
-                        >
-                          {p.label}
-                        </button>
-                      ))}
-                    </div>
-
-                    {chartLoading && <p className="muted">Grafik yükleniyor...</p>}
-                    {!chartLoading && chartError && <p className="muted">{chartError}</p>}
-                    {!chartLoading && !chartError && selectedChart?.points?.length > 1 && (
-                      <>
-                        <div className="chart-canvas-wrap" ref={chartSvgWrapRef} onMouseMove={onChartMouseMove} onMouseLeave={onChartMouseLeave}>
-                          {chartGeometry && (
-                            <svg className="chart-svg" viewBox={`0 0 ${chartGeometry.width} ${chartGeometry.height}`} preserveAspectRatio="none">
-                              <line className="chart-grid" x1={chartGeometry.padX} y1={chartGeometry.padY} x2={chartGeometry.width - chartGeometry.padX} y2={chartGeometry.padY} />
-                              <line className="chart-grid" x1={chartGeometry.padX} y1={chartGeometry.padY + chartGeometry.plotH * 0.33} x2={chartGeometry.width - chartGeometry.padX} y2={chartGeometry.padY + chartGeometry.plotH * 0.33} />
-                              <line className="chart-grid" x1={chartGeometry.padX} y1={chartGeometry.padY + chartGeometry.plotH * 0.66} x2={chartGeometry.width - chartGeometry.padX} y2={chartGeometry.padY + chartGeometry.plotH * 0.66} />
-                              <line className="chart-grid" x1={chartGeometry.padX} y1={chartGeometry.height - chartGeometry.padY} x2={chartGeometry.width - chartGeometry.padX} y2={chartGeometry.height - chartGeometry.padY} />
-                              <path className="chart-area" d={chartGeometry.areaPath} />
-                              <path className="chart-line" d={chartGeometry.linePath} />
-                              {hoveredPoint && (
-                                <>
-                                  <line className="chart-crosshair" x1={hoveredPoint.x} y1={chartGeometry.padY} x2={hoveredPoint.x} y2={chartGeometry.height - chartGeometry.padY} />
-                                  <line className="chart-crosshair" x1={chartGeometry.padX} y1={hoveredPoint.y} x2={chartGeometry.width - chartGeometry.padX} y2={hoveredPoint.y} />
-                                  <circle className="chart-hover-dot" cx={hoveredPoint.x} cy={hoveredPoint.y} r="4" />
-                                </>
-                              )}
-                            </svg>
-                          )}
-                          {hoveredPoint && chartGeometry && (
-                            <div
-                              className="chart-tooltip"
-                              style={{
-                                display: 'block',
-                                left: `${Math.min(((hoveredPoint.x / chartGeometry.width) * 100) + 1, 82)}%`,
-                                top: `${Math.max(((hoveredPoint.y / chartGeometry.height) * 100) - 18, 4)}%`,
-                              }}
-                            >
-                              <div className="tp-price">{formatRatio(hoveredPoint.close, 2)} {selectedChart.currency || 'TRY'}</div>
-                              <div>{formatChartDate(hoveredPoint.ts, chartPeriod)}</div>
-                            </div>
-                          )}
-                        </div>
-                        <div className="muted">
-                          Son: {formatRatio(selectedChart.points[selectedChart.points.length - 1]?.close, 2)} {selectedChart.currency || 'TRY'}
-                        </div>
-                      </>
-                    )}
-                    {!chartLoading && !chartError && (!selectedChart || selectedChart?.points?.length <= 1) && (
-                      <p className="muted">Grafik verisi bulunamadı.</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="card" style={{ padding: 14 }}>
-                  <h3 className="section-title">Fundamentals (Investing)</h3>
-                  {fundamentalsLoading && <p className="muted">Fundamentals yükleniyor...</p>}
-                  {fundamentalsError && <p className="muted">{fundamentalsError}</p>}
-                  {!fundamentalsLoading && !fundamentalsError && (
+                  {chartLoading && <p className="muted">Grafik yükleniyor...</p>}
+                  {!chartLoading && chartError && <p className="muted">{chartError}</p>}
+                  {!chartLoading && !chartError && selectedChart?.points?.length > 1 && (
                     <>
-                      <div className="muted" style={{ marginBottom: 10 }}>
-                        Son çekim: {selectedFundamentals?.fetchedAt ? new Date(selectedFundamentals.fetchedAt).toLocaleString('tr-TR') : '—'}
-                        {selectedFundamentals?.running ? ' • Arka planda güncelleniyor' : ''}
-                      </div>
-                      <div className="detail-grid">
-                        {FUNDAMENTAL_FIELDS.map((field) => (
-                          <div className="detail-item" key={field.key}>
-                            <div className="detail-label">{field.label}</div>
-                            <div className="detail-value">{formatFundamentalValue(field.key, selectedFundamentals?.metrics?.[field.key])}</div>
+                      <div className="chart-canvas-wrap" ref={chartSvgWrapRef} onMouseMove={onChartMouseMove} onMouseLeave={onChartMouseLeave}>
+                        {chartGeometry && (
+                          <svg className="chart-svg" viewBox={`0 0 ${chartGeometry.width} ${chartGeometry.height}`} preserveAspectRatio="none">
+                            <line className="chart-grid" x1={chartGeometry.padX} y1={chartGeometry.padY} x2={chartGeometry.width - chartGeometry.padX} y2={chartGeometry.padY} />
+                            <line className="chart-grid" x1={chartGeometry.padX} y1={chartGeometry.padY + chartGeometry.plotH * 0.33} x2={chartGeometry.width - chartGeometry.padX} y2={chartGeometry.padY + chartGeometry.plotH * 0.33} />
+                            <line className="chart-grid" x1={chartGeometry.padX} y1={chartGeometry.padY + chartGeometry.plotH * 0.66} x2={chartGeometry.width - chartGeometry.padX} y2={chartGeometry.padY + chartGeometry.plotH * 0.66} />
+                            <line className="chart-grid" x1={chartGeometry.padX} y1={chartGeometry.height - chartGeometry.padY} x2={chartGeometry.width - chartGeometry.padX} y2={chartGeometry.height - chartGeometry.padY} />
+                            <path className="chart-area" d={chartGeometry.areaPath} />
+                            <path className="chart-line" d={chartGeometry.linePath} />
+                            {hoveredPoint && (
+                              <>
+                                <line className="chart-crosshair" x1={hoveredPoint.x} y1={chartGeometry.padY} x2={hoveredPoint.x} y2={chartGeometry.height - chartGeometry.padY} />
+                                <line className="chart-crosshair" x1={chartGeometry.padX} y1={hoveredPoint.y} x2={chartGeometry.width - chartGeometry.padX} y2={hoveredPoint.y} />
+                                <circle className="chart-hover-dot" cx={hoveredPoint.x} cy={hoveredPoint.y} r="4" />
+                              </>
+                            )}
+                          </svg>
+                        )}
+                        {hoveredPoint && chartGeometry && (
+                          <div
+                            className="chart-tooltip"
+                            style={{
+                              display: 'block',
+                              left: `${Math.min(((hoveredPoint.x / chartGeometry.width) * 100) + 1, 82)}%`,
+                              top: `${Math.max(((hoveredPoint.y / chartGeometry.height) * 100) - 18, 4)}%`,
+                            }}
+                          >
+                            <div className="tp-price">{formatRatio(hoveredPoint.close, 2)} {selectedChart.currency || 'TRY'}</div>
+                            <div>{formatChartDate(hoveredPoint.ts, chartPeriod)}</div>
                           </div>
-                        ))}
+                        )}
                       </div>
-                      <div className="footer-note">
-                        Durum: {selectedFundamentals?.status || '—'} {selectedFundamentals?.url ? `• Kaynak: ${selectedFundamentals.url}` : ''}
+                      <div className="muted">
+                        Son: {formatRatio(selectedChart.points[selectedChart.points.length - 1]?.close, 2)} {selectedChart.currency || 'TRY'}
                       </div>
                     </>
                   )}
+                  {!chartLoading && !chartError && (!selectedChart || selectedChart?.points?.length <= 1) && (
+                    <p className="muted">Grafik verisi bulunamadı.</p>
+                  )}
                 </div>
-              </section>
-            ) : (
+              </div>
+
+              <div className="card" style={{ padding: 14 }}>
+                <h3 className="section-title">Fundamentals (Investing)</h3>
+                {fundamentalsLoading && <p className="muted">Fundamentals yükleniyor...</p>}
+                {fundamentalsError && <p className="muted">{fundamentalsError}</p>}
+                {!fundamentalsLoading && !fundamentalsError && (
+                  <>
+                    <div className="muted" style={{ marginBottom: 10 }}>
+                      Son çekim: {selectedFundamentals?.fetchedAt ? new Date(selectedFundamentals.fetchedAt).toLocaleString('tr-TR') : '—'}
+                      {selectedFundamentals?.running ? ' • Arka planda güncelleniyor' : ''}
+                    </div>
+                    <div className="detail-grid">
+                      {FUNDAMENTAL_FIELDS.map((field) => (
+                        <div className="detail-item" key={field.key}>
+                          <div className="detail-label">{field.label}</div>
+                          <div className="detail-value">{formatFundamentalValue(field.key, selectedFundamentals?.metrics?.[field.key])}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="footer-note">
+                      Durum: {selectedFundamentals?.status || '—'} {selectedFundamentals?.url ? `• Kaynak: ${selectedFundamentals.url}` : ''}
+                    </div>
+                  </>
+                )}
+              </div>
+            </section>
+          ) : (
             <section className="card favorites">
               <h2 className="section-title">Ana Sayfa • Yıldızlanan Hisseler</h2>
               {favoriteRows.length === 0 ? (
@@ -1605,9 +1614,9 @@
                 </div>
               )}
             </section>
-            )}
+          )}
 
-            {!selectedSymbol && (
+          {!selectedSymbol && (
             <section className="card stocks">
               <h2 className="section-title">Tüm BIST Hisseleri</h2>
               <div className="table-wrap" ref={tableWrapRef}>
@@ -1666,13 +1675,14 @@
                 Not: Yahoo delayed veri kullanılır. İlk yüklemede sembol keşfi başarısız olursa yedek BIST listesi gösterilir.
               </div>
             </section>
-            )}
-          </div>
-        );
-      }
+          )}
+        </div>
+      );
+    }
 
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(<App />);
-    </script>
-  </body>
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+
 </html>
