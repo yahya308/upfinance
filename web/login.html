@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UpFinance — Giriş Yap</title>
+    <meta name="description" content="UpFinance hesabınıza giriş yapın. BIST hisse izleme platformu." />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F0D060;
+            --gold-dark: #B8960C;
+            --navy: #1B1F3B;
+            --navy-deep: #0F1225;
+            --navy-light: #252A4A;
+            --navy-surface: #1E2340;
+            --text-primary: #F5F5F5;
+            --text-muted: #A0A4B8;
+            --error: #FF6B6B;
+            --success: #4ADE80;
+            --border: rgba(212, 175, 55, 0.15);
+            --glow: rgba(212, 175, 55, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--navy-deep);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(135deg, #0F1225 0%, #1B1F3B 40%, #151933 60%, #0F1225 100%);
+            overflow: hidden;
+        }
+
+        .bg-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(212, 175, 55, 0.04) 0%, transparent 50%);
+            animation: bgShift 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgShift {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(30px, -20px) rotate(2deg);
+            }
+        }
+
+        /* Floating particles */
+        .particles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) {
+            left: 15%;
+            top: 20%;
+            animation-delay: 0s;
+            animation-duration: 10s;
+        }
+
+        .particle:nth-child(2) {
+            left: 70%;
+            top: 30%;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .particle:nth-child(3) {
+            left: 40%;
+            top: 70%;
+            animation-delay: 4s;
+            animation-duration: 9s;
+        }
+
+        .particle:nth-child(4) {
+            left: 85%;
+            top: 60%;
+            animation-delay: 1s;
+            animation-duration: 11s;
+        }
+
+        .particle:nth-child(5) {
+            left: 25%;
+            top: 85%;
+            animation-delay: 3s;
+            animation-duration: 8s;
+        }
+
+        .particle:nth-child(6) {
+            left: 55%;
+            top: 15%;
+            animation-delay: 5s;
+            animation-duration: 13s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: translateY(0) scale(1);
+            }
+
+            25% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 0.3;
+                transform: translateY(-60px) scale(1.5);
+            }
+
+            75% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Page layout */
+        .page {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 24px;
+        }
+
+        /* Login card */
+        .card {
+            width: 100%;
+            max-width: 440px;
+            background: rgba(30, 35, 64, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 48px 40px 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(212, 175, 55, 0.05) inset;
+            animation: cardEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes cardEnter {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo / Brand */
+        .brand {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .brand-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+            animation: iconPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 4px 30px rgba(212, 175, 55, 0.5);
+            }
+        }
+
+        .brand-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--navy-deep);
+        }
+
+        .brand h1 {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 6px;
+            font-weight: 400;
+        }
+
+        /* Form fields */
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            color: var(--text-muted);
+            pointer-events: none;
+            transition: color 0.3s ease;
+        }
+
+        .form-input {
+            width: 100%;
+            background: rgba(15, 18, 37, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            color: var(--text-primary);
+            border-radius: 12px;
+            padding: 14px 14px 14px 44px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-input::placeholder {
+            color: rgba(160, 164, 184, 0.5);
+        }
+
+        .form-input:hover {
+            border-color: rgba(212, 175, 55, 0.25);
+        }
+
+        .form-input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1),
+                0 0 20px rgba(212, 175, 55, 0.05);
+        }
+
+        .form-input:focus~.input-icon,
+        .form-input:focus+.input-icon {
+            color: var(--gold);
+        }
+
+        .form-input.error {
+            border-color: var(--error);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+
+        .form-input.success {
+            border-color: var(--success);
+        }
+
+        .error-message {
+            display: none;
+            color: var(--error);
+            font-size: 12px;
+            margin-top: 6px;
+            padding-left: 2px;
+            animation: errorSlide 0.3s ease;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+
+        @keyframes errorSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Password toggle */
+        .password-toggle {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 2px;
+            display: flex;
+            transition: color 0.2s ease;
+        }
+
+        .password-toggle:hover {
+            color: var(--gold);
+        }
+
+        .password-toggle svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Submit button */
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--navy-deep);
+            border: none;
+            border-radius: 12px;
+            padding: 15px 24px;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            letter-spacing: 0.3px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+        }
+
+        .btn-submit:hover::before {
+            opacity: 1;
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .btn-submit span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+        }
+
+        .divider span {
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* Register link */
+        .register-link {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .register-link a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .register-link a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .register-link a:hover::after {
+            width: 100%;
+        }
+
+        .register-link a:hover {
+            color: var(--gold-light);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 100;
+            background: rgba(30, 35, 64, 0.95);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-radius: 12px;
+            padding: 14px 20px;
+            color: var(--error);
+            font-size: 13px;
+            font-weight: 500;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            max-width: 360px;
+        }
+
+        .toast.success {
+            border-color: rgba(74, 222, 128, 0.3);
+            color: var(--success);
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        /* Loading spinner on button */
+        .btn-submit.loading span {
+            opacity: 0;
+        }
+
+        .btn-submit.loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid rgba(15, 18, 37, 0.3);
+            border-top-color: var(--navy-deep);
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .card {
+                padding: 36px 24px 32px;
+                border-radius: 20px;
+            }
+
+            .brand h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-wrapper">
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="card">
+            <div class="brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z" />
+                    </svg>
+                </div>
+                <h1>UpFinance</h1>
+                <p>Hesabınıza giriş yapın</p>
+            </div>
+
+            <form id="loginForm" novalidate autocomplete="off">
+                <div class="form-group">
+                    <label class="form-label" for="email">E-posta Adresi</label>
+                    <div class="input-wrapper">
+                        <input class="form-input" type="email" id="email" name="email" placeholder="ornek@email.com"
+                            autocomplete="email" required />
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                    </div>
+                    <div class="error-message" id="emailError">Geçerli bir e-posta adresi giriniz</div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Şifre</label>
+                    <div class="input-wrapper">
+                        <input class="form-input" type="password" id="password" name="password" placeholder="••••••••"
+                            autocomplete="current-password" required />
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                        <button type="button" class="password-toggle" id="togglePassword"
+                            aria-label="Şifreyi göster/gizle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" id="eyeIcon">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="error-message" id="passwordError">Şifre en az 8 karakter, 1 büyük harf, 1 küçük harf, 1
+                        rakam ve 1 özel karakter içermelidir</div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    <span>Giriş Yap</span>
+                </button>
+            </form>
+
+            <div class="divider"><span>veya</span></div>
+
+            <div class="register-link">
+                Hesabınız yok mu?
+                <a href="register.html" id="registerLink">Kayıt Ol</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        (function () {
+            'use strict';
+
+            // --- Selectors ---
+            const form = document.getElementById('loginForm');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            const submitBtn = document.getElementById('submitBtn');
+            const togglePassword = document.getElementById('togglePassword');
+            const eyeIcon = document.getElementById('eyeIcon');
+            const toast = document.getElementById('toast');
+
+            // --- Validation Rules ---
+            const EMAIL_REGEX = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+            const PASSWORD_MIN_LENGTH = 8;
+            const PASSWORD_UPPERCASE = /[A-Z]/;
+            const PASSWORD_LOWERCASE = /[a-z]/;
+            const PASSWORD_DIGIT = /[0-9]/;
+            const PASSWORD_SPECIAL = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`~]/;
+
+            // --- Helpers ---
+            function showError(input, errorEl) {
+                input.classList.add('error');
+                input.classList.remove('success');
+                errorEl.classList.add('visible');
+            }
+
+            function hideError(input, errorEl) {
+                input.classList.remove('error');
+                errorEl.classList.remove('visible');
+            }
+
+            function markSuccess(input, errorEl) {
+                input.classList.remove('error');
+                input.classList.add('success');
+                errorEl.classList.remove('visible');
+            }
+
+            function showToast(message, type) {
+                toast.textContent = message;
+                toast.className = 'toast ' + (type || '');
+                requestAnimationFrame(function () {
+                    toast.classList.add('show');
+                });
+                setTimeout(function () {
+                    toast.classList.remove('show');
+                }, 3500);
+            }
+
+            // --- Validation Functions ---
+            function validateEmail() {
+                var value = emailInput.value.trim();
+                if (!value) {
+                    emailError.textContent = 'E-posta adresi boş bırakılamaz';
+                    showError(emailInput, emailError);
+                    return false;
+                }
+                if (!EMAIL_REGEX.test(value)) {
+                    emailError.textContent = 'Geçerli bir e-posta adresi giriniz';
+                    showError(emailInput, emailError);
+                    return false;
+                }
+                markSuccess(emailInput, emailError);
+                return true;
+            }
+
+            function validatePassword() {
+                var value = passwordInput.value;
+                if (!value) {
+                    passwordError.textContent = 'Şifre boş bırakılamaz';
+                    showError(passwordInput, passwordError);
+                    return false;
+                }
+                if (value.length < PASSWORD_MIN_LENGTH) {
+                    passwordError.textContent = 'Şifre en az ' + PASSWORD_MIN_LENGTH + ' karakter olmalıdır';
+                    showError(passwordInput, passwordError);
+                    return false;
+                }
+                if (!PASSWORD_UPPERCASE.test(value)) {
+                    passwordError.textContent = 'Şifre en az 1 büyük harf içermelidir';
+                    showError(passwordInput, passwordError);
+                    return false;
+                }
+                if (!PASSWORD_LOWERCASE.test(value)) {
+                    passwordError.textContent = 'Şifre en az 1 küçük harf içermelidir';
+                    showError(passwordInput, passwordError);
+                    return false;
+                }
+                if (!PASSWORD_DIGIT.test(value)) {
+                    passwordError.textContent = 'Şifre en az 1 rakam içermelidir';
+                    showError(passwordInput, passwordError);
+                    return false;
+                }
+                if (!PASSWORD_SPECIAL.test(value)) {
+                    passwordError.textContent = 'Şifre en az 1 özel karakter içermelidir (!@#$%^&*...)';
+                    showError(passwordInput, passwordError);
+                    return false;
+                }
+                markSuccess(passwordInput, passwordError);
+                return true;
+            }
+
+            // --- Real-time validation on blur ---
+            emailInput.addEventListener('blur', validateEmail);
+            passwordInput.addEventListener('blur', validatePassword);
+
+            // --- Clear error on input ---
+            emailInput.addEventListener('input', function () {
+                if (emailInput.classList.contains('error')) {
+                    hideError(emailInput, emailError);
+                }
+            });
+
+            passwordInput.addEventListener('input', function () {
+                if (passwordInput.classList.contains('error')) {
+                    hideError(passwordInput, passwordError);
+                }
+            });
+
+            // --- Password visibility toggle ---
+            var passwordVisible = false;
+            togglePassword.addEventListener('click', function () {
+                passwordVisible = !passwordVisible;
+                passwordInput.type = passwordVisible ? 'text' : 'password';
+                eyeIcon.innerHTML = passwordVisible
+                    ? '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>'
+                    : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+            });
+
+            // --- Form submit ---
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var isEmailValid = validateEmail();
+                var isPasswordValid = validatePassword();
+
+                if (!isEmailValid || !isPasswordValid) {
+                    showToast('Lütfen tüm alanları doğru şekilde doldurunuz', 'error');
+                    return;
+                }
+
+                // Simulate loading
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
+
+                setTimeout(function () {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                    showToast('Giriş başarılı! Yönlendiriliyorsunuz...', 'success');
+                    setTimeout(function () {
+                        window.location.href = 'index.html';
+                    }, 1200);
+                }, 1500);
+            });
+        })();
+    </script>
+</body>
+
+</html>
