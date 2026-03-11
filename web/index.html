@@ -1392,6 +1392,7 @@
         const session = marketStatus.session ? `${marketStatus.session.open}-${marketStatus.session.close}` : '—';
         const reasonMap = {
           open: 'Seans içi',
+          open_feed_stale: 'Seans içi (veri akışı gecikmeli)',
           before_open: 'Açılış öncesi',
           after_close: 'Kapanış sonrası',
           half_day: marketStatus.sessionLabel ? `Yarım gün (${marketStatus.sessionLabel})` : 'Yarım gün seans',

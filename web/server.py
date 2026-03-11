@@ -786,11 +786,11 @@ def get_market_status():
 
     probe = _get_market_probe()
     feed_active = probe.get("active")
+    is_open = expected_open
     if expected_open and feed_active is False:
-        is_open = False
-        reason = "unexpected_halt"
-    else:
-        is_open = expected_open
+        # Keep session state authoritative. Feed freshness is reported separately
+        # and should not mark the exchange as closed by itself.
+        reason = "open_feed_stale"
 
     if is_open:
         next_close = today_close
