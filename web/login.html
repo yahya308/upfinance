@@ -163,6 +163,8 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            min-height: 100dvh;
+            /* dynamic viewport height — avoids mobile toolbar jump */
             padding: 24px;
         }
 
@@ -486,7 +488,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             transform: translateX(120%);
             transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-            max-width: 360px;
+            max-width: min(360px, calc(100vw - 24px));
         }
 
         .toast.success {
@@ -524,15 +526,300 @@
             }
         }
 
-        /* Responsive */
-        @media (max-width: 480px) {
+        /* Responsive — Tablet */
+        @media (max-width: 600px) {
+            .page {
+                padding: 16px;
+                align-items: flex-start;
+                padding-top: env(safe-area-inset-top, 16px);
+                padding-bottom: env(safe-area-inset-bottom, 16px);
+            }
+
             .card {
-                padding: 36px 24px 32px;
+                padding: 36px 28px 32px;
                 border-radius: 20px;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+        }
+
+        /* Responsive — Mobile */
+        @media (max-width: 480px) {
+            .page {
+                padding: 12px;
+            }
+
+            .card {
+                padding: 32px 20px 28px;
+                border-radius: 18px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .brand {
+                margin-bottom: 28px;
+            }
+
+            .brand-icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 14px;
+                margin-bottom: 12px;
+            }
+
+            .brand-icon svg {
+                width: 24px;
+                height: 24px;
             }
 
             .brand h1 {
                 font-size: 22px;
+            }
+
+            .brand p {
+                font-size: 13px;
+            }
+
+            .form-label {
+                font-size: 12px;
+                margin-bottom: 6px;
+            }
+
+            /* 16px font-size prevents iOS auto-zoom on focus */
+            .form-input {
+                font-size: 16px;
+                padding: 13px 13px 13px 40px;
+                border-radius: 10px;
+            }
+
+            .input-icon {
+                left: 12px;
+                width: 16px;
+                height: 16px;
+            }
+
+            .password-toggle {
+                right: 12px;
+                padding: 4px;
+            }
+
+            .btn-submit {
+                padding: 14px 20px;
+                font-size: 15px;
+                border-radius: 10px;
+            }
+
+            .divider {
+                margin: 22px 0;
+            }
+
+            .register-link {
+                margin-top: 22px;
+                font-size: 13px;
+            }
+
+            .error-message {
+                font-size: 11px;
+            }
+
+            .toast {
+                top: auto;
+                bottom: 16px;
+                left: 12px;
+                right: 12px;
+                max-width: none;
+                text-align: center;
+                font-size: 13px;
+                padding: 12px 16px;
+                border-radius: 10px;
+                transform: translateY(120%);
+            }
+
+            .toast.show {
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive — Very small screens (360px) */
+        @media (max-width: 360px) {
+            .page {
+                padding: 8px;
+            }
+
+            .card {
+                padding: 24px 16px 22px;
+                border-radius: 16px;
+            }
+
+            .brand-icon {
+                width: 44px;
+                height: 44px;
+            }
+
+            .brand h1 {
+                font-size: 20px;
+            }
+
+            .form-input {
+                padding: 12px 12px 12px 38px;
+            }
+
+            .btn-submit {
+                padding: 13px 16px;
+                font-size: 14px;
+            }
+        }
+
+        /* Responsive — Tiny screens (320px) */
+        @media (max-width: 320px) {
+            .page {
+                padding: 6px;
+            }
+
+            .card {
+                padding: 20px 12px 18px;
+                border-radius: 14px;
+            }
+
+            .brand {
+                margin-bottom: 20px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 12px;
+            }
+
+            .brand-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .brand h1 {
+                font-size: 18px;
+            }
+
+            .brand p {
+                font-size: 12px;
+            }
+
+            .form-label {
+                font-size: 11px;
+            }
+
+            .form-input {
+                padding: 11px 11px 11px 36px;
+                font-size: 16px;
+            }
+
+            .btn-submit {
+                padding: 12px 14px;
+                font-size: 13px;
+            }
+
+            .divider {
+                margin: 16px 0;
+            }
+
+            .register-link {
+                margin-top: 16px;
+                font-size: 12px;
+            }
+        }
+
+        /* Landscape orientation on mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .page {
+                align-items: flex-start;
+                padding: 12px;
+            }
+
+            .card {
+                margin-top: 8px;
+                margin-bottom: 8px;
+            }
+
+            .brand {
+                margin-bottom: 16px;
+            }
+
+            .brand-icon {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 8px;
+            }
+
+            .brand-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .brand h1 {
+                font-size: 20px;
+            }
+
+            .brand p {
+                font-size: 12px;
+                margin-top: 2px;
+            }
+
+            .form-group {
+                margin-bottom: 12px;
+            }
+
+            .form-input {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .btn-submit {
+                padding: 12px 20px;
+                margin-top: 4px;
+            }
+
+            .divider {
+                margin: 14px 0;
+            }
+
+            .register-link {
+                margin-top: 14px;
+            }
+        }
+
+        /* Reduced motion — disable decorative animations for a11y */
+        @media (prefers-reduced-motion: reduce) {
+            .bg-wrapper::before {
+                animation: none;
+            }
+
+            .particle {
+                animation: none;
+                display: none;
+            }
+
+            .brand-icon {
+                animation: none;
+            }
+
+            .card {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            .toast {
+                transition-duration: 0.1s;
+            }
+
+            .form-input,
+            .btn-submit,
+            .password-toggle,
+            .input-icon {
+                transition: none;
+            }
+
+            .error-message {
+                animation: none;
             }
         }
     </style>
@@ -562,7 +849,7 @@
                 <p>Hesabınıza giriş yapın</p>
             </div>
 
-            <form id="loginForm" novalidate autocomplete="off">
+            <form id="loginForm" novalidate>
                 <div class="form-group">
                     <label class="form-label" for="email">E-posta Adresi</label>
                     <div class="input-wrapper">
@@ -614,7 +901,7 @@
         </div>
     </div>
 
-    <div class="toast" id="toast"></div>
+    <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
     <script>
         (function () {
@@ -670,7 +957,7 @@
 
             // --- Validation Functions ---
             function validateEmail() {
-                var value = emailInput.value.trim();
+                const value = emailInput.value.trim();
                 if (!value) {
                     emailError.textContent = 'E-posta adresi boş bırakılamaz';
                     showError(emailInput, emailError);
@@ -686,7 +973,7 @@
             }
 
             function validatePassword() {
-                var value = passwordInput.value;
+                const value = passwordInput.value;
                 if (!value) {
                     passwordError.textContent = 'Şifre boş bırakılamaz';
                     showError(passwordInput, passwordError);
@@ -739,7 +1026,7 @@
             });
 
             // --- Password visibility toggle ---
-            var passwordVisible = false;
+            let passwordVisible = false;
             togglePassword.addEventListener('click', function () {
                 passwordVisible = !passwordVisible;
                 passwordInput.type = passwordVisible ? 'text' : 'password';
@@ -752,8 +1039,8 @@
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                var isEmailValid = validateEmail();
-                var isPasswordValid = validatePassword();
+                const isEmailValid = validateEmail();
+                const isPasswordValid = validatePassword();
 
                 if (!isEmailValid || !isPasswordValid) {
                     showToast('Lütfen tüm alanları doğru şekilde doldurunuz', 'error');
