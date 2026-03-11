@@ -1337,7 +1337,10 @@
         }, []);
 
         useEffect(() => {
-          if (!marketStatus?.isOpen) return;
+          // Keep polling during expected session hours even if probe marks feed as stale.
+          // This lets UI recover automatically when delayed feed starts updating again.
+          const shouldPoll = Boolean(marketStatus?.isOpen || marketStatus?.expectedOpen);
+          if (!shouldPoll) return;
 
           const id = setInterval(() => {
             const dynamicChunkSize = 260;
