@@ -864,6 +864,100 @@
             }
         }
 
+        /* Transparent basket background */
+        .bg-baskets {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 80px 24px 24px;
+            gap: 14px;
+            overflow: hidden;
+            opacity: 0.12;
+            filter: blur(1px);
+        }
+
+        .bg-basket-card {
+            width: 100%;
+            max-width: 520px;
+            background: rgba(30, 35, 64, 0.9);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            border-radius: 18px;
+            padding: 18px 20px;
+        }
+
+        .bg-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .bg-card-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .bg-perf {
+            font-size: 13px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        .bg-perf.positive {
+            background: rgba(74, 222, 128, 0.12);
+            color: var(--success);
+        }
+
+        .bg-perf.negative {
+            background: rgba(255, 107, 107, 0.12);
+            color: var(--error);
+        }
+
+        .bg-perf.neutral {
+            background: rgba(160, 164, 184, 0.12);
+            color: var(--text-muted);
+        }
+
+        .bg-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .bg-stat {
+            background: rgba(15, 18, 37, 0.45);
+            border: 1px solid rgba(212, 175, 55, 0.06);
+            border-radius: 8px;
+            padding: 8px 10px;
+            text-align: center;
+        }
+
+        .bg-stat-label {
+            font-size: 9px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+        .bg-stat-value {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .bg-wrapper::before {
                 animation: none;
@@ -904,6 +998,9 @@
             <div class="particle"></div>
         </div>
     </div>
+
+    <!-- Transparent basket background -->
+    <div class="bg-baskets" id="bgBaskets"></div>
 
     <div class="page">
         <!-- ─── Create Basket Card ─── -->
@@ -973,6 +1070,71 @@
 
     <!-- BasketStorage API -->
     <script src="basketStorage.js"></script>
+
+    <script>
+        // Render transparent basket cards in background
+        (function () {
+            'use strict';
+            var bgContainer = document.getElementById('bgBaskets');
+            if (!bgContainer || !window.BasketStorage) return;
+
+            var baskets = window.BasketStorage.listBaskets();
+            if (!baskets.length) return;
+
+            function formatCurrency(value) {
+                return new Intl.NumberFormat('tr-TR', {
+                    style: 'currency', currency: 'TRY',
+                    minimumFractionDigits: 0, maximumFractionDigits: 2
+                }).format(value);
+            }
+
+            function calcValue(b) {
+                var v = typeof b.initialBalance === 'number' ? b.initialBalance : 0;
+                var txs = Array.isArray(b.transactions) ? b.transactions : [];
+                for (var i = 0; i < txs.length; i++) {
+                    var tx = txs[i];
+                    var amt = typeof tx.totalAmount === 'number' ? tx.totalAmount
+                        : typeof tx.amount === 'number' ? tx.amount : 0;
+                    switch (tx.type) {
+                        case 'CASH_IN': v += amt; break;
+                        case 'CASH_OUT': v -= amt; break;
+                        case 'SELL': v += amt; break;
+                        case 'BUY': v -= amt; break;
+                    }
+                }
+                return Math.round(v * 100) / 100;
+            }
+
+            function escHtml(s) {
+                var d = document.createElement('div');
+                d.appendChild(document.createTextNode(s));
+                return d.innerHTML;
+            }
+
+            var html = '';
+            for (var i = 0; i < baskets.length; i++) {
+                var b = baskets[i];
+                var cv = calcValue(b);
+                var init = typeof b.initialBalance === 'number' ? b.initialBalance : 0;
+                var pct = init > 0 ? Math.round(((cv - init) / init) * 10000) / 100 : 0;
+                var sign = pct > 0 ? '+' : '';
+                var cls = pct > 0 ? 'positive' : pct < 0 ? 'negative' : 'neutral';
+
+                html += '<div class="bg-basket-card">'
+                    + '<div class="bg-card-top">'
+                    + '<div class="bg-card-name">' + escHtml(b.name) + '</div>'
+                    + '<div class="bg-perf ' + cls + '">' + sign + pct.toFixed(2) + '%</div>'
+                    + '</div>'
+                    + '<div class="bg-stats">'
+                    + '<div class="bg-stat"><div class="bg-stat-label">Başlangıç</div><div class="bg-stat-value">' + formatCurrency(init) + '</div></div>'
+                    + '<div class="bg-stat"><div class="bg-stat-label">Güncel</div><div class="bg-stat-value" style="color:var(--gold)">' + formatCurrency(cv) + '</div></div>'
+                    + '<div class="bg-stat"><div class="bg-stat-label">Performans</div><div class="bg-stat-value">' + sign + pct.toFixed(2) + '%</div></div>'
+                    + '</div>'
+                    + '</div>';
+            }
+            bgContainer.innerHTML = html;
+        })();
+    </script>
 
     <script>
         (function () {

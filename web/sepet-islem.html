@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UpFinance — Sepet İşlemleri</title>
+    <meta name="description" content="UpFinance sepet al/sat işlemleri sayfası." />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F0D060;
+            --gold-dark: #B8960C;
+            --navy: #1B1F3B;
+            --navy-deep: #0F1225;
+            --navy-light: #252A4A;
+            --navy-surface: #1E2340;
+            --text-primary: #F5F5F5;
+            --text-muted: #A0A4B8;
+            --error: #FF6B6B;
+            --success: #4ADE80;
+            --border: rgba(212, 175, 55, 0.15);
+            --glow: rgba(212, 175, 55, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--navy-deep);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(135deg, #0F1225 0%, #1B1F3B 40%, #151933 60%, #0F1225 100%);
+            overflow: hidden;
+        }
+
+        .bg-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(212, 175, 55, 0.04) 0%, transparent 50%);
+            animation: bgShift 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgShift {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(30px, -20px) rotate(2deg);
+            }
+        }
+
+        .particles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) { left: 15%; top: 20%; animation-delay: 0s; animation-duration: 10s; }
+        .particle:nth-child(2) { left: 70%; top: 30%; animation-delay: 2s; animation-duration: 12s; }
+        .particle:nth-child(3) { left: 40%; top: 70%; animation-delay: 4s; animation-duration: 9s; }
+        .particle:nth-child(4) { left: 85%; top: 60%; animation-delay: 1s; animation-duration: 11s; }
+        .particle:nth-child(5) { left: 25%; top: 85%; animation-delay: 3s; animation-duration: 8s; }
+        .particle:nth-child(6) { left: 55%; top: 15%; animation-delay: 5s; animation-duration: 13s; }
+
+        @keyframes float {
+            0%, 100% { opacity: 0; transform: translateY(0) scale(1); }
+            25% { opacity: 0.6; }
+            50% { opacity: 0.3; transform: translateY(-60px) scale(1.5); }
+            75% { opacity: 0.5; }
+        }
+
+        /* Page layout */
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px;
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
+
+        /* Header */
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .header-icon {
+            width: 46px;
+            height: 46px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+            flex-shrink: 0;
+        }
+
+        .header-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--navy-deep);
+        }
+
+        .header-title {
+            font-size: 22px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Basket info card */
+        .basket-info-card {
+            background: rgba(30, 35, 64, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 22px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(212, 175, 55, 0.04) inset;
+            margin-bottom: 20px;
+            animation: cardSlideIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        @keyframes cardSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .info-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .info-value.gold {
+            color: var(--gold);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .stat-box {
+            background: rgba(15, 18, 37, 0.45);
+            border: 1px solid rgba(212, 175, 55, 0.06);
+            border-radius: 10px;
+            padding: 10px 12px;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-value.gold {
+            color: var(--gold);
+        }
+
+        /* Trade section placeholder */
+        .trade-section {
+            background: rgba(30, 35, 64, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(212, 175, 55, 0.04) inset;
+            margin-bottom: 20px;
+            animation: cardSlideIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: 0.1s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .trade-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .trade-title svg {
+            width: 20px;
+            height: 20px;
+            color: var(--gold);
+        }
+
+        /* Trade tabs */
+        .trade-tabs {
+            display: flex;
+            gap: 4px;
+            background: rgba(15, 18, 37, 0.5);
+            border-radius: 12px;
+            padding: 4px;
+            margin-bottom: 20px;
+        }
+
+        .trade-tab {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            background: transparent;
+            color: var(--text-muted);
+        }
+
+        .trade-tab.active-buy {
+            background: rgba(74, 222, 128, 0.15);
+            color: var(--success);
+            box-shadow: 0 2px 8px rgba(74, 222, 128, 0.1);
+        }
+
+        .trade-tab.active-sell {
+            background: rgba(255, 107, 107, 0.15);
+            color: var(--error);
+            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.1);
+        }
+
+        .trade-tab:hover:not(.active-buy):not(.active-sell) {
+            background: rgba(160, 164, 184, 0.08);
+            color: var(--text-primary);
+        }
+
+        /* Trade form placeholder */
+        .trade-form-placeholder {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+        }
+
+        .trade-form-placeholder .placeholder-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .trade-form-placeholder .placeholder-icon svg {
+            width: 28px;
+            height: 28px;
+            color: rgba(212, 175, 55, 0.3);
+        }
+
+        .trade-form-placeholder .placeholder-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .trade-form-placeholder .placeholder-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Holdings section */
+        .holdings-section {
+            background: rgba(30, 35, 64, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 22px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(212, 175, 55, 0.04) inset;
+            margin-bottom: 20px;
+            animation: cardSlideIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .holdings-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .holdings-title svg {
+            width: 18px;
+            height: 18px;
+            color: var(--gold);
+        }
+
+        .holdings-empty {
+            text-align: center;
+            padding: 24px 16px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .holdings-empty svg {
+            width: 36px;
+            height: 36px;
+            color: rgba(212, 175, 55, 0.2);
+            margin-bottom: 10px;
+        }
+
+        /* Transaction history */
+        .history-section {
+            background: rgba(30, 35, 64, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 22px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(212, 175, 55, 0.04) inset;
+            margin-bottom: 20px;
+            animation: cardSlideIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        .history-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .history-title svg {
+            width: 18px;
+            height: 18px;
+            color: var(--gold);
+        }
+
+        .history-empty {
+            text-align: center;
+            padding: 24px 16px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        /* Nav */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.06);
+            animation: fadeIn 0.8s ease forwards;
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+
+        .nav-bar a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .nav-bar a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-bar a:hover::after {
+            width: 100%;
+        }
+
+        .nav-bar a:hover {
+            color: var(--gold-light);
+        }
+
+        /* Error state */
+        .error-state {
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .error-state .error-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 107, 107, 0.06);
+            border: 1px solid rgba(255, 107, 107, 0.1);
+            border-radius: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .error-state .error-icon svg {
+            width: 36px;
+            height: 36px;
+            color: rgba(255, 107, 107, 0.5);
+        }
+
+        .error-state .error-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .error-state .error-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--navy-deep);
+            border: none;
+            border-radius: 10px;
+            padding: 10px 18px;
+            font-size: 13px;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+        }
+
+        /* ═══ Responsive ═══ */
+
+        @media (max-width: 600px) {
+            .page {
+                padding: 16px;
+            }
+
+            .header-title {
+                font-size: 19px;
+            }
+
+            .header-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 12px;
+            }
+
+            .header-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .page-header {
+                margin-bottom: 20px;
+            }
+
+            .basket-info-card {
+                padding: 18px 18px;
+                border-radius: 16px;
+            }
+
+            .trade-section {
+                padding: 22px 18px;
+                border-radius: 16px;
+            }
+
+            .stats-row {
+                gap: 8px;
+            }
+
+            .stat-box {
+                padding: 8px 8px;
+            }
+
+            .stat-label {
+                font-size: 9px;
+            }
+
+            .stat-value {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page {
+                padding: 12px;
+            }
+
+            .page-header {
+                gap: 12px;
+            }
+
+            .header-left {
+                gap: 10px;
+            }
+
+            .header-title {
+                font-size: 17px;
+            }
+
+            .header-sub {
+                font-size: 12px;
+            }
+
+            .info-value {
+                font-size: 14px;
+            }
+
+            .trade-form-placeholder {
+                padding: 28px 16px;
+            }
+
+            .trade-form-placeholder .placeholder-icon {
+                width: 52px;
+                height: 52px;
+                border-radius: 16px;
+            }
+
+            .trade-form-placeholder .placeholder-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .trade-form-placeholder .placeholder-title {
+                font-size: 14px;
+            }
+
+            .trade-form-placeholder .placeholder-desc {
+                font-size: 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .bg-wrapper::before { animation: none; }
+            .particle { animation: none; display: none; }
+            .basket-info-card, .trade-section, .holdings-section, .history-section {
+                animation: none; opacity: 1; transform: none;
+            }
+            .page-header, .nav-bar { animation: none; opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-wrapper">
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <div class="page">
+        <!-- Header -->
+        <header class="page-header" id="pageHeader">
+            <div class="header-left">
+                <div class="header-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="header-title" id="headerTitle">Sepet İşlemleri</div>
+                    <div class="header-sub" id="headerSub">Al/Sat işlemlerinizi yönetin</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content container -->
+        <div id="contentArea"></div>
+
+        <!-- Nav -->
+        <nav class="nav-bar">
+            <a href="sepetlerim.html">← Sepetlerime Dön</a>
+            <a href="index.html">Ana Sayfa</a>
+        </nav>
+    </div>
+
+    <!-- BasketStorage API -->
+    <script src="basketStorage.js"></script>
+
+    <script>
+        (function () {
+            'use strict';
+
+            var contentArea = document.getElementById('contentArea');
+            var headerTitle = document.getElementById('headerTitle');
+            var headerSub = document.getElementById('headerSub');
+
+            // ── Get basket ID from URL ──
+            function getBasketIdFromUrl() {
+                var params = new URLSearchParams(window.location.search);
+                return params.get('id');
+            }
+
+            // ── Format helpers ──
+            function formatCurrency(value) {
+                return new Intl.NumberFormat('tr-TR', {
+                    style: 'currency',
+                    currency: 'TRY',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 2
+                }).format(value);
+            }
+
+            function escapeHtml(str) {
+                var div = document.createElement('div');
+                div.appendChild(document.createTextNode(str));
+                return div.innerHTML;
+            }
+
+            // ── Calculate basket value ──
+            function calcBasketValue(basket) {
+                if (!basket) return 0;
+                var value = typeof basket.initialBalance === 'number' ? basket.initialBalance : 0;
+                var txs = Array.isArray(basket.transactions) ? basket.transactions : [];
+                for (var i = 0; i < txs.length; i++) {
+                    var tx = txs[i];
+                    var amt = typeof tx.totalAmount === 'number' ? tx.totalAmount
+                        : typeof tx.amount === 'number' ? tx.amount : 0;
+                    switch (tx.type) {
+                        case 'CASH_IN': value += amt; break;
+                        case 'CASH_OUT': value -= amt; break;
+                        case 'SELL': value += amt; break;
+                        case 'BUY': value -= amt; break;
+                    }
+                }
+                return Math.round(value * 100) / 100;
+            }
+
+            function calcPerformance(basket) {
+                if (!basket) return 0;
+                var initial = typeof basket.initialBalance === 'number' ? basket.initialBalance : 0;
+                if (initial === 0) return 0;
+                var currentValue = calcBasketValue(basket);
+                var pct = ((currentValue - initial) / initial) * 100;
+                return Math.round(pct * 100) / 100;
+            }
+
+            // ── Render ──
+            function render() {
+                var basketId = getBasketIdFromUrl();
+
+                if (!basketId) {
+                    showError('Sepet bulunamadı', 'URL\'de geçerli bir sepet ID\'si yok.');
+                    return;
+                }
+
+                var basket = window.BasketStorage.getBasketById(basketId);
+                if (!basket) {
+                    showError('Sepet bulunamadı', 'Bu ID ile eşleşen bir sepet bulunamadı.');
+                    return;
+                }
+
+                // Update header
+                headerTitle.textContent = escapeHtml(basket.name);
+                headerSub.textContent = 'Al/Sat işlemlerinizi yönetin';
+                document.title = 'UpFinance — ' + basket.name;
+
+                var currentValue = calcBasketValue(basket);
+                var perfPct = calcPerformance(basket);
+                var perfSign = perfPct > 0 ? '+' : '';
+                var txCount = Array.isArray(basket.transactions) ? basket.transactions.length : 0;
+
+                var html = '';
+
+                // ── Basket Info Card ──
+                html += '<div class="basket-info-card">'
+                    + '<div class="info-row">'
+                    + '<div>'
+                    + '<div class="info-label">Sepet Adı</div>'
+                    + '<div class="info-value">' + escapeHtml(basket.name) + '</div>'
+                    + '</div>'
+                    + '<div style="text-align:right;">'
+                    + '<div class="info-label">Performans</div>'
+                    + '<div class="info-value" style="color:' + (perfPct >= 0 ? 'var(--success)' : 'var(--error)') + '">'
+                    + perfSign + perfPct.toFixed(2) + '%'
+                    + '</div>'
+                    + '</div>'
+                    + '</div>'
+                    + '<div class="stats-row">'
+                    + '<div class="stat-box">'
+                    + '<div class="stat-label">Başlangıç</div>'
+                    + '<div class="stat-value">' + formatCurrency(basket.initialBalance) + '</div>'
+                    + '</div>'
+                    + '<div class="stat-box">'
+                    + '<div class="stat-label">Güncel Bakiye</div>'
+                    + '<div class="stat-value gold">' + formatCurrency(currentValue) + '</div>'
+                    + '</div>'
+                    + '<div class="stat-box">'
+                    + '<div class="stat-label">İşlem Sayısı</div>'
+                    + '<div class="stat-value">' + txCount + '</div>'
+                    + '</div>'
+                    + '</div>'
+                    + '</div>';
+
+                // ── Trade Section ──
+                html += '<div class="trade-section">'
+                    + '<div class="trade-title">'
+                    + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+                    + '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>'
+                    + '<polyline points="17 6 23 6 23 12"/>'
+                    + '</svg>'
+                    + 'Al / Sat İşlemi'
+                    + '</div>'
+                    + '<div class="trade-tabs">'
+                    + '<button class="trade-tab active-buy" id="tabBuy">AL (Buy)</button>'
+                    + '<button class="trade-tab" id="tabSell">SAT (Sell)</button>'
+                    + '</div>'
+                    + '<div class="trade-form-placeholder">'
+                    + '<div class="placeholder-icon">'
+                    + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'
+                    + '<rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>'
+                    + '<path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>'
+                    + '</svg>'
+                    + '</div>'
+                    + '<div class="placeholder-title">Al/Sat İşlemleri Yakında</div>'
+                    + '<div class="placeholder-desc">Bu alan hisse senedi alım ve satım işlemleriniz için tasarlanmaktadır.<br/>Yakında buradan işlem yapabileceksiniz.</div>'
+                    + '</div>'
+                    + '</div>';
+
+                // ── Holdings Section ──
+                html += '<div class="holdings-section">'
+                    + '<div class="holdings-title">'
+                    + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+                    + '<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>'
+                    + '<polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>'
+                    + '</svg>'
+                    + 'Portföy (Elde Tutulanlar)'
+                    + '</div>'
+                    + '<div class="holdings-empty">'
+                    + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'
+                    + '<circle cx="12" cy="12" r="10"/><path d="M8 12h8"/>'
+                    + '</svg>'
+                    + '<div>Henüz portföyde hisse yok.</div>'
+                    + '</div>'
+                    + '</div>';
+
+                // ── Transaction History Section ──
+                html += '<div class="history-section">'
+                    + '<div class="history-title">'
+                    + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+                    + '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>'
+                    + '</svg>'
+                    + 'İşlem Geçmişi'
+                    + '</div>'
+                    + '<div class="history-empty">'
+                    + 'Henüz işlem yapılmamış.'
+                    + '</div>'
+                    + '</div>';
+
+                contentArea.innerHTML = html;
+
+                // ── Trade tab switching ──
+                var tabBuy = document.getElementById('tabBuy');
+                var tabSell = document.getElementById('tabSell');
+
+                if (tabBuy && tabSell) {
+                    tabBuy.addEventListener('click', function () {
+                        tabBuy.className = 'trade-tab active-buy';
+                        tabSell.className = 'trade-tab';
+                    });
+                    tabSell.addEventListener('click', function () {
+                        tabSell.className = 'trade-tab active-sell';
+                        tabBuy.className = 'trade-tab';
+                    });
+                }
+            }
+
+            function showError(title, desc) {
+                contentArea.innerHTML = '<div class="error-state">'
+                    + '<div class="error-icon">'
+                    + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'
+                    + '<circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>'
+                    + '</svg>'
+                    + '</div>'
+                    + '<div class="error-title">' + title + '</div>'
+                    + '<div class="error-desc">' + desc + '</div>'
+                    + '<a class="btn-back" href="sepetlerim.html">← Sepetlerime Dön</a>'
+                    + '</div>';
+            }
+
+            // ── Init ──
+            render();
+        })();
+    </script>
+</body>
+
+</html>

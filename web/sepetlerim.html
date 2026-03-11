@@ -463,15 +463,17 @@
             flex-shrink: 0;
         }
 
-        .btn-detail {
-            background: rgba(212, 175, 55, 0.1);
-            border-color: rgba(212, 175, 55, 0.15);
+        .btn-enter {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08));
+            border-color: rgba(212, 175, 55, 0.25);
             color: var(--gold);
         }
 
-        .btn-detail:hover {
-            background: rgba(212, 175, 55, 0.18);
-            border-color: rgba(212, 175, 55, 0.3);
+        .btn-enter:hover {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.15));
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
         }
 
         .btn-reset {
@@ -1257,17 +1259,16 @@
             // ═══════════════════════════════════════════════════════
 
             /**
-             * onDetailBasket(id)
-             * Sepet detay sayfasına yönlendirir (ileride geliştirilecek).
+             * onEnterBasket(id)
+             * Sepet al/sat işlem sayfasına yönlendirir.
              */
-            function onDetailBasket(id) {
+            function onEnterBasket(id) {
                 var basket = window.BasketStorage.getBasketById(id);
                 if (!basket) {
                     showToast('Sepet bulunamadı.', 'error');
                     return;
                 }
-                // Placeholder: ileride sepet detay sayfasına yönlendirilecek
-                showToast('"' + basket.name + '" detay sayfası yakında eklenecek.', 'success');
+                window.location.href = 'sepet-islem.html?id=' + encodeURIComponent(id);
             }
 
             /**
@@ -1530,11 +1531,11 @@
 
                         // Actions
                         + '<div class="card-actions">'
-                        + '<button class="btn-action btn-detail" data-action="detail" data-id="' + b.id + '">'
+                        + '<button class="btn-action btn-enter" data-action="enter" data-id="' + b.id + '">'
                         + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
-                        + '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'
+                        + '<path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/>'
                         + '</svg>'
-                        + 'Detay'
+                        + 'Sepete Gir'
                         + '</button>'
                         + '<button class="btn-action btn-reset" data-action="reset" data-id="' + b.id + '">'
                         + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
@@ -1570,7 +1571,7 @@
                 if (!id || !action) return;
 
                 switch (action) {
-                    case 'detail': onDetailBasket(id); break;
+                    case 'enter': onEnterBasket(id); break;
                     case 'reset': onResetBasket(id); break;
                     case 'delete': onDeleteBasket(id); break;
                 }
